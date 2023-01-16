@@ -11,7 +11,8 @@ This directory contains all files composing the massive "code" file which holds 
 | [**particle.s**](particle.s)                           | Particle Effects                     |  80013F30  |   A89E90   | A690  |
 | [**flg_set.s**](flg_set.s)                             | Flag Set                             |  8001E5C0  |   A94520   |  410  |
 | [**DLF.s**](DLF.s)                                     | Dynamically Linked File              |  8001E9D0  |   A94930   |  250  |
-| [**actor.s**](actor.s)                                 | Actor                                |  8001EC20  |   A94B80   | C740  |
+| [**z_actor.s**](z_actor.s)                             | Actor                                |  8001EC20  |   A94B80   | C540  |
+| [**z_actor_dlftbls.s**](z_actor_dlftbls.s)             | Actor Overlay Tables                 |  8002B160  |   ??????   |  200  |
 | [**bgcheck.s**](bgcheck.s)                             | Background Check                     |  8002B360  |   AA12C0   | A290  |
 | [**camera.s**](camera.s)                               | Camera                               |  800355F0  |   AAB550   | 14820 |
 | [**collision_check.s**](collision_check.s)             | Collision Check                      |  80049E10  |   ABFD70   | 7C90  |
@@ -62,7 +63,7 @@ This directory contains all files composing the massive "code" file which holds 
 | [**play.s**](play.s)                                   | Play                                 |  8009A170  |   B100D0   | 5D50  |
 | [**code_8009FEC0.s**](code_8009FEC0.s)                 | Unknown (8009FEC0)                   |  8009FEC0  |   B15E20   |  3D0  |
 | [**code_800A0290.s**](code_800A0290.s)                 | Unknown (800A0290)                   |  800A0290  |   B161F0   |  50   |
-| [**audio.s**](audio.s)                                 | Audio Thread                         |  800A02E0  |   B16240   |  420  |
+| [**audioMgr.s**](audioMgr.s)                           | Audio Thread Manager                 |  800A02E0  |   B16240   |  420  |
 | [**game.s**](game.s)                                   | Game                                 |  800A0700  |   B16660   |  8F0  |
 | [**graph.s**](graph.s)                                 | Graph Thread                         |  800A0FF0  |   B16F50   |  C60  |
 | [**main.s**](main.s)                                   | Main Thread                          |  800A1C50  |   B17BB0   |  3B0  |

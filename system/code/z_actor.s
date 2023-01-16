@@ -10,6 +10,7 @@
 
 .section .text
 func_8001EC20:
+# MqDbg: ActorShape_Init
     mtc1    a1, $f12                   # $f12 = 0.00
     mtc1    a3, $f14                   # $f14 = 0.00
     addiu   t6, $zero, 0x00FF          # t6 = 000000FF
@@ -22,6 +23,7 @@ func_8001EC20:
 
 
 func_8001EC44:
+# MqDbg: ActorShadow_Draw
 # gameplay_keep d. list: Circular Shadow
     addiu   $sp, $sp, 0xFF68           # $sp -= 0x98
     sw      s0, 0x001C($sp)
@@ -277,6 +279,7 @@ lbl_8001EFE4:
 
 
 func_8001EFF4:
+# MqDbg: ActorShadow_DrawCircle
 # Draw Drop Shadow (Wrapper for 8001EC44)
 # (Used by En_Item00, Heart Piece)
 # gameplay_keep d. list: Circular Shadow
@@ -293,6 +296,7 @@ func_8001EFF4:
 
 
 func_8001F01C:
+# MqDbg: ActorShadow_DrawWhiteCircle
 # gameplay_keep d. list: Circular Shadow
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x001C($sp)
@@ -309,6 +313,7 @@ func_8001F01C:
 
 
 func_8001F04C:
+# MqDbg: ActorShadow_DrawHorse
 # gameplay_keep d. list: Squiggly Shadow
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x001C($sp)
@@ -323,6 +328,7 @@ func_8001F04C:
 
 
 func_8001F074:
+# MqDbg: ActorShadow_DrawFoot
 # gameplay_keep d. list: Teardrop Shadow
     addiu   $sp, $sp, 0xFFC0           # $sp -= 0x40
     lui     $at, 0x3F80                # $at = 3F800000
@@ -463,6 +469,7 @@ lbl_8001F1E4:
 
 
 func_8001F280:
+# MqDbg: ActorShadow_DrawFeet
     addiu   $sp, $sp, 0xFED0           # $sp -= 0x130
     lui     $at, 0x41A0                # $at = 41A00000
     sw      s8, 0x0078($sp)
@@ -796,6 +803,7 @@ lbl_8001F708:
 
 
 func_8001F74C:
+# MqDbg: Actor_SetFeetPos
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -822,6 +830,7 @@ lbl_8001F794:
 
 
 func_8001F7A0:
+# MqDbg: Actor_ProjectPos
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -852,6 +861,7 @@ lbl_8001F7F4:
 
 
 func_8001F804:
+# MqDbg: func_8002BE64
     mtc1    a2, $f12                   # $f12 = 0.00
     mtc1    a3, $f14                   # $f14 = 0.00
     sll     t6, a1,  2
@@ -869,6 +879,7 @@ func_8001F804:
 
 
 func_8001F83C:
+# MqDbg: func_8002BE98
 # Navi colour related.
     addiu   $sp, $sp, 0xFFC0           # $sp -= 0x40
     sw      s4, 0x0038($sp)
@@ -924,6 +935,7 @@ lbl_8001F8A4:
 
 
 func_8001F904:
+# MqDbg: Actor_SetNaviToActor
 # Navi Colors
 # Loads data from table at 800E8214 for setting Navi's Colors
 # A0 = (GC + 0x1C90)
@@ -1029,6 +1041,7 @@ lbl_8001FA5C:
 
 
 func_8001FA68:
+# MqDbg: func_8002C0C0
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a2, 0x0020($sp)
@@ -1057,6 +1070,7 @@ func_8001FA68:
 
 
 func_8001FACC:
+# MqDbg: func_8002C124
 # Navi colour related. gameplay_keep d. list: 52980 & CC10
     addiu   $sp, $sp, 0xFF20           # $sp -= 0xE0
     sw      s1, 0x004C($sp)
@@ -1484,6 +1498,7 @@ lbl_800200C8:
 
 
 func_80020108:
+# MqDbg: func_8002C7BC
     addiu   $sp, $sp, 0xFF98           # $sp -= 0x68
     sw      s1, 0x0018($sp)
     sw      s0, 0x0014($sp)
@@ -1739,6 +1754,7 @@ lbl_8002048C:
 
 
 func_8002049C:
+# MqDbg: Flags_GetSwitch
 # Tests if Switch Flag is Set
 # A0 = Global Context
 # A1 = Switch Flag Value
@@ -1760,6 +1776,7 @@ lbl_800204B8:
 
 
 func_800204D0:
+# MqDbg: Flags_SetSwitch
 # Sets Switch Flag to 1
 # A0 = Global Context
 # A1 = Switch Flag Value
@@ -1784,6 +1801,7 @@ lbl_800204F8:
 
 
 func_80020510:
+# MqDbg: Flags_UnsetSwitch
 # Sets Switch Flag to 0
 # A0 = Global Context
 # A1 = Switch Flag Value
@@ -1808,6 +1826,7 @@ lbl_80020538:
 
 
 func_80020554:
+# MqDbg: Flags_GetUnknown
 # Tests if Unused Scene Flag is Set
 # A0 = Global Context
 # A1 = Flag Value
@@ -1829,6 +1848,7 @@ lbl_80020570:
 
 
 func_80020588:
+# MqDbg: Flags_SetUnknown
 # Sets Unused Scene Flag to 1
 # A0 = Global Context
 # A1 = Flag Value
@@ -1853,6 +1873,7 @@ lbl_800205B0:
 
 
 func_800205C8:
+# MqDbg: Flags_UnsetUnknown
 # Sets Unused Scene Flag to 0
 # A0 = Global Context
 # A1 = Flag Value
@@ -1877,6 +1898,7 @@ lbl_800205F0:
 
 
 func_8002060C:
+# MqDbg: Flags_GetTreasure
 # Tests if a Chest Flag is set
 # A0 = Global Context
 # A1 = Flag Value
@@ -1890,6 +1912,7 @@ func_8002060C:
 
 
 func_80020624:
+# MqDbg: Flags_SetTreasure
 # Sets Chest Flag to 1
 # A0 = Global Context
 # A1 = Flag Value
@@ -1903,6 +1926,7 @@ func_80020624:
 
 
 func_80020640:
+# MqDbg: Flags_GetClear
 # Test if a Room Clear Flag is set
 # A0 = Global Context
 # A1 = Flag Value
@@ -1916,6 +1940,7 @@ func_80020640:
 
 
 func_80020658:
+# MqDbg: Flags_SetClear
 # Sets Room Clear Flag to 1
 # A0 = Global Context
 # A1 = Flag Value
@@ -1929,6 +1954,7 @@ func_80020658:
 
 
 func_80020674:
+# MqDbg: Flags_UnsetClear
 # Sets Room Clear Flag to 0
 # A0 = Global Context
 # A1 = Flag Value
@@ -1943,6 +1969,7 @@ func_80020674:
 
 
 func_80020694:
+# MqDbg: Flags_GetTempClear
 # Tests if Global Context + 0x1D40 Flag is set
 # A0 = Global Context
 # A1 = Flag Value
@@ -1956,6 +1983,7 @@ func_80020694:
 
 
 func_800206AC:
+# MqDbg: Flags_SetTempClear
 # Sets Global Context + 0x1D40 Flag to 1
 # A0 = Global Context
 # A1 = Flag Value
@@ -1969,6 +1997,7 @@ func_800206AC:
 
 
 func_800206C8:
+# MqDbg: Flags_UnsetTempClear
 # Sets Global Context + 0x1D40 Flag to 0
 # A0 = Global Context
 # A1 = Flag Value
@@ -1983,6 +2012,7 @@ func_800206C8:
 
 
 func_800206E8:
+# MqDbg: Flags_GetCollectible
 # Tests if Scene Collectible Flag is set
 # A0 = Global Context
 # A1 = Flag Value
@@ -2004,6 +2034,7 @@ lbl_80020704:
 
 
 func_8002071C:
+# MqDbg: Flags_SetCollectible
 # Sets Scene Collectible Flag to 1
 # A0 = Global Context
 # A1 = Flag Value
@@ -2030,6 +2061,7 @@ lbl_80020758:
 
 
 func_80020760:
+# MqDbg: TitleCard_Init
 # Zero Title Card stuff
 # A0 = Global Context
 # A1 = Global Context + 0x1D4C
@@ -2044,6 +2076,7 @@ func_80020760:
 
 
 func_80020780:
+# MqDbg: TitleCard_InitBossName
 # Set Boss Title Card to display?
 # A0 = Global Context
 # A1 = Global Context + 0x1D4C
@@ -2072,6 +2105,7 @@ func_80020780:
 
 
 func_800207C4:
+# MqDbg: TitleCard_InitPlaceName
 # Title Card related
 # A0 = Global Context
 # A1 = Global Context + 0x1D4C
@@ -2120,6 +2154,7 @@ lbl_80020818:
 
 
 func_80020860:
+# MqDbg: TitleCard_Update
 # Update Title Card? (called when updating actors)
 # A0 = Global Context
 # A1 = Global Context + 0x14DC
@@ -2179,6 +2214,7 @@ lbl_80020910:
 
 
 func_8002091C:
+# MqDbg: TitleCard_Draw
 # Draw Title Card? (called when drawing actors)
 # A0 = Global Context
 # A1 = Global Context + 0x14DC
@@ -2550,6 +2586,7 @@ lbl_80020E70:
 
 
 func_80020E80:
+# MqDbg: TitleCard_Clear
 # Title Card related (called from player actor)
 # Possibly checks and updates title card delay and some other data?
 # A0 = Global Context
@@ -2574,6 +2611,7 @@ lbl_80020EAC:
 
 
 func_80020EB4:
+# MqDbg: Actor_Kill
 # Kill Actor (nulls draw/update, but does not deallocate)
 # A0 = Actor Instance
     lw      t6, 0x0004(a0)             # 00000004
@@ -2587,6 +2625,7 @@ func_80020EB4:
 
 
 func_80020ED4:
+# MqDbg: Actor_SetWorldToHome
 # Actor Initialization, Copy 0x14 bytes from Actor Instance + 0x08 to Instance + 0x24
 # A0 = Actor Instance
     lw      t7, 0x0008(a0)             # 00000008
@@ -2604,6 +2643,7 @@ func_80020ED4:
 
 
 func_80020F04:
+# MqDbg: Actor_SetFocus
 # Sets the actor height (used by navi, target arrows, camera face when an npc is talking, etc)
 # A0 = Actor Instance
 # A1 = float height (Y offset from actor origin)
@@ -2627,6 +2667,7 @@ func_80020F04:
 
 
 func_80020F48:
+# MqDbg: Actor_SetWorldRotToShape
     lwl     t7, 0x00B4(a0)             # 000000B4
     lwr     t7, 0x00B7(a0)             # 000000B7
     swl     t7, 0x0030(a0)             # 00000030
@@ -2638,6 +2679,7 @@ func_80020F48:
 
 
 func_80020F68:
+# MqDbg: Actor_SetShapeRotToWorld
     lwl     t7, 0x0030(a0)             # 00000030
     lwr     t7, 0x0033(a0)             # 00000033
     swl     t7, 0x00B4(a0)             # 000000B4
@@ -2649,6 +2691,7 @@ func_80020F68:
 
 
 func_80020F88:
+# MqDbg: Actor_SetScale
 # Set actor's scale
 # A0 = Actor Instance
 # A1 = float Scale
@@ -2662,6 +2705,7 @@ func_80020F88:
 
 
 func_80020FA4:
+# MqDbg: Actor_SetObjectDependency
 # Update CPU Segment 0x06 to point to actor's defined object dependency
 # A0 = Global Context
 # A1 = Actor Instance
@@ -2682,6 +2726,7 @@ func_80020FA4:
 
 
 func_80020FDC:
+# MqDbg: Actor_Init
 # Actor Instance Initialization
 # Instance has already been 0 initialized, init vars in overlay copied over, and has been bound to category
 # A0 = Global Context
@@ -2759,6 +2804,7 @@ lbl_800210DC:
 
 
 func_800210F0:
+# MqDbg: Actor_Destroy
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lw      v0, 0x012C(a0)             # 0000012C
@@ -2776,6 +2822,7 @@ lbl_80021118:
 
 
 func_80021124:
+# MqDbg: Actor_UpdatePos
 # Physics, updates XYZ coordinates of actor
 # A0 = Actor Instance
     lui     t6, 0x8012                 # t6 = 80120000
@@ -2813,6 +2860,7 @@ func_80021124:
 
 
 func_800211A4:
+# MqDbg: Actor_UpdateVelocityXZGravity
 # Physics, updates XYZ velocity vectors (+0x5C) of an actor
 # Only factors y component of speed rotation xyz (+0x30)
 # A0 = Actor Instance
@@ -2850,6 +2898,7 @@ lbl_80021210:
 
 
 func_8002121C:
+# MqDbg: Actor_MoveXZGravity
 # Physics, updates XYZ velocity (factoring Y only) and XYZ coords
 # (Wrapper for 800211A4 and 80021124)
 # A0 = Actor Instance
@@ -2867,6 +2916,7 @@ func_8002121C:
 
 
 func_80021248:
+# MqDbg: Actor_UpdateVelocityXYZ
 # Physics, updates XYZ velocity vectors (+0x5C) of an actor
 # Factors x and y component of speed rotation xyz (+0x30)
 # A0 = Actor Instance
@@ -2901,6 +2951,7 @@ func_80021248:
 
 
 func_800212B8:
+# MqDbg: Actor_MoveXYZ
 # Physics, updates XYZ velocity and XYZ coordinates of actor
 # (Wrapper for 80021248 and 80021124)
 # A0 = Actor Instance
@@ -2918,6 +2969,7 @@ func_800212B8:
 
 
 func_800212E4:
+# MqDbg: Actor_SetProjectileSpeed
 # Physics, multiply Y velocity of an actor?
 # Updates Y velocity vector (+0x60) and XY speed (+0x68) of an actor?
 # Only factors x component of speed rotation xyz (+0x30)
@@ -2947,6 +2999,7 @@ func_800212E4:
 
 
 func_80021338:
+# MqDbg: Actor_UpdatePosByAnimation
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      $ra, 0x0014($sp)
     sw      a1, 0x002C($sp)
@@ -2981,6 +3034,7 @@ func_80021338:
 
 
 func_800213B4:
+# MqDbg: Actor_WorldYawTowardActor
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     or      a2, a0, $zero              # a2 = 00000000
@@ -2995,6 +3049,7 @@ func_800213B4:
 
 
 func_800213E0:
+# MqDbg: Actor_FocusYawTowardActor
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     or      a2, a0, $zero              # a2 = 00000000
@@ -3009,6 +3064,7 @@ func_800213E0:
 
 
 func_8002140C:
+# MqDbg: Actor_WorldYawTowardPoint
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     or      a2, a0, $zero              # a2 = 00000000
@@ -3021,6 +3077,7 @@ func_8002140C:
 
 
 func_80021430:
+# MqDbg: Actor_WorldPitchTowardActor
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     or      a2, a0, $zero              # a2 = 00000000
@@ -3035,6 +3092,7 @@ func_80021430:
 
 
 func_8002145C:
+# MqDbg: Actor_FocusPitchTowardActor
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     or      a2, a0, $zero              # a2 = 00000000
@@ -3049,6 +3107,7 @@ func_8002145C:
 
 
 func_80021488:
+# MqDbg: Actor_WorldPitchTowardPoint
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     or      a2, a0, $zero              # a2 = 00000000
@@ -3061,6 +3120,7 @@ func_80021488:
 
 
 func_800214AC:
+# MqDbg: Actor_WorldDistXYZToActor
 # Calculates XYZ between two actors (+0x24)
 # Wrapper for 80063E18
 # A0 = Actor A
@@ -3080,6 +3140,7 @@ func_800214AC:
 
 
 func_800214D8:
+# MqDbg: Actor_WorldDistXYZToPoint
 # Calculates XYZ between actor (+0x24) and a point
 # Wrapper fo 80063E18
 # A0 = Actor
@@ -3097,6 +3158,7 @@ func_800214D8:
 
 
 func_800214FC:
+# MqDbg: Actor_WorldDistXZToActor
 # Calculates XZ distance between two actors (+0x24)
 # Wrapper for 80063EB8
 # A0 = Actor A
@@ -3116,6 +3178,7 @@ func_800214FC:
 
 
 func_80021528:
+# MqDbg: Actor_WorldDistXZToPoint
 # Calculates XZ distance between actor (+0x24) and a Point
 # Wrapper for 80063EB8
 # A0 = Actor
@@ -3133,6 +3196,7 @@ func_80021528:
 
 
 func_8002154C:
+# MqDbg: func_8002DBD0
 # Calculates vertical, horizontal and front distance between 2 points taking rotation of instance into account
 # A0 = Actor Instance
 # A1 = SP + offset to store an array of 3 floats
@@ -3180,6 +3244,7 @@ func_8002154C:
 
 
 func_800215EC:
+# MqDbg: Actor_HeightDiff
     lwc1    $f4, 0x0028(a1)            # 00000028
     lwc1    $f6, 0x0028(a0)            # 00000028
     sub.s   $f0, $f4, $f6
@@ -3188,6 +3253,7 @@ func_800215EC:
 
 
 func_80021600:
+# MqDbg: Player_GetHeight
 # Calculate Player Height?
 # Factors in riding on Epona
 # A0 = Link Instance
@@ -3223,6 +3289,7 @@ lbl_80021650:
 
 
 func_80021660:
+# MqDbg: func_8002DCE4
     lw      v0, 0x066C(a0)             # 0000066C
     lui     $at, 0x4100                # $at = 41000000
     sll     t6, v0,  8
@@ -3262,6 +3329,7 @@ lbl_800216C0:
 
 
 func_800216E8:
+# MqDbg: func_8002DD6C
     lw      v0, 0x066C(a0)             # 0000066C
     andi    v0, v0, 0x0008             # v0 = 00000000
     jr      $ra
@@ -3269,6 +3337,7 @@ func_800216E8:
 
 
 func_800216F8:
+# MqDbg: func_8002DD78
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -3286,6 +3355,7 @@ lbl_80021724:
 
 
 func_8002172C:
+# MqDbg: func_8002DDA8
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lw      a1, 0x1C44(a0)             # 00001C44
@@ -3305,6 +3375,7 @@ lbl_8002175C:
 
 
 func_80021768:
+# MqDbg: func_8002DDE4
     lw      v1, 0x1C44(a0)             # 00001C44
     lw      v0, 0x0670(v1)             # 00000670
     andi    v0, v0, 0x0008             # v0 = 00000000
@@ -3313,6 +3384,7 @@ func_80021768:
 
 
 func_8002177C:
+# MqDbg: func_8002DDF4
     lw      v1, 0x1C44(a0)             # 00001C44
     lw      v0, 0x0670(v1)             # 00000670
     andi    v0, v0, 0x1000             # v0 = 00000000
@@ -3321,6 +3393,7 @@ func_8002177C:
 
 
 func_80021790:
+# MqDbg: func_8002DE04
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -3352,6 +3425,7 @@ func_80021790:
 
 
 func_80021800:
+# MqDbg: func_8002DE74
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a1, 0x001C($sp)
@@ -3379,6 +3453,7 @@ lbl_8002184C:
 
 
 func_80021858:
+# MqDbg: Actor_MountHorse
     sw      a0, 0x0000($sp)
     lw      t6, 0x066C(a1)             # 0000066C
     lui     $at, 0x0080                # $at = 00800000
@@ -3391,6 +3466,7 @@ func_80021858:
 
 
 func_8002187C:
+# MqDbg: func_8002DEEC
     lw      v0, 0x066C(a0)             # 0000066C
     lui     $at, 0x2000                # $at = 20000000
     ori     $at, $at, 0x0080           # $at = 20000080
@@ -3406,6 +3482,7 @@ lbl_800218A0:
 
 
 func_800218A8:
+# MqDbg: func_8002DF18
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     jal     func_8005AEFC
@@ -3417,6 +3494,7 @@ func_800218A8:
 
 
 func_800218C8:
+# MqDbg: func_8002DF38
     sw      a2, 0x0008($sp)
     andi    a2, a2, 0x00FF             # a2 = 00000000
     lw      v1, 0x1C44(a0)             # 00001C44
@@ -3429,6 +3507,7 @@ func_800218C8:
 
 
 func_800218EC:
+# MqDbg: func_8002DF54
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      a2, 0x0028($sp)
     andi    a2, a2, 0x00FF             # a2 = 00000000
@@ -3447,6 +3526,7 @@ func_800218EC:
 
 
 func_80021928:
+# MqDbg: func_8002DF90
     mtc1    $zero, $f0                 # $f0 = 0.00
     nop
     swc1    $f0, 0x0144(a0)            # 00000144
@@ -3456,6 +3536,7 @@ func_80021928:
 
 
 func_80021940:
+# MqDbg: func_8002DFA4
     sw      a2, 0x0008($sp)
     sll     a2, a2, 16
     mtc1    a1, $f12                   # $f12 = 0.00
@@ -3469,6 +3550,7 @@ func_80021940:
 
 
 func_80021968:
+# MqDbg: Player_IsFacingActor
     sw      a1, 0x0004($sp)
     sll     a1, a1, 16
     sra     a1, a1, 16
@@ -3496,6 +3578,7 @@ lbl_800219B8:
 
 
 func_800219C0:
+# MqDbg: Actor_ActorBIsFacingActorA
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a1, 0x001C($sp)
@@ -3527,6 +3610,7 @@ lbl_80021A20:
 
 
 func_80021A28:
+# MqDbg: Actor_IsFacingPlayer
 # Detects if the angle to face Link is inside a range?
 # A0 = Actor Instance
 # A1 = u16 Range
@@ -3554,6 +3638,7 @@ lbl_80021A6C:
 
 
 func_80021A74:
+# MqDbg: Actor_ActorAIsFacingActorB
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -3583,6 +3668,7 @@ lbl_80021ACC:
 
 
 func_80021AD4:
+# MqDbg: Actor_IsFacingAndNearPlayer
     sw      a2, 0x0008($sp)
     sll     a2, a2, 16
     mtc1    a1, $f14                   # $f14 = 0.00
@@ -3621,6 +3707,7 @@ lbl_80021B4C:
 
 
 func_80021B54:
+# MqDbg: Actor_ActorAIsFacingAndNearActorB
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -3663,6 +3750,7 @@ lbl_80021BD8:
 
 
 func_80021BE8:
+# MqDbg: func_8002E234
 # Collision/Position Updating related
 # A0 = Actor Instance
 # A1 = float ?
@@ -3703,6 +3791,7 @@ lbl_80021C58:
 
 
 func_80021C60:
+# MqDbg: func_8002E2AC
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      s0, 0x0020($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -3847,6 +3936,7 @@ lbl_80021E5C:
 
 
 func_80021E6C:
+# MqDbg: Actor_UpdateBgCheckInfo
 # possibly primary actor collision call
 # A0 = Global Context
 # A1 = Actor Instance
@@ -4096,6 +4186,7 @@ lbl_800221DC:
 
 
 func_800221EC:
+# MqDbg: func_8002E830
     addiu   $sp, $sp, 0xFF98           # $sp -= 0x68
     sw      s1, 0x0058($sp)
     or      s1, a0, $zero              # s1 = 00000000
@@ -4219,6 +4310,7 @@ lbl_8002226C:
 
 
 func_800223C8:
+# MqDbg: func_8002EABC
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      $ra, 0x001C($sp)
     lw      t6, 0x02C0(a3)             # 000002C0
@@ -4236,6 +4328,7 @@ func_800223C8:
 
 
 func_80022400:
+# MqDbg: func_8002EB44
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      $ra, 0x001C($sp)
     lw      t6, 0x02D0(a3)             # 000002D0
@@ -4253,6 +4346,7 @@ func_80022400:
 
 
 func_80022438:
+# MqDbg: func_8002EBCC
 # Sets lighting angles for shiny things or something.
 # A0 = Actor Instance
 # A1 = Global Context
@@ -4332,6 +4426,7 @@ lbl_80022544:
 
 
 func_80022554:
+# MqDbg: func_8002ED80
     addiu   $sp, $sp, 0xFFA8           # $sp -= 0x58
     sw      s0, 0x0018($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -4407,6 +4502,7 @@ lbl_80022660:
 
 
 func_80022670:
+# MqDbg: Actor_GetFocus
     lw      t7, 0x0038(a1)             # 00000038
     or      v0, a0, $zero              # v0 = 00000000
     sw      t7, 0x0000(a0)             # 00000000
@@ -4423,6 +4519,7 @@ func_80022670:
 
 
 func_800226A4:
+# MqDbg: Actor_GetWorld
     lw      t7, 0x0024(a1)             # 00000024
     or      v0, a0, $zero              # v0 = 00000000
     sw      t7, 0x0000(a0)             # 00000000
@@ -4439,6 +4536,7 @@ func_800226A4:
 
 
 func_800226D8:
+# MqDbg: Actor_GetWorldPosShapeRot
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0030($sp)
@@ -4478,6 +4576,7 @@ func_800226D8:
 # A2 = s16 ???
 # F0 = result (effective distance)
 func_80022754:
+# MqDbg: func_8002EFC0
     sw      a2, 0x0008($sp)
     sll     a2, a2, 16
     sra     a2, a2, 16                 # sign extend a2
@@ -4544,6 +4643,7 @@ lbl_80022818:
 # A1 = float distance squared
 # V0 = 1 if true, else 0
 func_80022824:
+# MqDbg: func_8002F090
     mtc1    a1, $f12                   # $f12 = distance squared
     nop
     lb      t6, 0x001F(a0)             # read 0x1F byte of actor
@@ -4563,6 +4663,7 @@ lbl_80022858:
 
 
 func_80022860:
+# MqDbg: func_8002F0C8
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lw      t6, 0x0130(a0)             # 00000130
@@ -4625,6 +4726,7 @@ lbl_80022920:
 
 
 func_80022930:
+# MqDbg: Actor_ProcessTalkRequest
 # Tests if actor flag 0x0100 is set and unsets it if it's the case
 # A0 = Actor Instance
 # A1 = Global Context
@@ -4645,6 +4747,7 @@ lbl_80022958:
 
 
 func_80022960:
+# MqDbg: func_8002F1C4
 # NPC Request Trade Item
 # A0 = Actor Instance
 # A1 = Global Context
@@ -4712,6 +4815,7 @@ lbl_80022A24:
 
 
 func_80022A34:
+# MqDbg: func_8002F298
 # NPC Request Trade Item
 # (Wrapper for 80022960)
 # Passes A2 into A2 and A3 of inner function
@@ -4736,6 +4840,7 @@ func_80022A34:
 
 
 func_80022A68:
+# MqDbg: func_8002F2CC
 # NPC Request Trade Item?
 # (Wrapper for 80022A34)
 # Calls wrapped function with A3 = 0
@@ -4756,6 +4861,7 @@ func_80022A68:
 
 
 func_80022A90:
+# MqDbg: func_8002F2F4
 # NPC Request Trade Item?
 # (Wrapper for 80022A68)
 # Calls wrapped function with A2 =(float) s16 Inst. + 0x98 + 50.0f
@@ -4781,6 +4887,7 @@ func_80022A90:
 
 
 func_80022AD0:
+# MqDbg: Actor_TextboxIsClosing
 # Checks if the current dialog state is 2
 # A0 = Actor Instance
 # A1 = Global Context
@@ -4803,6 +4910,7 @@ lbl_80022AFC:
 
 
 func_80022B04:
+# MqDbg: func_8002F368
 # Get Trade Item Link is holding
 # V0 = Link Instance + 0x0683
     lw      v1, 0x1C44(a0)             # 00001C44
@@ -4812,6 +4920,7 @@ func_80022B04:
 
 
 func_80022B14:
+# MqDbg: Actor_GetScreenPos
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      $ra, 0x0014($sp)
     sw      a1, 0x002C($sp)
@@ -4854,6 +4963,7 @@ func_80022B14:
 
 
 func_80022BB0:
+# MqDbg: Actor_HasParent
 # Is Actor Held? Or Interacting?
 # A0 = Actor Instance
 # V0 = 0 if Instance + 0x118 is null, else 1
@@ -4870,6 +4980,7 @@ lbl_80022BCC:
 
 
 func_80022BD4:
+# MqDbg: Actor_OfferGetItem
 # Give Item
 # A0 = Actor instance (Actor giving item)
 # A1 = Global Context
@@ -4959,6 +5070,7 @@ lbl_80022CE4:
 
 
 func_80022CF4:
+# MqDbg: Actor_OfferGetItemNearby
 # Give Item Wrapper (80022BD4)
 # Sets A3 to 50.0f, SP+0x10 to 10.0f
 # A0 = Actor Instance
@@ -4978,6 +5090,7 @@ func_80022CF4:
 
 
 func_80022D20:
+# MqDbg: Actor_OfferCarry
 # Give Item Wrapper (80022CF4)
 # Sets A2 to 0
 # A0 = Actor Instance
@@ -4993,6 +5106,7 @@ func_80022D20:
 
 
 func_80022D40:
+# MqDbg: Actor_HasNoParent
     sw      a1, 0x0004($sp)
     lw      t6, 0x0118(a0)             # 00000118
     or      v0, $zero, $zero           # v0 = 00000000
@@ -5006,6 +5120,7 @@ lbl_80022D5C:
 
 
 func_80022D64:
+# MqDbg: func_8002F5C4
     sw      a2, 0x0008($sp)
     lw      v0, 0x0118(a0)             # 00000118
     lh      t6, 0x0000(v0)             # 00000000
@@ -5022,6 +5137,7 @@ lbl_80022D84:
 
 
 func_80022D94:
+# MqDbg: Actor_SetClosestSecretDistance
     lw      v0, 0x1C44(a1)             # 00001C44
     lwc1    $f0, 0x008C(a0)            # 0000008C
     lwc1    $f4, 0x0694(v0)            # 00000694
@@ -5036,6 +5152,7 @@ lbl_80022DB4:
 
 
 func_80022DBC:
+# MqDbg: Actor_IsMounted
     sw      a0, 0x0000($sp)
     lw      t6, 0x011C(a1)             # 0000011C
     or      v0, $zero, $zero           # v0 = 00000000
@@ -5049,6 +5166,7 @@ lbl_80022DD8:
 
 
 func_80022DE0:
+# MqDbg: Actor_SetRideActor
     lw      v1, 0x1C44(a0)             # 00001C44
     lui     $at, 0x003C                # $at = 003C0000
     ori     $at, $at, 0x7880           # $at = 003C7880
@@ -5067,6 +5185,7 @@ lbl_80022E10:
 
 
 func_80022E18:
+# MqDbg: Actor_NotMounted
     sw      a0, 0x0000($sp)
     lw      t6, 0x011C(a1)             # 0000011C
     or      v0, $zero, $zero           # v0 = 00000000
@@ -5080,6 +5199,7 @@ lbl_80022E34:
 
 
 func_80022E3C:
+# MqDbg: func_8002F698
     sw      a3, 0x000C($sp)
     sll     a3, a3, 16
     mtc1    a2, $f12                   # $f12 = 0.00
@@ -5099,6 +5219,7 @@ func_80022E3C:
 
 
 func_80022E7C:
+# MqDbg: func_8002F6D4
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      a3, 0x0034($sp)
     sll     a3, a3, 16
@@ -5120,6 +5241,7 @@ func_80022E7C:
 
 
 func_80022EC4:
+# MqDbg: func_8002F71C
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      a3, 0x002C($sp)
     sll     a3, a3, 16
@@ -5138,6 +5260,7 @@ func_80022EC4:
 
 
 func_80022F00:
+# MqDbg: func_8002F758
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      a3, 0x0034($sp)
     sll     a3, a3, 16
@@ -5159,6 +5282,7 @@ func_80022F00:
 
 
 func_80022F48:
+# MqDbg: func_8002F7A0
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      a3, 0x002C($sp)
     sll     a3, a3, 16
@@ -5177,6 +5301,7 @@ func_80022F48:
 
 
 func_80022F84:
+# MqDbg: Player_PlaySfx
 # Play Sound Effect (Actor)
 # A0 = Actor Instance
 # A1 = Sfx Id
@@ -5202,6 +5327,7 @@ func_80022F84:
 
 
 func_80022FD0:
+# MqDbg: Actor_PlaySfx
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      a1, 0x001C($sp)
     andi    a1, a1, 0xFFFF             # a1 = 00000000
@@ -5216,6 +5342,7 @@ func_80022FD0:
 
 
 func_80022FFC:
+# MqDbg: func_8002F850
 # Play surface sound effect?
 # A0 = Global Context
 # A1 = Actor Instance
@@ -5266,6 +5393,7 @@ lbl_80023068:
 
 
 func_800230A0:
+# MqDbg: func_8002F8F0
 # Set 3D SFX?
 # Flips bit at 0x00080000 of Actor + 0x04 to it's 1 state?
 # A0 = Actor Instance to write 3D sfx to?
@@ -5286,6 +5414,7 @@ func_800230A0:
 
 
 func_800230D4:
+# MqDbg: func_8002F91C
     sw      a1, 0x0004($sp)
     andi    a1, a1, 0xFFFF             # a1 = 00000000
     lw      t6, 0x0004(a0)             # 00000004
@@ -5302,6 +5431,7 @@ func_800230D4:
 
 
 func_80023108:
+# MqDbg: func_8002F948
     sw      a1, 0x0004($sp)
     andi    a1, a1, 0xFFFF             # a1 = 00000000
     lw      t6, 0x0004(a0)             # 00000004
@@ -5318,6 +5448,7 @@ func_80023108:
 
 
 func_8002313C:
+# MqDbg: func_8002F974
     sw      a1, 0x0004($sp)
     andi    a1, a1, 0xFFFF             # a1 = 00000000
     lw      t6, 0x0004(a0)             # 00000004
@@ -5331,6 +5462,7 @@ func_8002313C:
 
 
 func_80023164:
+# MqDbg: func_8002F994
     lw      t6, 0x0004(a0)             # 00000004
     lui     $at, 0x1000                # $at = 10000000
     addiu   t0, $zero, 0x0003          # t0 = 00000003
@@ -5358,6 +5490,7 @@ lbl_800231B0:
 
 
 func_800231BC:
+# MqDbg: func_8002F9EC
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -5393,6 +5526,7 @@ lbl_80023224:
 
 
 func_80023234:
+# MqDbg: func_8002FA60
 # Seems to set the variables pertaining to displaying the Farore's Wind sprite
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     lui     v0, 0x8012                 # v0 = 80120000
@@ -5483,6 +5617,7 @@ lbl_800232DC:
 
 
 func_80023384:
+# MqDbg: Actor_DrawFaroresWindPointer
 # gameplay_keep d. list: Sparkle Mote I [?]
     addiu   $sp, $sp, 0xFF10           # $sp -= 0xF0
     sw      s1, 0x0028($sp)
@@ -6037,6 +6172,7 @@ lbl_80023BB4:
 
 
 func_80023BC8:
+# MqDbg: func_80030488
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lui     a2, 0x8012                 # a2 = 80120000
@@ -6050,6 +6186,7 @@ func_80023BC8:
 
 
 func_80023BF0:
+# MqDbg: Actor_DisableLens
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lbu     t6, 0x1C27(a0)             # 00001C27
@@ -6065,6 +6202,7 @@ lbl_80023C10:
 
 
 func_80023C1C:
+# MqDbg: Actor_InitContext
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s1, 0x001C($sp)
     sw      s0, 0x0018($sp)
@@ -6154,6 +6292,7 @@ lbl_80023CD4:
 
 
 func_80023D70:
+# MqDbg: Actor_UpdateAll
 # Update Actors
 # gameplay_keep d. list: 52980 x2
 # A0 = Global Context
@@ -6486,6 +6625,7 @@ lbl_800241A8:
 
 
 func_8002420C:
+# MqDbg: Actor_FaultPrint
 # Textlog related, Print actor name?
 # A0 = Actor Instance
 # A1 = ?
@@ -6523,6 +6663,7 @@ lbl_80024250:
 
 
 func_80024280:
+# MqDbg: Actor_Draw
 # Actor_draw
 # Draw Actor
 # A0 = Global Context
@@ -6717,6 +6858,7 @@ lbl_80024524:
 
 
 func_80024540:
+# MqDbg: func_80030ED8
 # play actor sfx?
 # A0 = Actor Instance
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
@@ -6779,6 +6921,7 @@ lbl_80024600:
 
 
 func_80024610:
+# MqDbg: Actor_DrawLensOverlay
 # gameplay_keep texture: Half Circle
     lw      v0, 0x02D0(a0)             # 000002D0
     lui     t8, 0x0402                 # t8 = 04020000
@@ -6876,6 +7019,7 @@ func_80024610:
 
 
 func_80024784:
+# MqDbg: Actor_DrawLensActors
     addiu   $sp, $sp, 0xFF88           # $sp -= 0x78
     sw      s4, 0x0028($sp)
     sw      s3, 0x0024($sp)
@@ -7025,6 +7169,7 @@ lbl_8002499C:
 
 
 func_800249B8:
+# MqDbg: func_800314B0
 # Possibly tests if actor should be drawn
 # A0 = Global Context
 # A1 = Actor Instance
@@ -7042,6 +7187,7 @@ func_800249B8:
 
 
 func_800249DC:
+# MqDbg: func_800314D4
 # Possibly tests if actor should be drawn
 # A0 = Global Context
 # A1 = actor instance
@@ -7106,6 +7252,7 @@ lbl_80024AAC:
 
 
 func_80024AB4:
+# MqDbg: func_800315AC
 # Draw Actors, Particles
 # A0 = Global Context
 # A1 = 801CA0C4 (Actor Table Struct)
@@ -7260,6 +7407,7 @@ lbl_80024C90:
 
 
 func_80024CCC:
+# MqDbg: Actor_KillAllWithMissingObject
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s5, 0x0028($sp)
     or      s5, a0, $zero              # s5 = 00000000
@@ -7306,6 +7454,7 @@ lbl_80024D38:
 
 
 func_80024D68:
+# MqDbg: Actor_FreezeAllEnemies
     sw      a0, 0x0000($sp)
     lui     v1, 0x800F                 # v1 = 800F0000
     lui     a0, 0x800F                 # a0 = 800F0000
@@ -7332,6 +7481,7 @@ lbl_80024DA8:
 
 
 func_80024DB8:
+# MqDbg: func_80031B14
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      s3, 0x0024($sp)
     sw      s1, 0x001C($sp)
@@ -7414,6 +7564,7 @@ lbl_80024E78:
 
 
 func_80024EE0:
+# MqDbg: func_80031C3C
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s3, 0x0020($sp)
     sw      s2, 0x001C($sp)
@@ -7467,6 +7618,7 @@ lbl_80024F5C:
 
 
 func_80024F98:
+# MqDbg: Actor_AddToCategory
 # Bind Actor to Category
 # A0 = Global Context + 0x1C24 (Actor Context)
 # A1 = Actor Instance
@@ -7493,6 +7645,7 @@ lbl_80024FD0:
 
 
 func_80024FE0:
+# MqDbg: Actor_RemoveFromCategory
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x0014($sp)
     lbu     t6, 0x0008(a1)             # 00000008
@@ -7551,6 +7704,7 @@ lbl_8002509C:
 
 
 func_800250AC:
+# MqDbg: Actor_FreeOverlay
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     or      a1, a0, $zero              # a1 = 00000000
@@ -7582,6 +7736,7 @@ lbl_80025104:
 
 
 func_80025110:
+# MqDbg: Actor_Spawn
 # ActorSpawn
 # Spawn Actor
 # A0 = Global Context + 0x1C24 (Actor Context)
@@ -7797,6 +7952,7 @@ lbl_800253DC:
 
 
 func_800253F0:
+# MqDbg: Actor_SpawnAsChild
 # Spawn Attached Actor
 # New actor + 0x118 will be set to A2
 # Existing Actor + 0x11C will be set to the new actor's ptr
@@ -7856,6 +8012,7 @@ lbl_80025478:
 
 
 func_80025488:
+# MqDbg: Actor_SpawnTransitionActors
 # Spawn Transition Actors
 # Iterates over a list of transition actors to determine which ones to spawn
 # A0 = Global Context
@@ -7947,6 +8104,7 @@ lbl_800255A8:
 
 
 func_800255C4:
+# MqDbg: Actor_SpawnEntry
 # Spawn Actor from Spawn Record
 # (Wrapper for 80025110)
 # Actor Spawn record is the one used in Scene Header commands 0x00 and 0x01
@@ -7989,6 +8147,7 @@ func_800255C4:
 
 
 func_80025648:
+# MqDbg: Actor_Delete
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s1, 0x0018($sp)
     sw      s0, 0x0014($sp)
@@ -8062,6 +8221,7 @@ lbl_80025738:
 
 
 func_8002574C:
+# MqDbg: func_80032880
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x0014($sp)
     addiu   a2, $sp, 0x001E            # a2 = FFFFFFFE
@@ -8092,6 +8252,7 @@ lbl_80025798:
 # A2 = Link Instance
 # A3 = u32 Actor Category Id
 func_800257A0:
+# MqDbg: func_800328D4
     addiu   $sp, $sp, 0xFF70           # $sp -= 0x90
     sw      s8, 0x0060($sp)
     sw      s3, 0x004C($sp)
@@ -8238,6 +8399,7 @@ lbl_80025984:
 
 
 func_800259BC:
+# MqDbg: func_80032AF0
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s4, 0x0024($sp)
     sw      s3, 0x0020($sp)
@@ -8330,6 +8492,7 @@ lbl_80025AE0:
 
 
 func_80025B0C:
+# MqDbg: Actor_Find
     sll     t6, a2,  3
     addu    t7, a0, t6
     lw      v1, 0x0010(t7)             # 00000010
@@ -8353,6 +8516,7 @@ lbl_80025B44:
 
 
 func_80025B4C:
+# MqDbg: Enemy_StartFinishingBlow
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a1, 0x001C($sp)
@@ -8370,6 +8534,7 @@ func_80025B4C:
 
 
 func_80025B84:
+# MqDbg: func_80032CB4
 # Possibly Link's eye blinking?
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      a2, 0x0028($sp)
@@ -8426,6 +8591,7 @@ lbl_80025C20:
 
 
 func_80025C38:
+# MqDbg: func_80032D60
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      a2, 0x0028($sp)
     sll     a2, a2, 16
@@ -8483,6 +8649,7 @@ lbl_80025CF0:
 
 
 func_80025D04:
+# MqDbg: BodyBreak_Alloc
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -8553,6 +8720,7 @@ lbl_80025DEC:
 
 
 func_80025DFC:
+# MqDbg: BodyBreak_SetInfo
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -8627,6 +8795,7 @@ lbl_80025EF0:
 
 
 func_80025F04:
+# MqDbg: BodyBreak_SpawnParts
     addiu   $sp, $sp, 0xFFA0           # $sp -= 0x60
     sw      s6, 0x0058($sp)
     sll     s6, a3, 16
@@ -8758,6 +8927,7 @@ lbl_800260BC:
 
 
 func_800260E8:
+# MqDbg: Actor_SpawnFloorDustRing
     addiu   $sp, $sp, 0xFF58           # $sp -= 0xA8
     sdc1    $f26, 0x0038($sp)
     sw      s7, 0x0064($sp)
@@ -8902,6 +9072,7 @@ lbl_800262C4:
 
 
 func_80026308:
+# MqDbg: func_80033480
     addiu   $sp, $sp, 0xFF60           # $sp -= 0xA0
     sdc1    $f20, 0x0020($sp)
     sw      s5, 0x0054($sp)
@@ -9021,6 +9192,7 @@ lbl_80026488:
 
 
 func_800264C8:
+# MqDbg: Actor_GetCollidedExplosive
 # Collision, Test if entity is being bombed
 # A0 = Global Context
 # A1 = Actor Collision Struct
@@ -9046,6 +9218,7 @@ lbl_80026504:
 
 
 func_8002650C:
+# MqDbg: func_80033684
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s1, 0x0020($sp)
     or      s1, a1, $zero              # s1 = 00000000
@@ -9104,6 +9277,7 @@ lbl_800265B4:
 
 
 func_800265D4:
+# MqDbg: Actor_ChangeCategory
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a1, 0x001C($sp)
@@ -9123,6 +9297,7 @@ func_800265D4:
 
 
 func_80026614:
+# MqDbg: Actor_GetProjectileActor
     addiu   $sp, $sp, 0xFF48           # $sp -= 0xB8
     sdc1    $f28, 0x0048($sp)
     sw      s3, 0x005C($sp)
@@ -9247,6 +9422,7 @@ lbl_80026790:
 
 
 func_800267D4:
+# MqDbg: Actor_SetTextWithPrefix
 # Set Actor Text Id with prefix based on the current scene
 # References Jump Table 80106508 to determine which prefix to use (0x0000-0x7000)
 # A0 = Global Context
@@ -9295,6 +9471,7 @@ lbl_80026840:
 
 
 func_80026850:
+# MqDbg: Actor_TestFloorInDirection
     addiu   $sp, $sp, 0xFFB8           # $sp -= 0x48
     sw      s0, 0x0020($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -9349,6 +9526,7 @@ func_80026850:
 
 
 func_8002691C:
+# MqDbg: Actor_IsTargeted
 # ? Same code as 80026950
 # A0 = Global Context
 # A1 = ?
@@ -9369,6 +9547,7 @@ lbl_80026948:
 
 
 func_80026950:
+# MqDbg: Actor_OtherIsTargeted
 # ? Same code as 8002691C
 # A0 = Global Context
 # A1 = ?
@@ -9389,6 +9568,7 @@ lbl_8002697C:
 
 
 func_80026984:
+# MqDbg: func_80033AEC
     addiu   $sp, $sp, 0xFFB8           # $sp -= 0x48
     sdc1    $f26, 0x0030($sp)
     sdc1    $f24, 0x0028($sp)
@@ -9478,6 +9658,7 @@ lbl_80026AAC:
 
 
 func_80026AD0:
+# MqDbg: func_80033C30
 # gameplay_keep d. list: Circular Shadow
 # A0 = vector3_f32* coordinates
 # A1 = vector3_f32* scale
@@ -9571,6 +9752,7 @@ lbl_80026BA0:
 
 
 func_80026C1C:
+# MqDbg: Actor_RequestQuake
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      $ra, 0x001C($sp)
     sw      a1, 0x002C($sp)
@@ -9600,6 +9782,7 @@ func_80026C1C:
 
 
 func_80026C84:
+# MqDbg: Actor_RequestQuakeWithSpeed
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      $ra, 0x001C($sp)
     sw      a0, 0x0028($sp)
@@ -9631,6 +9814,7 @@ func_80026C84:
 
 
 func_80026CF4:
+# MqDbg: Actor_RequestQuakeAndRumble
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a1, 0x001C($sp)
@@ -9664,6 +9848,7 @@ lbl_80026D48:
 
 
 func_80026D64:
+# MqDbg: Rand_ZeroFloat
 # Generates a random floating point between 0 and N exclusive
 # F12 = N, exclusive upper bound
 # F0 = result
@@ -9681,6 +9866,7 @@ func_80026D64:
 
 
 func_80026D90:
+# MqDbg: Rand_CenteredFloat
 # Multiplies value by a random scalar between -0.5 and 0.5 exclusive
 # F12 = N
 # F0 = result
@@ -9701,6 +9887,7 @@ func_80026D90:
 
 
 func_80026DC8:
+# MqDbg: Actor_DrawDoorLock
     addiu   $sp, $sp, 0xFF10           # $sp -= 0xF0
     sdc1    $f30, 0x0040($sp)
     sw      s0, 0x0048($sp)
@@ -9879,6 +10066,7 @@ lbl_80026FB8:
 
 
 func_80027070:
+# MqDbg: func_8003424C
 # Wrapper for 800511B8
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
@@ -9891,6 +10079,7 @@ func_80027070:
 
 
 func_80027090:
+# MqDbg: Actor_SetColorFilter
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      a2, 0x0020($sp)
     sll     a2, a2, 16
@@ -9929,6 +10118,7 @@ lbl_800270E0:
 
 
 func_80027114:
+# MqDbg: func_800342EC
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      $ra, 0x0014($sp)
     sw      a1, 0x002C($sp)
@@ -9961,6 +10151,7 @@ func_80027114:
 
 
 func_80027188:
+# MqDbg: func_8003435C
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      $ra, 0x0014($sp)
     sw      a1, 0x002C($sp)
@@ -9993,6 +10184,7 @@ func_80027188:
 
 
 func_800271FC:
+# MqDbg: Npc_UpdateTalking
 # Set NPC Dialog Response
 # A0 = Global Context
 # A1 = Actor Instance
@@ -10067,6 +10259,7 @@ lbl_800272D8:
 
 
 func_800272EC:
+# MqDbg: Npc_TrackPointWithLimits
     addiu   $sp, $sp, 0xFFB8           # $sp -= 0x48
     sw      $ra, 0x001C($sp)
     sw      a0, 0x0048($sp)
@@ -10303,6 +10496,7 @@ lbl_80027604:
 
 
 func_80027620:
+# MqDbg: Npc_GetTrackingPresetMaxPlayerYaw
 # A0 = s16
     sw      a0, 0x0000($sp)
     sll     a0, a0, 16
@@ -10318,6 +10512,7 @@ func_80027620:
 
 
 func_8002764C:
+# MqDbg: Npc_UpdateAutoTurn
 # A0 = Actor Instance
 # A1 = ptr ?
 # A2 = float ?
@@ -10470,6 +10665,7 @@ lbl_80027844:
 
 
 func_80027854:
+# MqDbg: Npc_TrackPoint
 # Possibly used to get an NPC to "look" at something?
 # A0 = Actor Instance
 # A1 = ptr to ? (some actor data)
@@ -10552,6 +10748,7 @@ lbl_80027928:
 
 
 func_8002796C:
+# MqDbg: func_80034B28
     lw      v1, 0x02C4(a0)             # 000002C4
     lui     t6, 0xDF00                 # t6 = DF000000
     addiu   v1, v1, 0xFFF0             # v1 = FFFFFFF0
@@ -10564,6 +10761,7 @@ func_8002796C:
 
 
 func_80027990:
+# MqDbg: func_80034B54
     lw      v1, 0x02C4(a0)             # 000002C4
     lui     t6, 0xE200                 # t6 = E2000000
     ori     t6, t6, 0x001C             # t6 = E200001C
@@ -10582,6 +10780,7 @@ func_80027990:
 
 
 func_800279CC:
+# MqDbg: func_80034BA0
     addiu   $sp, $sp, 0xFFB8           # $sp -= 0x48
     sw      $ra, 0x002C($sp)
     sw      s0, 0x0028($sp)
@@ -10647,6 +10846,7 @@ func_800279CC:
 
 
 func_80027AC4:
+# MqDbg: func_80034CC4
     addiu   $sp, $sp, 0xFFB8           # $sp -= 0x48
     sw      $ra, 0x002C($sp)
     sw      s0, 0x0028($sp)
@@ -10707,6 +10907,7 @@ func_80027AC4:
 
 
 func_80027BA8:
+# MqDbg: func_80034DD4
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s0, 0x0020($sp)
     sw      a2, 0x0030($sp)
@@ -10775,6 +10976,7 @@ lbl_80027C84:
 
 
 func_80027C98:
+# MqDbg: Animation_ChangeByInfo
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s0, 0x0028($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -10818,6 +11020,7 @@ lbl_80027CF4:
 
 
 func_80027D30:
+# MqDbg: func_80034F54
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      s4, 0x0014($sp)
     sw      s3, 0x0010($sp)
@@ -10938,6 +11141,7 @@ lbl_80027ED8:
 
 
 func_80027EF4:
+# MqDbg: Actor_Noop
 # Store A0, A1 on stack
 # A0 = ?
 # A1 = ?
@@ -10948,6 +11152,7 @@ func_80027EF4:
 
 
 func_80027F04:
+# MqDbg: func_80035124
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s0, 0x0020($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -11040,6 +11245,7 @@ lbl_80027FFC:
 
 
 func_80028048:
+# MqDbg: Gfx_DrawDListOpa
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0028($sp)
@@ -11075,6 +11281,7 @@ func_80028048:
 
 
 func_800280C8:
+# MqDbg: Gfx_DrawDListXlu
 # Draw a single display list, affected by Lens of Truth?
 # A0 = Global Context
 # A1 = DList segment offset
@@ -11114,6 +11321,7 @@ func_800280C8:
 
 
 func_80028148:
+# MqDbg: func_800353E8
 # Get Link Instance + 0x0835 (u8)
 # A0 = Global Context
 # V0 = u8 Link Instance + 0x0835
@@ -11124,6 +11332,7 @@ func_80028148:
 
 
 func_80028158:
+# MqDbg: Actor_FindNearby
 # Finds the closest actor instance of a specified id and category within a specified dsitance from another actor
 # A0 = Global Context
 # A1 = Actor Instance
@@ -11188,6 +11397,7 @@ lbl_800281FC:
 
 
 func_8002821C:
+# MqDbg: func_800354B4
 # Checks if link is at certain distance, and if link is attacking, doesn't check jumpslashes?
 # A0 = Global Context
 # A1 = Actor Instance
@@ -11245,6 +11455,7 @@ lbl_800282BC:
 
 
 func_800282C4:
+# MqDbg: func_8003555C
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      $ra, 0x001C($sp)
     addiu   t6, $zero, 0x00C8          # t6 = 000000C8
@@ -11271,6 +11482,7 @@ func_800282C4:
 
 
 func_80028320:
+# MqDbg: func_800355B8
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lui     a2, 0x800F                 # a2 = 800F0000
@@ -11285,6 +11497,7 @@ func_80028320:
 
 
 func_8002834C:
+# MqDbg: func_800355E4
     lbu     t6, 0x0011(a1)             # 00000011
     lw      v0, 0x1C44(a0)             # 00001C44
     andi    t7, t6, 0x0008             # t7 = 00000000
@@ -11307,6 +11520,7 @@ lbl_80028388:
 
 
 func_80028390:
+# MqDbg: Actor_ApplyDamage
 # Subtracts damage amount (from colliding damage source) from this actor's health
 # A0 = Actor Instance
 # V0 = u8 resulting actor health
@@ -11326,6 +11540,7 @@ lbl_800283B0:
 
 
 func_800283BC:
+# MqDbg: Actor_SetDropFlag
 # Attack Collision (sets redead-freeze variable in some cases)
 # A0 = Actor Instance
 # A1 = Actor Collision Struct + 0x18
@@ -11403,6 +11618,7 @@ lbl_8002849C:
 
 
 func_800284A8:
+# MqDbg: Actor_SetDropFlagJntSph
     or      a3, a2, $zero              # a3 = 00000000
     sb      $zero, 0x0116(a0)          # 00000116
     lw      v0, 0x0018(a1)             # 00000018
@@ -11483,6 +11699,7 @@ lbl_800285A8:
 
 
 func_800285B0:
+# MqDbg: func_80035844
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      $ra, 0x0014($sp)
     sw      a2, 0x0030($sp)
@@ -11525,6 +11742,7 @@ lbl_800285FC:
 
 
 func_80028644:
+# MqDbg: func_800358DC
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      a1, 0x003C($sp)
     sw      a2, 0x0040($sp)
@@ -11585,6 +11803,7 @@ lbl_80028710:
 
 
 func_80028720:
+# MqDbg: func_800359B8
     addiu   $sp, $sp, 0xFFB8           # $sp -= 0x48
     sw      $ra, 0x0014($sp)
     sw      a1, 0x004C($sp)
@@ -11678,6 +11897,7 @@ lbl_80028878:
 
 
 func_80028884:
+# MqDbg: func_80035B18
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a1, 0x001C($sp)
@@ -11693,6 +11913,7 @@ func_80028884:
 
 
 func_800288B4:
+# MqDbg: Flags_GetEventChkInf
 # Tests if event_chk_inf flag is set
 # A0 = event_chk_inf flag id
 # V0 = 0 if not set, non-zero if set
@@ -11710,6 +11931,7 @@ func_800288B4:
 
 
 func_800288E0:
+# MqDbg: Flags_SetEventChkInf
 # Sets event_chk_inf flag to 1
 # A0 = event_chk_inf_flag id
     sra     t6, a0,  4
@@ -11728,6 +11950,7 @@ func_800288E0:
 
 
 func_80028914:
+# MqDbg: Flags_GetInfTable
 # Tests if inf_table flag is set
 # A0 = inf_table flag id
 # V0 = 0 if not set, non-zero if set
@@ -11745,6 +11968,7 @@ func_80028914:
 
 
 func_80028940:
+# MqDbg: Flags_SetInfTable
 # Sets inf_table flag to 1
 # A0 = inf_table flag id
     sra     t6, a0,  4
@@ -11763,6 +11987,7 @@ func_80028940:
 
 
 func_80028974:
+# MqDbg: func_80035BFC
 # Generic NPC Text Handler 4
 # References Jump Table 801066E8
 # A0 = Global Context
@@ -13150,6 +13375,7 @@ lbl_80029BB8:
 
 
 func_80029BC8:
+# MqDbg: func_80036E50
 # Generic NPC Text Handler 5
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      a1, 0x002C($sp)
@@ -13633,6 +13859,7 @@ lbl_8002A24C:
 
 
 func_8002A258:
+# MqDbg: func_800374E0
 # Generic NPC Text Handler 6
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s0, 0x0018($sp)
@@ -14167,6 +14394,7 @@ lbl_8002A998:
 
 
 func_8002A9AC:
+# MqDbg: func_80037C30
 # Generic NPC Text Handler 7
 # (Wrapper for 80028974)
 # A0 = Global Context
@@ -14187,6 +14415,7 @@ func_8002A9AC:
 
 
 func_8002A9DC:
+# MqDbg: func_80037C5C
 # Generic NPC Text Handler 8
 # (Wrapper for 80029BC8)
 # A0 = ?
@@ -14210,6 +14439,7 @@ func_8002A9DC:
 
 
 func_8002AA18:
+# MqDbg: func_80037C94
 # Wrapper for 8002A258
 # A0 = ?
 # A1 = ?
@@ -14226,6 +14456,7 @@ func_8002AA18:
 
 
 func_8002AA3C:
+# MqDbg: func_80037CB8
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      $ra, 0x001C($sp)
     sw      a0, 0x0030($sp)
@@ -14290,6 +14521,7 @@ lbl_8002AB10:
 
 
 func_8002AB20:
+# MqDbg: func_80037D98
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s0, 0x0018($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -14407,6 +14639,7 @@ lbl_8002ACA4:
 
 
 func_8002ACB8:
+# MqDbg: Actor_TrackNone
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x001C($sp)
     sw      a0, 0x0020($sp)
@@ -14449,6 +14682,7 @@ func_8002ACB8:
 
 
 func_8002AD54:
+# MqDbg: Actor_TrackPoint
 # Set actor head look-at direction?
 # A0 = Actor Instance
 # A1 = vector3_f32* look at point?
@@ -14570,6 +14804,7 @@ lbl_8002AED4:
 
 
 func_8002AEE8:
+# MqDbg: Actor_TrackPlayerSetFocusHeight
 # ? (Unused? Identical to 8002B024?)
     addiu   $sp, $sp, 0xFFC0           # $sp -= 0x40
     sw      s0, 0x0018($sp)
@@ -14663,6 +14898,7 @@ lbl_8002B010:
 
 
 func_8002B024:
+# MqDbg: Actor_TrackPlayer
 # Wrapper for 8002AD54 and 8002ACB8
 # A0 = Global Context
 # A1 = Actor instance
@@ -14758,154 +14994,6 @@ lbl_8002B144:
     addiu   $sp, $sp, 0x0038           # $sp += 0x38
     jr      $ra
     nop
-    nop
-    nop
-    nop
-
-
-func_8002B160:
-    jr      $ra
-    nop
-
-
-func_8002B168:
-# Actor overlay related. - Specifically actor_dlftbls [?]
-    addiu   $sp, $sp, 0xFFB8           # $sp -= 0x48
-    sw      $ra, 0x0044($sp)
-    sw      s8, 0x0040($sp)
-    sw      s7, 0x003C($sp)
-    sw      s6, 0x0038($sp)
-    sw      s5, 0x0034($sp)
-    sw      s4, 0x0030($sp)
-    sw      s3, 0x002C($sp)
-    sw      s2, 0x0028($sp)
-    sw      s1, 0x0024($sp)
-    sw      s0, 0x0020($sp)
-    sw      a0, 0x0048($sp)
-    sw      a1, 0x004C($sp)
-    lui     v0, 0x8012                 # v0 = 80120000
-    lw      v0, 0x1C9C(v0)             # 80121C9C
-    or      s6, $zero, $zero           # s6 = 00000000
-    or      s5, $zero, $zero           # s5 = 00000000
-    beq     v0, $zero, lbl_8002B1BC
-    nop
-    b       lbl_8002B1BC
-    lw      s6, 0x011C(v0)             # 8012011C
-lbl_8002B1BC:
-    beq     v0, $zero, lbl_8002B1D0
-    nop
-    lw      t6, 0x0100(v0)             # 80120100
-    b       lbl_8002B1D0
-    lw      s5, 0x0104(v0)             # 80120104
-lbl_8002B1D0:
-    jal     func_800ADB98
-    nop
-    lui     s0, 0x800F                 # s0 = 800F0000
-    addiu   s0, s0, 0xC010             # s0 = 800EC010
-    lui     a0, 0x8010                 # a0 = 80100000
-    addiu   a0, a0, 0x69E0             # a0 = 801069E0
-    jal     func_800ADBF8
-    lw      a1, 0x0000(s0)             # 800EC010
-    lui     a0, 0x8010                 # a0 = 80100000
-    jal     func_800ADBF8
-    addiu   a0, a0, 0x69F4             # a0 = 801069F4
-    lw      v1, 0x0000(s0)             # 800EC010
-    lui     s3, 0x800F                 # s3 = 800F0000
-    addiu   s3, s3, 0x8530             # s3 = 800E8530
-    beq     v1, $zero, lbl_8002B2BC
-    or      s4, $zero, $zero           # s4 = 00000000
-    lui     s8, 0x8010                 # s8 = 80100000
-    lui     s7, 0x8010                 # s7 = 80100000
-    addiu   s7, s7, 0x6A14             # s7 = 80106A14
-    addiu   s8, s8, 0x6A28             # s8 = 80106A28
-lbl_8002B220:
-    lw      v0, 0x0008(s3)             # 800E8538
-    lw      s0, 0x0010(s3)             # 800E8540
-    lw      t8, 0x000C(s3)             # 800E853C
-    or      a0, s7, $zero              # a0 = 80106A14
-    subu    s2, v0, s0
-    beq     s0, $zero, lbl_8002B2AC
-    subu    t0, t8, v0
-    addu    s1, s0, t0
-    or      a3, s1, $zero              # a3 = 00000000
-    or      a1, s4, $zero              # a1 = 00000000
-    or      a2, s0, $zero              # a2 = 800EC010
-    jal     func_800ADBF8
-    sw      s2, 0x0010($sp)
-    sltu    $at, s6, s0
-    bne     $at, $zero, lbl_8002B278
-    sltu    $at, s6, s1
-    beq     $at, $zero, lbl_8002B278
-    or      a0, s8, $zero              # a0 = 80106A28
-    jal     func_800ADBF8
-    addu    a1, s6, s2
-    b       lbl_8002B298
-    nop
-lbl_8002B278:
-    sltu    $at, s5, s0
-    bne     $at, $zero, lbl_8002B298
-    sltu    $at, s5, s1
-    beq     $at, $zero, lbl_8002B298
-    lui     a0, 0x8010                 # a0 = 80100000
-    addiu   a0, a0, 0x6A34             # a0 = 80106A34
-    jal     func_800ADBF8
-    addu    a1, s5, s2
-lbl_8002B298:
-    lui     a0, 0x8010                 # a0 = 80100000
-    jal     func_800ADBF8
-    addiu   a0, a0, 0x6A40             # a0 = 80106A40
-    lui     v1, 0x800F                 # v1 = 800F0000
-    lw      v1, -0x3FF0(v1)            # 800EC010
-lbl_8002B2AC:
-    addiu   s4, s4, 0x0001             # s4 = 00000001
-    sltu    $at, s4, v1
-    bne     $at, $zero, lbl_8002B220
-    addiu   s3, s3, 0x0020             # s3 = 800E8550
-lbl_8002B2BC:
-    lw      $ra, 0x0044($sp)
-    lw      s0, 0x0020($sp)
-    lw      s1, 0x0024($sp)
-    lw      s2, 0x0028($sp)
-    lw      s3, 0x002C($sp)
-    lw      s4, 0x0030($sp)
-    lw      s5, 0x0034($sp)
-    lw      s6, 0x0038($sp)
-    lw      s7, 0x003C($sp)
-    lw      s8, 0x0040($sp)
-    jr      $ra
-    addiu   $sp, $sp, 0x0048           # $sp += 0x48
-
-
-func_8002B2EC:
-    addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
-    sw      $ra, 0x0014($sp)
-    addiu   t6, $zero, 0x01D7          # t6 = 000001D7
-    lui     $at, 0x800F                # $at = 800F0000
-    lui     a0, 0x8012                 # a0 = 80120000
-    lui     a1, 0x8003                 # a1 = 80030000
-    sw      t6, -0x3FF0($at)           # 800EC010
-    addiu   a1, a1, 0xB168             # a1 = 8002B168
-    addiu   a0, a0, 0x8C60             # a0 = 80118C60
-    or      a2, $zero, $zero           # a2 = 00000000
-    jal     func_800AEF8C
-    or      a3, $zero, $zero           # a3 = 00000000
-    lw      $ra, 0x0014($sp)
-    addiu   $sp, $sp, 0x0018           # $sp += 0x18
-    jr      $ra
-    nop
-
-
-func_8002B32C:
-    addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
-    sw      $ra, 0x0014($sp)
-    lui     a0, 0x8012                 # a0 = 80120000
-    jal     func_800AF014
-    addiu   a0, a0, 0x8C60             # a0 = 80118C60
-    lui     $at, 0x800F                # $at = 800F0000
-    sw      $zero, -0x3FF0($at)        # 800EC010
-    lw      $ra, 0x0014($sp)
-    addiu   $sp, $sp, 0x0018           # $sp += 0x18
-    jr      $ra
     nop
     nop
     nop

@@ -7,6 +7,7 @@
 
 .section .text
 func_800A02E0:
+# MqDbg: func_80172C30
 # A0 = Audio Context (80120C78)
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
@@ -26,6 +27,7 @@ lbl_800A030C:
 
 
 func_800A0318:
+# MqDbg: AudioMgr_HandleRetrace
 # A0 = Audio Context (80120C78)
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s0, 0x0018($sp)
@@ -134,6 +136,7 @@ lbl_800A048C:
 
 
 func_800A04A0:
+# MqDbg: AudioMgr_HandlePreNMI
 # A0 = Audio Context (80120C78)
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
@@ -147,6 +150,7 @@ func_800A04A0:
 
 
 func_800A04C4:
+# MqDbg: AudioMgr_ThreadEntry
 # audio thread entrypoint
 # A0 = Audio Context (80120C78)
     addiu   $sp, $sp, 0xFFB8           # $sp -= 0x48
@@ -233,6 +237,7 @@ lbl_800A05C0:
 
 
 func_800A05F4:
+# MqDbg: AudioMgr_Unlock
 # Pulls an empty message from AC + 0xC8 message queue
 # Seems to be used to wait until the audio thread is started
 # The corresponding message is put on the queue at some point during the audio thread entrypoint
@@ -251,6 +256,7 @@ func_800A05F4:
 
 
 func_800A0620:
+# MqDbg: AudioMgr_Init
 # Initializes audio thread and context
 # A0 = Audio Context (80120C78)
 # A1 = void* stack start address
