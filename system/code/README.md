@@ -79,7 +79,18 @@ This directory contains all files composing the massive "code" file which holds 
 | [**code_800AD410.s**](code_800AD410.s)                 | Unknown (800AD410)                   |  800AD410  |   B23370   |  180  |
 | [**fault.s**](fault.s)                                 | Crash Debugger Thread                |  800AD590  |   B234F0   | 2200  |
 | [**kancode.s**](kancode.s)                             | Kanji Code                           |  800AF790  |   B256F0   |  AF0  |
-| [**sound.s**](sound.s)                                 | Sound                                |  800B0280  |   B261E0   | 1B740 |
+| [**audio_synthesis.s**](audio_synthesis.s)             | Audio Synthesis                      |  800B0280  |   B261E0   | 3160  |
+| [**audio_heap.s**](audio_heap.s)                       | Audio Heap                           |  800B33E0  |   ??????   | 33D0  |
+| [**audio_load.s**](audio_load.s)                       | Audio Load                           |  800B67B0  |   ??????   | 3DF0  |
+| [**code_800BA5A0.s**](code_800BA5A0.s)                 | Audio Thread                         |  800BA5A0  |   ??????   | 1860  |
+| [**code_800BBE00.s**](code_800BBE00.s)                 | Audio DCache                         |  800BBE00  |   ??????   |  80   |
+| [**aisetnextbuf.s**](aisetnextbuf.s)                   | Audio Interface: Set Next Buffer     |  800BBE80  |   ??????   |  80   |
+| [**audio_playback.s**](audio_playback.s)               | Audio Playback                       |  800BBF00  |   ??????   | 1F80  |
+| [**audio_effects.s**](audio_effects.s)                 | Audio Effects                        |  800BDE80  |   ??????   |  A80  |
+| [**audio_seqplayer.s**](audio_seqplayer.s)             | Audio Sequence Player                |  800BE900  |   ??????   | 3620  |
+| [**code_800C1F20.s**](code_800C1F20.s)                 | Audio External General               |  800C1F20  |   ??????   | 6020  |
+| [**code_800C7F40.s**](code_800C7F40.s)                 | Audio External Sfx                   |  800C7F40  |   ??????   | 1E60  |
+| [**code_800C9DA0.s**](code_800C9DA0.s)                 | Audio External Sequence              |  800C9DA0  |   ??????   | 1C20  |
 | [**text_draw.s**](text_draw.s)                         | Text Draw                            |  800CB9C0  |   B41920   |  C00  |
 | [**n64_lib.s**](n64_lib.s)                             | N64 Library                          |  800CC5C0  |   B42520   | 9930  |
 | [**message.s**](message.s)                             | Message                              |  800D5EF0  |   B4BE50   | BD00  |
