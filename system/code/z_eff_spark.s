@@ -1,6 +1,6 @@
 # Particle Effects: sparks
 #
-# Starts at VRAM: 80018A20 / VROM: ??????
+# Starts at VRAM: 80018A20 / VROM: A8E980
 #
 
 .section .text

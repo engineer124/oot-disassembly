@@ -1,6 +1,6 @@
 # Audio External General
 #
-# Starts at VRAM: 800C1F20 / VROM: ??????
+# Starts at VRAM: 800C1F20 / VROM: B37E80
 #
 
 .section .text

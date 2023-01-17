@@ -1,6 +1,6 @@
 # Audio External Sequence
 #
-# Starts at VRAM: 800C9DA0 / VROM: ??????
+# Starts at VRAM: 800C9DA0 / VROM: B3FD00
 #
 
 .section .text

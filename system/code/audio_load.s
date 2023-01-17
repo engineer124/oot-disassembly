@@ -1,6 +1,6 @@
 # Audio Load
 #
-# Starts at VRAM: 800B67B0 / VROM: ??????
+# Starts at VRAM: 800B67B0 / VROM: B2C710
 #
 
 .section .text

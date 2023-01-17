@@ -1,6 +1,6 @@
 # Audio Thread
 #
-# Starts at VRAM: 800BA5A0 / VROM: ??????
+# Starts at VRAM: 800BA5A0 / VROM: B30500
 #
 
 func_800BA5A0:

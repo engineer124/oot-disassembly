@@ -1,6 +1,6 @@
 # "Particle Effects" part of the code file
 #
-# Starts at VRAM: 8001B000 / VROM: ??????
+# Starts at VRAM: 8001B000 / VROM: A90F60
 #
 
 .section .text

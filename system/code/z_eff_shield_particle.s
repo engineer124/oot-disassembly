@@ -1,6 +1,6 @@
 # Particle Effects: shield particles
 #
-# Starts at VRAM: 800173B0 / VROM: ??????
+# Starts at VRAM: 800173B0 / VROM: A8D310
 #
 
 

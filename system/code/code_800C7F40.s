@@ -1,6 +1,6 @@
 # Audio External Sfx
 #
-# Starts at VRAM: 800C7F40 / VROM: ??????
+# Starts at VRAM: 800C7F40 / VROM: B3DEA0
 #
 
 .section .text

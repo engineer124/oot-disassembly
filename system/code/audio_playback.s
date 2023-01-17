@@ -1,6 +1,6 @@
 # Audio Playback
 #
-# Starts at VRAM: 800BBF00 / VROM: ??????
+# Starts at VRAM: 800BBF00 / VROM: B31E60
 #
 
 .section .text

@@ -1,6 +1,6 @@
 # Particle Effects
 #
-# Starts at VRAM: 8001A880 / VROM: ??????
+# Starts at VRAM: 8001A880 / VROM: A907E0
 #
 
 .section .text

@@ -1,6 +1,6 @@
 # Transition System: Wiping
 #
-# Starts at VRAM: 80098790 / VROM: ??????
+# Starts at VRAM: 80098790 / VROM: B0E6F0
 #
 
 .section .text

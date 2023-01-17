@@ -1,6 +1,6 @@
 # Audio Effects
 #
-# Starts at VRAM: 800BDE80 / VROM: ??????
+# Starts at VRAM: 800BDE80 / VROM: B33DE0
 #
 
 .section .text

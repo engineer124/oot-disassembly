@@ -5,7 +5,7 @@
 # General Documentation about particles:
 # https://wiki.cloudmodding.com/oot/Particles
 #
-# Starts at VRAM: 8001BAA0 / VROM: ??????
+# Starts at VRAM: 8001BAA0 / VROM: A91A00
 #
 
 .section .text

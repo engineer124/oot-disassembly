@@ -1,6 +1,6 @@
 # Particle Effects: blure
 #
-# Starts at VRAM: 80013F30 / VROM: ??????
+# Starts at VRAM: 80013F30 / VROM: A89E90
 #
 
 .section .text

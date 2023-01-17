@@ -1,6 +1,6 @@
 # Audio Interface: Set Next Buffer
 #
-# Starts at VRAM: 800BBE80 / VROM: ??????
+# Starts at VRAM: 800BBE80 / VROM: B31DE0
 #
 
 .section .text

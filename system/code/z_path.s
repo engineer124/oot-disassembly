@@ -1,6 +1,6 @@
 # "Path" part of the code file
 #
-# Starts at VRAM: 800790B0 / VROM: ??????
+# Starts at VRAM: 800790B0 / VROM: AEF010
 #
 
 .section .text

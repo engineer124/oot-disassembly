@@ -1,6 +1,6 @@
 # Particle Effects: ss dead
 #
-# Starts at VRAM: 8001A0E0 / VROM: ??????
+# Starts at VRAM: 8001A0E0 / VROM: A90040
 #
 
 .section .text

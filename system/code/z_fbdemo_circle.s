@@ -1,6 +1,6 @@
 # Transition System: Circles
 #
-# Starts at VRAM: 80098C00 / VROM: ??????
+# Starts at VRAM: 80098C00 / VROM: B0EB60
 #
 
 .section .text

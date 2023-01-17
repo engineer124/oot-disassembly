@@ -1,6 +1,6 @@
 # Transition System: Fading
 #
-# Starts at VRAM: 800992C0 / VROM: ??????
+# Starts at VRAM: 800992C0 / VROM: B0F220
 #
 
 .section .text

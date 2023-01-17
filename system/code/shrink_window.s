@@ -2,7 +2,7 @@
 #
 # Controls letterboxing: black boxes at the top and bottom of the screen
 #
-# Starts at VRAM: 80099620 / VROM: ??????
+# Starts at VRAM: 80099620 / VROM: B0F580
 #
 
 .section .text

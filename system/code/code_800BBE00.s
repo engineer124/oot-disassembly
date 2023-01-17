@@ -1,6 +1,6 @@
 # Audio dcache
 #
-# Starts at VRAM: 800BBE00 / VROM: ??????
+# Starts at VRAM: 800BBE00 / VROM: B31D60
 #
 
 .section .text

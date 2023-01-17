@@ -1,6 +1,6 @@
 # Audio Heap
 #
-# Starts at VRAM: 800B33E0 / VROM: ??????
+# Starts at VRAM: 800B33E0 / VROM: B29340
 #
 
 .section .text

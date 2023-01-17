@@ -9,16 +9,16 @@ This directory contains all files composing the massive "code" file which holds 
 | [**En_A_Keep.s**](En_A_Keep.s)                         | Actor En_A_Obj (Gameplay_keep Items) |  800110A0  |   A87000   |  AA0  |
 | [**En_Item00.s**](En_Item00.s)                         | Actor En_Item00 (Collectibles)       |  80011B40  |   A87AA0   | 23F0  |
 | [**z_eff_blure.s**](z_eff_blure.s)                     | Particle Effects                     |  80013F30  |   A89E90   | 3480  |
-| [**z_eff_shield_particle.s**](z_eff_shield_particle.s) | Particle Effects                     |  800173B0  |   ??????   | 1670  |
-| [**z_eff_spark.s**](z_eff_spark.s)                     | Particle Effects                     |  80018A20  |   ??????   | 16C0  |
-| [**z_eff_ss_dead.s**](z_eff_ss_dead.s)                 | Particle Effects                     |  8001A0E0  |   ??????   |  7A0  |
-| [**z_effect.s**](z_effect.s)                           | Particle Effects                     |  8001A880  |   ??????   |  780  |
-| [**z_effect_soft_sprite.s**](z_effect_soft_sprite.s)   | Particle Effects                     |  8001B000  |   ??????   |  AA0  |
-| [**z_effect_soft_sprite_old_init.s**](z_effect_soft_sprite_old_init.s) | Particle Effects     |  8001BAA0  |   ??????   | 2B20  |
+| [**z_eff_shield_particle.s**](z_eff_shield_particle.s) | Particle Effects                     |  800173B0  |   A8D310   | 1670  |
+| [**z_eff_spark.s**](z_eff_spark.s)                     | Particle Effects                     |  80018A20  |   A8E980   | 16C0  |
+| [**z_eff_ss_dead.s**](z_eff_ss_dead.s)                 | Particle Effects                     |  8001A0E0  |   A90040   |  7A0  |
+| [**z_effect.s**](z_effect.s)                           | Particle Effects                     |  8001A880  |   A907E0   |  780  |
+| [**z_effect_soft_sprite.s**](z_effect_soft_sprite.s)   | Particle Effects                     |  8001B000  |   A90F60   |  AA0  |
+| [**z_effect_soft_sprite_old_init.s**](z_effect_soft_sprite_old_init.s) | Particle Effects     |  8001BAA0  |   A91A00   | 2B20  |
 | [**flg_set.s**](flg_set.s)                             | Flag Set                             |  8001E5C0  |   A94520   |  410  |
 | [**DLF.s**](DLF.s)                                     | Dynamically Linked File              |  8001E9D0  |   A94930   |  250  |
 | [**z_actor.s**](z_actor.s)                             | Actor                                |  8001EC20  |   A94B80   | C540  |
-| [**z_actor_dlftbls.s**](z_actor_dlftbls.s)             | Actor Overlay Tables                 |  8002B160  |   ??????   |  200  |
+| [**z_actor_dlftbls.s**](z_actor_dlftbls.s)             | Actor Overlay Tables                 |  8002B160  |   AA10C0   |  200  |
 | [**bgcheck.s**](bgcheck.s)                             | Background Check                     |  8002B360  |   AA12C0   | A290  |
 | [**camera.s**](camera.s)                               | Camera                               |  800355F0  |   AAB550   | 14820 |
 | [**collision_check.s**](collision_check.s)             | Collision Check                      |  80049E10  |   ABFD70   | 7C90  |
@@ -49,7 +49,7 @@ This directory contains all files composing the massive "code" file which holds 
 | [**onepointdemo.s**](onepointdemo.s)                   | Single Focus Cutscene                |  80067C70  |   ADDBD0   | 4000  |
 | [**map_exp.s**](map_exp.s)                             | Minimap                              |  8006BC70  |   AE1BD0   | 1C70  |
 | [**z_parameter.s**](z_parameter.s)                     | Interface, Hud, Items                |  8006D8E0  |   AE3840   | B7D0  |
-| [**z_path.s**](z_path.s)                               | Paths                                |  800790B0  |   ??????   |  150  |
+| [**z_path.s**](z_path.s)                               | Paths                                |  800790B0  |   AEF010   |  150  |
 | [**z_player_lib.s**](z_player_lib.s)                   | Player Library                       |  80079200  |   AEF160   | 3A30  |
 | [**prenmi.s**](prenmi.s)                               | PreNMI                               |  8007CC30  |   AF2B90   | 1010  |
 | [**rcp.s**](rcp.s)                                     | Reality Co-Processor                 |  8007DC40  |   AF3BA0   | 1900  |
@@ -64,13 +64,13 @@ This directory contains all files composing the massive "code" file which holds 
 | [**vr_box.s**](vr_box.s)                               | Skybox                               |  80094660  |   B0A5C0   | 28F0  |
 | [**vr_box_draw.s**](vr_box_draw.s)                     | Skybox Draw                          |  80096F50  |   B0CEB0   |  700  |
 | [**z_player_call.s**](z_player_call.s)                 | Player Call (Main Functions)         |  80097650  |   B0D5B0   |  170  |
-| [**z_fbdemo.s**](z_fbdemo.s)                           | Transition System: Tile (Unused)     |  800977C0  |   ??????   |  A20  |
+| [**z_fbdemo.s**](z_fbdemo.s)                           | Transition System: Tile (Unused)     |  800977C0  |   B0D720   |  A20  |
 | [**z_fbdemo_triforce.s**](z_fbdemo_triforce.s)         | Transition System: Triforce (Unused) |  800981E0  |   B0E140   |  5B0  |
-| [**z_fbdemo_wipe1.s**](z_fbdemo_wipe1.s)               | Transition System: Wiping            |  80098790  |   ??????   |  470  |
-| [**z_fbdemo_circle.s**](z_fbdemo_circle.s)             | Transition System: Circles           |  80098C00  |   ??????   |  6C0  |
-| [**z_fbdemo_fade.s**](z_fbdemo_fade.s)                 | Transition System: Fading            |  800992C0  |   ??????   |  360  |
-| [**shrink_window.s**](shrink_window.s)                 | Letterboxing                         |  80099620  |   ??????   |  170  |
-| [**code_80099790.s**](code_80099790.s)                 | Cutscene Camera Spline               |  80099790  |   ??????   |  4D0  |
+| [**z_fbdemo_wipe1.s**](z_fbdemo_wipe1.s)               | Transition System: Wiping            |  80098790  |   B0E6F0   |  470  |
+| [**z_fbdemo_circle.s**](z_fbdemo_circle.s)             | Transition System: Circles           |  80098C00  |   B0EB60   |  6C0  |
+| [**z_fbdemo_fade.s**](z_fbdemo_fade.s)                 | Transition System: Fading            |  800992C0  |   B0F220   |  360  |
+| [**shrink_window.s**](shrink_window.s)                 | Letterboxing                         |  80099620  |   B0F580   |  170  |
+| [**code_80099790.s**](code_80099790.s)                 | Cutscene Camera Spline               |  80099790  |   B0F6F0   |  4D0  |
 | [**kaleido_manager.s**](kaleido_manager.s)             | Pause Screen Manager                 |  80099C60  |   B0FBC0   |  230  |
 | [**kaleido_scope_call.s**](kaleido_scope_call.s)       | Pause Screen Call                    |  80099E90  |   B0FDF0   |  2E0  |
 | [**play.s**](play.s)                                   | Play                                 |  8009A170  |   B100D0   | 5D50  |
@@ -93,7 +93,7 @@ This directory contains all files composing the massive "code" file which holds 
 | [**fault.s**](fault.s)                                 | Crash Debugger Thread                |  800AD590  |   B234F0   | 2200  |
 | [**kancode.s**](kancode.s)                             | Kanji Code                           |  800AF790  |   B256F0   |  AF0  |
 | [**audio_synthesis.s**](audio_synthesis.s)             | Audio Synthesis                      |  800B0280  |   B261E0   | 3160  |
-| [**audio_heap.s**](audio_heap.s)                       | Audio Heap                           |  800B33E0  |   ??????   | 33D0  |
+| [**audio_heap.s**](audio_heap.s)                       | Audio Heap                           |  800B33E0  |   B29340   | 33D0  |
 | [**audio_load.s**](audio_load.s)                       | Audio Load                           |  800B67B0  |   ??????   | 3DF0  |
 | [**code_800BA5A0.s**](code_800BA5A0.s)                 | Audio Thread                         |  800BA5A0  |   ??????   | 1860  |
 | [**code_800BBE00.s**](code_800BBE00.s)                 | Audio DCache                         |  800BBE00  |   ??????   |  80   |

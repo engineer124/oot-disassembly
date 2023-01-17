@@ -1,6 +1,6 @@
 # "Actor" Overlay Tables
 #
-# Starts at VRAM: 8002B160 / VROM: ??????
+# Starts at VRAM: 8002B160 / VROM: AA10C0
 #
 
 .section .text

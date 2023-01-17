@@ -1,6 +1,6 @@
 # Transition System: Triforce (Unused)
 #
-# Starts at VRAM: 800981E0 / VROM: ??????
+# Starts at VRAM: 800981E0 / VROM: B0E140
 #
 
 .section .text

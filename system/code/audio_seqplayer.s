@@ -1,6 +1,6 @@
 # Audio SeqPlayer
 #
-# Starts at VRAM: 800BE900 / VROM: ??????
+# Starts at VRAM: 800BE900 / VROM: B34860
 #
 
 .section .text
