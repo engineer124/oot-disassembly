@@ -8,7 +8,13 @@ This directory contains all files composing the massive "code" file which holds 
 | ------------------------------------------------------ | ------------------------------------ | :--------: | :--------: | :---: |
 | [**En_A_Keep.s**](En_A_Keep.s)                         | Actor En_A_Obj (Gameplay_keep Items) |  800110A0  |   A87000   |  AA0  |
 | [**En_Item00.s**](En_Item00.s)                         | Actor En_Item00 (Collectibles)       |  80011B40  |   A87AA0   | 23F0  |
-| [**particle.s**](particle.s)                           | Particle Effects                     |  80013F30  |   A89E90   | A690  |
+| [**z_eff_blure.s**](z_eff_blure.s)                     | Particle Effects                     |  80013F30  |   A89E90   | 3480  |
+| [**z_eff_shield_particle.s**](z_eff_shield_particle.s) | Particle Effects                     |  800173B0  |   ??????   | 1670  |
+| [**z_eff_spark.s**](z_eff_spark.s)                     | Particle Effects                     |  80018A20  |   ??????   | 16C0  |
+| [**z_eff_ss_dead.s**](z_eff_ss_dead.s)                 | Particle Effects                     |  8001A0E0  |   ??????   |  7A0  |
+| [**z_effect.s**](z_effect.s)                           | Particle Effects                     |  8001A880  |   ??????   |  780  |
+| [**z_effect_soft_sprite.s**](z_effect_soft_sprite.s)   | Particle Effects                     |  8001B000  |   ??????   |  AA0  |
+| [**z_effect_soft_sprite_old_init.s**](z_effect_soft_sprite_old_init.s) | Particle Effects     |  8001BAA0  |   ??????   | 2B20  |
 | [**flg_set.s**](flg_set.s)                             | Flag Set                             |  8001E5C0  |   A94520   |  410  |
 | [**DLF.s**](DLF.s)                                     | Dynamically Linked File              |  8001E9D0  |   A94930   |  250  |
 | [**z_actor.s**](z_actor.s)                             | Actor                                |  8001EC20  |   A94B80   | C540  |
