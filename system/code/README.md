@@ -43,7 +43,7 @@ This directory contains all files composing the massive "code" file which holds 
 | [**onepointdemo.s**](onepointdemo.s)                   | Single Focus Cutscene                |  80067C70  |   ADDBD0   | 4000  |
 | [**map_exp.s**](map_exp.s)                             | Minimap                              |  8006BC70  |   AE1BD0   | 1C70  |
 | [**parameter.s**](parameter.s)                         | Parameter                            |  8006D8E0  |   AE3840   | B920  |
-| [**player_lib.s**](player_lib.s)                       | Player Library                       |  80079200  |   AEF160   | 3A30  |
+| [**z_player_lib.s**](z_player_lib.s)                   | Player Library                       |  80079200  |   AEF160   | 3A30  |
 | [**prenmi.s**](prenmi.s)                               | PreNMI                               |  8007CC30  |   AF2B90   | 1010  |
 | [**rcp.s**](rcp.s)                                     | Reality Co-Processor                 |  8007DC40  |   AF3BA0   | 1900  |
 | [**room.s**](room.s)                                   | Room                                 |  8007F540  |   AF54A0   | 17F0  |
@@ -56,8 +56,14 @@ This directory contains all files composing the massive "code" file which holds 
 | [**vimode.s**](vimode.s)                               | Video Interface Mode                 |  80092EB0  |   B08E10   | 17B0  |
 | [**vr_box.s**](vr_box.s)                               | Skybox                               |  80094660  |   B0A5C0   | 28F0  |
 | [**vr_box_draw.s**](vr_box_draw.s)                     | Skybox Draw                          |  80096F50  |   B0CEB0   |  700  |
-| [**player.s**](player.s)                               | Player                               |  80097650  |   B0D5B0   |  B90  |
-| [**fbdemo.s**](fbdemo.s)                               | Cutscene Frame Buffer                |  800981E0  |   B0E140   | 1A80  |
+| [**z_player_call.s**](z_player_call.s)                 | Player Call (Main Functions)         |  80097650  |   B0D5B0   |  170  |
+| [**z_fbdemo.s**](z_fbdemo.s)                           | Transition System: Tile (Unused)     |  800977C0  |   ??????   |  A20  |
+| [**z_fbdemo_triforce.s**](z_fbdemo_triforce.s)         | Transition System: Triforce (Unused) |  800981E0  |   B0E140   |  5B0  |
+| [**z_fbdemo_wipe1.s**](z_fbdemo_wipe1.s)               | Transition System: Wiping            |  80098790  |   ??????   |  470  |
+| [**z_fbdemo_circle.s**](z_fbdemo_circle.s)             | Transition System: Circles           |  80098C00  |   ??????   |  6C0  |
+| [**z_fbdemo_fade.s**](z_fbdemo_fade.s)                 | Transition System: Fading            |  800992C0  |   ??????   |  360  |
+| [**shrink_window.s**](shrink_window.s)                 | Letterboxing                         |  80099620  |   ??????   |  170  |
+| [**code_80099790.s**](code_80099790.s)                 | Cutscene Camera Spline               |  80099790  |   ??????   |  4D0  |
 | [**kaleido_manager.s**](kaleido_manager.s)             | Pause Screen Manager                 |  80099C60  |   B0FBC0   |  230  |
 | [**kaleido_scope_call.s**](kaleido_scope_call.s)       | Pause Screen Call                    |  80099E90  |   B0FDF0   |  2E0  |
 | [**play.s**](play.s)                                   | Play                                 |  8009A170  |   B100D0   | 5D50  |

@@ -10,6 +10,7 @@
 
 .section .text
 func_808301C0:
+# MqDbg: Player_ZeroSpeedXZ
 # Zeroes out floats at Link Instance + 0x68 (speedXZ) and Link Instance + 0x0828 (linear velocity on XZ plane?)
 # A0 = Link Instance
     mtc1    $zero, $f0                 # $f0 = 0.00
@@ -21,6 +22,7 @@ func_808301C0:
 
 
 func_808301D8:
+# MqDbg: func_80832224
 # Wrapper for 808301C0 which also zeroes out byte at Link Instance + 0x069D
 # A0 = Link Instance
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
@@ -36,6 +38,7 @@ func_808301D8:
 
 
 func_80830200:
+# MqDbg: func_8083224C
 # Test if link actor flag 0x0100 is set
 # A0 = Global Context
 # V0 = 0 if true, else 1
@@ -49,6 +52,7 @@ func_80830200:
 
 
 func_8083021C:
+# MqDbg: func_80832264
 # Wrapper for 8008C178 (A3 = A1 and A1 += 0x01A4)
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
@@ -62,6 +66,7 @@ func_8083021C:
 
 
 func_80830240:
+# MqDbg: func_80832284
 # Wrapper for 8008C23C (A3 = A1 and A1 += 0x01A4)
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
@@ -75,6 +80,7 @@ func_80830240:
 
 
 func_80830264:
+# MqDbg: func_808322A4
 # Wrapper for 8008C298 (A3 = 3F2AAAAB and A1 += 0x01A4)
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
@@ -91,6 +97,7 @@ func_80830264:
 
 
 func_80830294:
+# MqDbg: func_808322D0
 # Wrapper for 8008C1D8 (A3 = 3F2AAAAB and A1 += 0x01A4)
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
@@ -107,6 +114,7 @@ func_80830294:
 
 
 func_808302C4:
+# MqDbg: func_808322FC
 # Increment halfword at Link Instance + 0xB6 (Y rot2) with halfword at (pointer located at Link Instance + 0x01C4) + 0x8
 # Also zeroes out the halfword at (pointer located at Link Instance + 0x01C4) + 0x8
 # A0 = Link Instance
@@ -121,6 +129,7 @@ func_808302C4:
 
 
 func_808302E4:
+# MqDbg: func_80832318
 # Unsets Link State II 0x00080000 (crawling?) and zeroes out some Link Instance data
 # A0 = Link Instance
     lw      t6, 0x0670(a0)             # 00000670
@@ -137,6 +146,7 @@ func_808302E4:
 
 
 func_80830310:
+# MqDbg: func_80832340
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     or      a3, a1, $zero              # a3 = 00000000
@@ -170,6 +180,7 @@ lbl_80830368:
 
 
 func_80830380:
+# MqDbg: func_808323B4
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s0, 0x0018($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -210,6 +221,7 @@ lbl_808303FC:
 
 
 func_8083040C:
+# MqDbg: func_80832440
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -272,6 +284,7 @@ lbl_80830474:
 
 
 func_808304F4:
+# MqDbg: func_80832528
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lb      t6, 0x0141(a1)             # 00000141
@@ -291,6 +304,7 @@ lbl_80830520:
 
 
 func_80830530:
+# MqDbg: func_80832564
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -308,6 +322,7 @@ func_80830530:
 
 
 func_80830568:
+# MqDbg: func_80832594
     lui     t7, %hi(var_80851498)      # t7 = 80850000
     lh      t7, %lo(var_80851498)(t7)
     lh      t6, 0x0A70(a0)             # 00000A70
@@ -354,6 +369,7 @@ lbl_808305F8:
 
 
 func_80830608:
+# MqDbg: func_80832630
 # Sets byte at Link Instance + 0x1C24 to 1 if it's currently 0
 # A0 = Link Instance
     lbu     t6, 0x1C24(a0)             # 00001C24
@@ -367,6 +383,7 @@ lbl_8083061C:
 
 
 func_80830624:
+# MqDbg: Player_RequestRumble
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a1, 0x001C($sp)
@@ -390,6 +407,7 @@ lbl_80830660:
 
 
 func_80830670:
+# MqDbg: func_80832698
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a1, 0x001C($sp)
@@ -419,6 +437,7 @@ lbl_808306C4:
 
 
 func_808306D0:
+# MqDbg: func_808326F0
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s2, 0x001C($sp)
     or      s2, a0, $zero              # s2 = 00000000
@@ -450,6 +469,7 @@ lbl_808306FC:
 
 
 func_8083073C:
+# MqDbg: func_8083275C
     sw      a1, 0x0004($sp)
     andi    a1, a1, 0xFFFF             # a1 = 00000000
     lhu     t6, 0x088E(a0)             # 0000088E
@@ -460,6 +480,7 @@ func_8083073C:
 
 
 func_80830758:
+# MqDbg: func_80832770
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      a1, 0x001C($sp)
     andi    a1, a1, 0xFFFF             # a1 = 00000000
@@ -477,6 +498,7 @@ func_80830758:
 
 
 func_80830790:
+# MqDbg: func_808327A4
     sw      a1, 0x0004($sp)
     andi    a1, a1, 0xFFFF             # a1 = 00000000
     lw      t8, 0x0668(a0)             # 00000668
@@ -490,6 +512,7 @@ func_80830790:
 
 
 func_808307B8:
+# MqDbg: func_808327C4
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      a1, 0x001C($sp)
     andi    a1, a1, 0xFFFF             # a1 = 00000000
@@ -507,6 +530,7 @@ func_808307B8:
 
 
 func_808307F0:
+# MqDbg: func_808327F8
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a1, 0x001C($sp)
@@ -535,6 +559,7 @@ lbl_8083082C:
 
 
 func_8083084C:
+# MqDbg: func_80832854
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lb      t6, 0x013F(a0)             # 0000013F
@@ -559,6 +584,7 @@ lbl_80830880:
 
 
 func_80830898:
+# MqDbg: func_808328A0
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lb      t6, 0x013F(a0)             # 0000013F
@@ -583,6 +609,7 @@ lbl_808308CC:
 
 
 func_808308E4:
+# MqDbg: func_808328EC
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      a1, 0x001C($sp)
     andi    a1, a1, 0xFFFF             # a1 = 00000000
@@ -599,6 +626,7 @@ func_808308E4:
 
 
 func_80830918:
+# MqDbg: func_80832924
     addiu   $sp, $sp, 0xFFB0           # $sp -= 0x50
     sw      s2, 0x0030($sp)
     sw      s1, 0x002C($sp)
@@ -722,6 +750,7 @@ lbl_80830A80:
 
 
 func_80830ACC:
+# MqDbg: func_80832B0C
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      $ra, 0x0024($sp)
     sw      a0, 0x0028($sp)
@@ -752,6 +781,7 @@ func_80830ACC:
 
 
 func_80830B38:
+# MqDbg: func_80832B78
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      $ra, 0x0024($sp)
     sw      a0, 0x0028($sp)
@@ -783,6 +813,7 @@ func_80830B38:
 
 
 func_80830BA8:
+# MqDbg: func_80832BE8
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     mtc1    $zero, $f0                 # $f0 = 0.00
     sw      $ra, 0x0024($sp)
@@ -804,6 +835,7 @@ func_80830BA8:
 
 
 func_80830BF0:
+# MqDbg: func_80832C2C
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     mtc1    $zero, $f0                 # $f0 = 0.00
     sw      $ra, 0x0024($sp)
@@ -824,6 +856,7 @@ func_80830BF0:
 
 
 func_80830C34:
+# MqDbg: func_80832C6C
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     mtc1    $zero, $f0                 # $f0 = 0.00
     sw      $ra, 0x0024($sp)
@@ -845,6 +878,7 @@ func_80830C34:
 
 
 func_80830C7C:
+# MqDbg: func_80832CB0
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -871,6 +905,7 @@ lbl_80830CC0:
 
 
 func_80830CD0:
+# MqDbg: func_80832CFC
     lwl     t7, 0x01E2(a0)             # 000001E2
     lwr     t7, 0x01E5(a0)             # 000001E5
     lh      t8, 0x00B6(a0)             # 000000B6
@@ -884,6 +919,7 @@ func_80830CD0:
 
 
 func_80830CF8:
+# MqDbg: func_80832D20
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     jal     func_80830CD0
@@ -922,6 +958,7 @@ func_80830CF8:
 
 
 func_80830D84:
+# MqDbg: func_80832DB0
 # Zeroes out halfword at (pointer located at Link Instance + 0x01C4) + 0x8
 # A0 = Link Instance
     lw      t6, 0x01C4(a0)             # 000001C4
@@ -931,6 +968,7 @@ func_80830D84:
 
 
 func_80830D94:
+# MqDbg: func_80832DBC
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lbu     t6, 0x01D9(a0)             # 000001D9
@@ -972,6 +1010,7 @@ lbl_80830E14:
 
 
 func_80830E20:
+# MqDbg: func_80832E48
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      $ra, 0x0014($sp)
     sw      a1, 0x002C($sp)
@@ -1047,6 +1086,7 @@ lbl_80830F18:
 
 
 func_80830F30:
+# MqDbg: func_80832F54
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -1096,6 +1136,7 @@ lbl_80830FB4:
 
 
 func_80830FD8:
+# MqDbg: func_80832FFC
 # Wrapper for 8008C1D8 (A1 += 0x01A4 and A3 = SP+0x10) and 80830F30 (A2 = A3)
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
@@ -1118,6 +1159,7 @@ func_80830FD8:
 
 
 func_80831020:
+# MqDbg: func_8083303C
 # Wrapper for 80830FD8 (SP+0x10 = float 1.00)
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x001C($sp)
@@ -1132,6 +1174,7 @@ func_80831020:
 
 
 func_80831048:
+# MqDbg: func_80833064
 # Wrapper for 80830FD8 (SP+0x10 = float at 808530E8)
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x001C($sp)
@@ -1146,6 +1189,7 @@ func_80831048:
 
 
 func_80831070:
+# MqDbg: func_8083308C
 # Wrapper for 80831048 (A3 = 0x001C)
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
@@ -1158,6 +1202,7 @@ func_80831070:
 
 
 func_80831090:
+# MqDbg: func_808330AC
 # Wrapper for 8008C298 (A1 += 0x01A4 and A3 = SP+0x10) and 80830F30 (A2 = A3)
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
@@ -1180,6 +1225,7 @@ func_80831090:
 
 
 func_808310D8:
+# MqDbg: func_808330EC
 # Wrapper for 80831090 (SP+0x10 = float 1.00)
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x001C($sp)
@@ -1194,6 +1240,7 @@ func_808310D8:
 
 
 func_80831100:
+# MqDbg: func_80833114
 # Wrapper for 80831090 (SP+0x10 = float at 808530EC)
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x001C($sp)
@@ -1208,6 +1255,7 @@ func_80831100:
 
 
 func_80831128:
+# MqDbg: func_8083313C
 # Wrapper for 80831100 (A3 = 0x001C)
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
@@ -1220,6 +1268,7 @@ func_80831128:
 
 
 func_80831148:
+# MqDbg: func_8083315C
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      a0, 0x0018($sp)
     or      a3, a1, $zero              # a3 = 00000000
@@ -1301,6 +1350,7 @@ lbl_80831250:
 
 
 func_80831274:
+# MqDbg: func_8083328C
 # Wrapper for 8008C1D8 (A1 += 0x01A4 and A3 = word at 808514A8)
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
@@ -1317,6 +1367,7 @@ func_80831274:
 
 
 func_808312A4:
+# MqDbg: func_808332B8
 # Test if Link State I 0x08000000 (swimming) is set and Iron Boots aren't equipped?
 # A0 = Link Instance
 # V0 = 1 if true, else 0
@@ -1335,6 +1386,7 @@ lbl_808312C8:
 
 
 func_808312D0:
+# MqDbg: func_808332E4
 # Test if Link State I 0x01000000 is set
 # A0 = Link Instance
 # V0 = 1 if true, else 0
@@ -1346,6 +1398,7 @@ func_808312D0:
 
 
 func_808312E4:
+# MqDbg: func_808332F4
     sw      a1, 0x0004($sp)
     lb      t6, 0x0424(a0)             # 00000424
     lui     t9, %hi(var_808514E4)      # t9 = 80850000
@@ -1367,6 +1420,7 @@ lbl_8083131C:
 
 
 func_80831328:
+# MqDbg: func_80833338
     lbu     t6, 0x014B(a0)             # 0000014B
     lui     v0, %hi(var_808517D4)      # v0 = 80850000
     sll     t7, t6,  2
@@ -1377,6 +1431,7 @@ func_80831328:
 
 
 func_80831344:
+# MqDbg: func_80833350
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -1432,6 +1487,7 @@ lbl_808313E8:
 
 
 func_808313F8:
+# MqDbg: func_808333FC
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lui     v0, %hi(var_80851D3C)      # v0 = 80850000
@@ -1451,6 +1507,7 @@ lbl_80831424:
 
 
 func_80831434:
+# MqDbg: func_80833438
     lbu     t6, 0x0880(a0)             # 00000880
     beql    t6, $zero, lbl_8083145C
     lw      t9, 0x066C(a0)             # 0000066C
@@ -1489,6 +1546,7 @@ lbl_80831498:
 
 
 func_808314B0:
+# MqDbg: func_808334B4
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -1506,6 +1564,7 @@ lbl_808314DC:
 
 
 func_808314E4:
+# MqDbg: func_808334E4
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -1529,6 +1588,7 @@ lbl_80831524:
 
 
 func_8083152C:
+# MqDbg: func_80833528
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -1552,6 +1612,7 @@ lbl_8083156C:
 
 
 func_80831574:
+# MqDbg: func_8083356C
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -1575,6 +1636,7 @@ lbl_808315B4:
 
 
 func_808315BC:
+# MqDbg: func_808335B0
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -1598,6 +1660,7 @@ lbl_808315FC:
 
 
 func_80831604:
+# MqDbg: func_808335F4
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -1621,6 +1684,7 @@ lbl_80831644:
 
 
 func_8083164C:
+# MqDbg: func_80833638
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     mtc1    $zero, $f4                 # $f4 = 0.00
@@ -1635,6 +1699,7 @@ func_8083164C:
 
 
 func_80831678:
+# MqDbg: 
 # Test if Link Item Action (Instance + 0x141) is Sword-Like (03 to 07)
 # A0 = Link Instance
 # V0 = 1 if true, else 0
@@ -1649,6 +1714,7 @@ func_80831678:
 
 
 func_80831698:
+# MqDbg: func_80833664
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      a2, 0x0030($sp)
     sll     a2, a2, 24
@@ -1703,6 +1769,7 @@ lbl_80831748:
 
 
 func_80831758:
+# MqDbg: Player_ItemToItemAction
 # Get Item Action Parameter Index
 # A0 = Item Index (C-Item Indexing)
 # V0 = Item Action Parameter Index
@@ -1733,6 +1800,7 @@ lbl_80831794:
 
 
 func_808317A4:
+# MqDbg: func_80833770
     sw      a0, 0x0000($sp)
     sw      a1, 0x0004($sp)
     jr      $ra
@@ -1740,6 +1808,7 @@ func_808317A4:
 
 
 func_808317B4:
+# MqDbg: 
 # Test if Link Item Action (Instance + 0x141) is Two-handed Sword-Like (05 to 07)
 # A0 = Link Instance
 # V0 = 1 if true, else 0
@@ -1754,6 +1823,7 @@ func_808317B4:
 
 
 func_808317D4:
+# MqDbg: func_8083377C
 # Set Full Deku Stick Size (1.00) in Link Instance
 # Also sets A0 to SP+0x00
 # A0 = ?
@@ -1768,6 +1838,7 @@ func_808317D4:
 
 
 func_808317F0:
+# MqDbg: func_80833790
     sw      a0, 0x0000($sp)
     sw      a1, 0x0004($sp)
     jr      $ra
@@ -1775,6 +1846,7 @@ func_808317F0:
 
 
 func_80831800:
+# MqDbg: func_8083379C
     sw      a0, 0x0000($sp)
     lw      t6, 0x066C(a1)             # 0000066C
     lb      t8, 0x0141(a1)             # 00000141
@@ -1793,6 +1865,7 @@ lbl_80831828:
 
 
 func_80831838:
+# MqDbg: func_808337D4
     addiu   $sp, $sp, 0xFFB0           # $sp -= 0x50
     sw      s0, 0x0038($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -1881,6 +1954,7 @@ lbl_80831968:
 
 
 func_80831978:
+# MqDbg: func_80833910
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      $ra, 0x0034($sp)
     or      a2, a0, $zero              # a2 = 00000000
@@ -1912,6 +1986,7 @@ func_80831978:
 
 
 func_808319E8:
+# MqDbg: func_80833984
     sw      a0, 0x0000($sp)
     lw      t6, 0x066C(a1)             # 0000066C
     lui     $at, 0x0100                # $at = 01000000
@@ -1922,6 +1997,7 @@ func_808319E8:
 
 
 func_80831A04:
+# MqDbg: func_8083399C
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      a2, 0x0020($sp)
     sll     a2, a2, 24
@@ -1955,6 +2031,7 @@ func_80831A04:
 
 
 func_80831A7C:
+# MqDbg: func_80833A20
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x0014($sp)
     sw      a1, 0x0024($sp)
@@ -2032,6 +2109,7 @@ lbl_80831B74:
 
 
 func_80831B84:
+# MqDbg: func_80833B2C
     lw      t6, 0x066C(a0)             # 0000066C
     lui     $at, 0x4003                # $at = 40030000
     or      v0, $zero, $zero           # v0 = 00000000
@@ -2046,6 +2124,7 @@ lbl_80831BA4:
 
 
 func_80831BAC:
+# MqDbg: func_80833B54
     lw      v0, 0x0654(a0)             # 00000654
     beql    v0, $zero, lbl_80831BE4
     lw      v0, 0x066C(a0)             # 0000066C
@@ -2082,6 +2161,7 @@ lbl_80831C1C:
 
 
 func_80831C24:
+# MqDbg: func_80833BCC
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -2101,6 +2181,7 @@ lbl_80831C54:
 
 
 func_80831C60:
+# MqDbg: func_80833C04
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -2120,6 +2201,7 @@ lbl_80831C90:
 
 
 func_80831C9C:
+# MqDbg: func_80833C3C
     mtc1    $zero, $f0                 # $f0 = 0.00
     nop
     swc1    $f0, 0x0864(a0)            # 00000864
@@ -2129,6 +2211,7 @@ func_80831C9C:
 
 
 func_80831CB4:
+# MqDbg: func_80833C50
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -2152,6 +2235,7 @@ lbl_80831CF0:
 
 
 func_80831D00:
+# MqDbg: func_80833C98
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a1, 0x001C($sp)
@@ -2174,6 +2258,7 @@ lbl_80831D38:
 
 
 func_80831D48:
+# MqDbg: func_80833CDC
     slti    $at, a1, 0x0004
     bne     $at, $zero, lbl_80831D5C
     lui     v0, 0x0001                 # v0 = 00010000
@@ -2262,6 +2347,7 @@ lbl_80831E58:
 
 
 func_80831E64:
+# MqDbg: func_80833DF8
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0028($sp)
@@ -2468,6 +2554,7 @@ lbl_80832138:
 
 
 func_80832144:
+# MqDbg: func_808340DC
     addiu   $sp, $sp, 0xFFB0           # $sp -= 0x50
     sw      s0, 0x0028($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -2589,6 +2676,7 @@ lbl_808322C8:
 
 
 func_808322FC:
+# MqDbg: func_80834298
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lbu     t6, 0x0002(a0)             # 00000002
@@ -2651,6 +2739,7 @@ lbl_808323D0:
 
 
 func_808323DC:
+# MqDbg: func_80834380
     lui     t0, 0x8012                 # t0 = 80120000
     addiu   t0, t0, 0xA5D0             # t0 = 8011A5D0
     lw      t6, 0x0004(t0)             # 8011A5D4
@@ -2703,6 +2792,7 @@ lbl_8083246C:
 
 
 func_80832488:
+# MqDbg: func_8083442C
     addiu   $sp, $sp, 0xFFA8           # $sp -= 0x58
     sw      s0, 0x0038($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -2802,6 +2892,7 @@ lbl_808325DC:
 
 
 func_808325F0:
+# MqDbg: func_80834594
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -2853,6 +2944,7 @@ lbl_80832690:
 
 
 func_808326A0:
+# MqDbg: func_80834644
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -2889,6 +2981,7 @@ lbl_808326D0:
 
 
 func_80832720:
+# MqDbg: func_808346C4
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -2931,6 +3024,7 @@ lbl_808327A4:
 
 
 func_808327B4:
+# MqDbg: func_80834758
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      s0, 0x0028($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -3002,6 +3096,7 @@ lbl_808328A8:
 
 
 func_808328BC:
+# MqDbg: func_8083485C
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     or      a2, a1, $zero              # a2 = 00000000
     or      a1, a0, $zero              # a1 = 00000000
@@ -3021,6 +3116,7 @@ lbl_808328EC:
 
 
 func_808328F4:
+# MqDbg: func_80834894
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -3048,6 +3144,7 @@ lbl_80832928:
 
 
 func_80832950:
+# MqDbg: func_808348EC
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -3098,6 +3195,7 @@ lbl_808329E8:
 
 
 func_80832A00:
+# MqDbg: func_8083499C
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lw      t6, 0x066C(a0)             # 0000066C
@@ -3119,6 +3217,7 @@ lbl_80832A30:
 
 
 func_80832A40:
+# MqDbg: func_808349DC
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -3144,6 +3243,7 @@ lbl_80832A80:
 
 
 func_80832A90:
+# MqDbg: func_80834A2C
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s1, 0x0018($sp)
     sw      s0, 0x0014($sp)
@@ -3229,6 +3329,7 @@ lbl_80832BB0:
 
 
 func_80832BC0:
+# MqDbg: func_80834B5C
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     or      a2, a0, $zero              # a2 = 00000000
@@ -3265,6 +3366,7 @@ lbl_80832C2C:
 
 
 func_80832C3C:
+# MqDbg: func_80834BD4
     addiu   $sp, $sp, 0xFFC0           # $sp -= 0x40
     sw      s0, 0x0028($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -3310,6 +3412,7 @@ lbl_80832CB0:
 
 
 func_80832CE0:
+# MqDbg: func_80834C74
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s0, 0x0018($sp)
     lui     v0, %hi(var_808514D4)      # v0 = 80850000
@@ -3361,6 +3464,7 @@ lbl_80832D84:
 
 
 func_80832D98:
+# MqDbg: func_80834D2C
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -3442,6 +3546,7 @@ lbl_80832E9C:
 
 
 func_80832EB0:
+# MqDbg: func_80834E44
     lui     v0, 0x0001                 # v0 = 00010000
     addu    v0, v0, a0
     lb      v0, 0x1E5C(v0)             # 00011E5C
@@ -3460,6 +3565,7 @@ lbl_80832EE0:
 
 
 func_80832EE8:
+# MqDbg: func_80834E7C
     lui     v1, 0x0001                 # v1 = 00010000
     addu    v1, v1, a0
     lb      v1, 0x1E5C(v1)             # 00011E5C
@@ -3479,6 +3585,7 @@ lbl_80832F1C:
 
 
 func_80832F24:
+# MqDbg: func_80834EB8
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a1, 0x001C($sp)
@@ -3515,6 +3622,7 @@ lbl_80832F88:
 
 
 func_80832F98:
+# MqDbg: func_80834F2C
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a1, 0x001C($sp)
@@ -3558,6 +3666,7 @@ lbl_8083301C:
 
 
 func_80833028:
+# MqDbg: func_80834FBC
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x001C($sp)
     lw      v0, 0x011C(a0)             # 0000011C
@@ -3587,6 +3696,7 @@ lbl_80833078:
 
 
 func_80833088:
+# MqDbg: func_8083501C
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -3628,6 +3738,7 @@ lbl_808330FC:
 
 
 func_80833110:
+# MqDbg: func_808350A4
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      s1, 0x0020($sp)
     sw      s0, 0x001C($sp)
@@ -3715,6 +3826,7 @@ lbl_80833230:
 
 
 func_80833244:
+# MqDbg: func_808351D4
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -3865,6 +3977,7 @@ lbl_8083343C:
 
 
 func_80833450:
+# MqDbg: func_808353D8
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -3991,6 +4104,7 @@ lbl_808335EC:
 
 
 func_80833600:
+# MqDbg: func_80835588
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     or      a2, a0, $zero              # a2 = 00000000
@@ -4019,6 +4133,7 @@ lbl_80833648:
 
 
 func_8083365C:
+# MqDbg: func_808355DC
     lw      t6, 0x066C(a0)             # 0000066C
     lbu     t8, 0x01D9(a0)             # 000001D9
     lui     $at, 0x0002                # $at = 00020000
@@ -4051,6 +4166,7 @@ lbl_808336BC:
 
 
 func_808336C8:
+# MqDbg: func_80835644
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -4073,6 +4189,7 @@ lbl_80833700:
 
 
 func_80833710:
+# MqDbg: func_80835688
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      a1, 0x001C($sp)
     or      a1, a0, $zero              # a1 = 00000000
@@ -4101,6 +4218,7 @@ lbl_80833760:
 
 
 func_80833770:
+# MqDbg: func_808356E8
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s1, 0x0018($sp)
     sw      s0, 0x0014($sp)
@@ -4175,6 +4293,7 @@ lbl_80833860:
 
 
 func_80833874:
+# MqDbg: func_808357E8
     lui     t6, 0x8012                 # t6 = 80120000
     lw      t6, -0x5A2C(t6)            # 8011A5D4
     sll     t7, t6,  2
@@ -4185,6 +4304,7 @@ func_80833874:
 
 
 func_80833890:
+# MqDbg: func_80835800
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a1, 0x001C($sp)
@@ -4224,6 +4344,7 @@ lbl_80833904:
 
 
 func_80833914:
+# MqDbg: func_80835884
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0020($sp)
@@ -4255,6 +4376,7 @@ lbl_80833960:
 
 
 func_80833980:
+# MqDbg: func_808358F0
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -4332,6 +4454,7 @@ lbl_80833A7C:
 
 
 func_80833A94:
+# MqDbg: func_808359FC
     addiu   $sp, $sp, 0xFFB0           # $sp -= 0x50
     sw      s0, 0x0030($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -4431,6 +4554,7 @@ lbl_80833BE8:
 
 
 func_80833BFC:
+# MqDbg: func_80835B60
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -4478,6 +4602,7 @@ lbl_80833C90:
 
 
 func_80833CA4:
+# MqDbg: func_80835C08
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -4504,6 +4629,7 @@ lbl_80833CE8:
 
 
 func_80833CFC:
+# MqDbg: func_80835C58
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -4602,6 +4728,7 @@ lbl_80833E44:
 
 
 func_80833E58:
+# MqDbg: func_80835DAC
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x0014($sp)
     lbu     t6, 0x01D9(a1)             # 000001D9
@@ -4618,6 +4745,7 @@ func_80833E58:
 
 
 func_80833E8C:
+# MqDbg: func_80835DE4
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s0, 0x0018($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -4647,6 +4775,7 @@ lbl_80833EE0:
 
 
 func_80833EF0:
+# MqDbg: func_80835E44
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -4677,6 +4806,7 @@ lbl_80833F48:
 
 
 func_80833F54:
+# MqDbg: func_80835EA4
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      $ra, 0x0024($sp)
     sw      a0, 0x0028($sp)
@@ -4703,6 +4833,7 @@ func_80833F54:
 
 
 func_80833FB0:
+# MqDbg: func_80835EFC
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     or      a1, a0, $zero              # a1 = 00000000
@@ -4728,6 +4859,7 @@ lbl_80833FF4:
 
 
 func_80834000:
+# MqDbg: func_80835F44
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0028($sp)
@@ -5083,6 +5215,7 @@ lbl_808344FC:
 
 
 func_80834508:
+# MqDbg: func_80836448
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s0, 0x0020($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -5190,6 +5323,7 @@ lbl_80834678:
 
 
 func_80834688:
+# MqDbg: func_808365C8
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     or      a1, a0, $zero              # a1 = 00000000
@@ -5239,6 +5373,7 @@ lbl_80834728:
 
 
 func_80834734:
+# MqDbg: func_80836670
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s0, 0x0020($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -5390,6 +5525,7 @@ lbl_80834948:
 
 
 func_8083495C:
+# MqDbg: func_80836898
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -5415,6 +5551,7 @@ func_8083495C:
 
 
 func_808349B4:
+# MqDbg: func_808368EC
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -5478,6 +5615,7 @@ lbl_80834A78:
 
 
 func_80834A90:
+# MqDbg: func_808369C8
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      a2, 0x0020($sp)
     sw      a3, 0x0024($sp)
@@ -5546,6 +5684,7 @@ lbl_80834B6C:
 
 
 func_80834B7C:
+# MqDbg: func_80836AB8
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      s0, 0x001C($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -5628,6 +5767,7 @@ lbl_80834C98:
 
 
 func_80834CB0:
+# MqDbg: func_80836BEC
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x0014($sp)
     or      a3, a0, $zero              # a3 = 00000000
@@ -5905,6 +6045,7 @@ lbl_80835068:
 
 
 func_80835074:
+# MqDbg: func_80836FAC
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lbu     t6, 0x069D(a1)             # 0000069D
@@ -6077,6 +6218,7 @@ lbl_808352D4:
 
 
 func_808352E4:
+# MqDbg: func_8083721C
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     or      a3, a0, $zero              # a3 = 00000000
@@ -6101,6 +6243,7 @@ func_808352E4:
 
 
 func_80835338:
+# MqDbg: func_80837268
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s1, 0x0020($sp)
     or      s1, a2, $zero              # s1 = 00000000
@@ -6164,6 +6307,7 @@ lbl_80835404:
 
 
 func_80835418:
+# MqDbg: func_80837348
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s3, 0x0020($sp)
     sw      s2, 0x001C($sp)
@@ -6260,6 +6404,7 @@ lbl_80835558:
 
 
 func_80835574:
+# MqDbg: func_808374A0
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     mtc1    a3, $f12                   # $f12 = 0.00
     sw      $ra, 0x001C($sp)
@@ -6303,6 +6448,7 @@ lbl_808355FC:
 
 
 func_8083560C:
+# MqDbg: func_80837530
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      s0, 0x0030($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -6353,6 +6499,7 @@ lbl_808356A8:
 
 
 func_808356BC:
+# MqDbg: func_808375D8
     addiu   $sp, $sp, 0xFFC0           # $sp -= 0x40
     sw      $ra, 0x0014($sp)
     or      a2, a0, $zero              # a2 = 00000000
@@ -6443,6 +6590,7 @@ lbl_808357DC:
 
 
 func_808357EC:
+# MqDbg: func_80837704
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      s0, 0x0028($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -6502,6 +6650,7 @@ lbl_8083584C:
 
 
 func_808358C4:
+# MqDbg: func_808377DC
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -6522,6 +6671,7 @@ func_808358C4:
 
 
 func_80835908:
+# MqDbg: func_80837818
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x0014($sp)
     lbu     t6, 0x0836(a0)             # 00000836
@@ -6598,6 +6748,7 @@ lbl_808359F4:
 
 
 func_80835A08:
+# MqDbg: func_80837918
     sll     t6, a1,  7
     addu    v0, a0, t6
     addiu   $at, $zero, 0x0002         # $at = 00000002
@@ -6614,6 +6765,7 @@ lbl_80835A28:
 
 
 func_80835A38:
+# MqDbg: func_80837948
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s0, 0x0018($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -6731,6 +6883,7 @@ lbl_80835BA8:
 
 
 func_80835BD8:
+# MqDbg: func_80837AE0
     lb      t6, 0x0A68(a0)             # 00000A68
     bltz    t6, lbl_80835BEC
     nop
@@ -6742,6 +6895,7 @@ lbl_80835BEC:
 
 
 func_80835BF4:
+# MqDbg: func_80837AFC
     lb      t6, 0x0A68(a0)             # 00000A68
     slt     $at, a1, t6
     beql    $at, $zero, lbl_80835C0C
@@ -6754,6 +6908,7 @@ lbl_80835C0C:
 
 
 func_80835C14:
+# MqDbg: func_80837B18
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lb      t6, 0x0A68(a1)             # 00000A68
@@ -6778,6 +6933,7 @@ lbl_80835C4C:
 
 
 func_80835C5C:
+# MqDbg: func_80837B60
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lw      t6, 0x01C4(a0)             # 000001C4
@@ -6796,6 +6952,7 @@ func_80835C5C:
 
 
 func_80835C98:
+# MqDbg: func_80837B9C
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      a1, 0x001C($sp)
     or      a1, a0, $zero              # a1 = 00000000
@@ -6828,6 +6985,7 @@ lbl_80835CFC:
 
 
 func_80835D08:
+# MqDbg: func_80837C0C
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s0, 0x0020($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -7191,6 +7349,7 @@ lbl_80836230:
 
 
 func_80836240:
+# MqDbg: func_80838144
     addiu   v0, a0, 0xFFFE             # v0 = FFFFFFFE
     bltz    v0, lbl_8083625C
     slti    $at, v0, 0x0002
@@ -7206,6 +7365,7 @@ lbl_80836260:
 
 
 func_80836268:
+# MqDbg: func_8083816C
     xori    v0, a0, 0x0004             # v0 = 00000004
     sltiu   v0, v0, 0x0001
     bne     v0, $zero, lbl_80836290
@@ -7222,6 +7382,7 @@ lbl_80836290:
 
 
 func_80836298:
+# MqDbg: func_8083819C
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      $ra, 0x002C($sp)
     sw      a0, 0x0030($sp)
@@ -7259,6 +7420,7 @@ lbl_80836310:
 
 
 func_8083631C:
+# MqDbg: func_8083821C
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      $ra, 0x0024($sp)
     sw      s2, 0x0020($sp)
@@ -7288,6 +7450,7 @@ lbl_80836340:
 
 
 func_80836380:
+# MqDbg: func_80838280
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lbu     t6, 0x00B3(a0)             # 000000B3
@@ -7307,6 +7470,7 @@ lbl_808363A4:
 
 
 func_808363BC:
+# MqDbg: func_808382BC
     lb      v0, 0x0A68(a0)             # 00000A68
     bltz    v0, lbl_808363D4
     slti    $at, v0, 0x0014
@@ -7319,6 +7483,7 @@ lbl_808363D4:
 
 
 func_808363DC:
+# MqDbg: func_808382DC
     addiu   $sp, $sp, 0xFF90           # $sp -= 0x70
     sw      s0, 0x0028($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -7772,6 +7937,7 @@ lbl_80836A2C:
 
 
 func_80836A40:
+# MqDbg: func_80838940
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -7817,6 +7983,7 @@ lbl_80836A8C:
 
 
 func_80836AE4:
+# MqDbg: func_808389E8
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     mtc1    a2, $f12                   # $f12 = 0.00
     sw      $ra, 0x001C($sp)
@@ -7831,6 +7998,7 @@ func_80836AE4:
 
 
 func_80836B10:
+# MqDbg: func_80838A14
     addiu   $sp, $sp, 0xFFC0           # $sp -= 0x40
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -8129,6 +8297,7 @@ lbl_80836F50:
 
 
 func_80836F64:
+# MqDbg: func_80838E70
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -8176,6 +8345,7 @@ func_80836F64:
 
 
 func_80837014:
+# MqDbg: func_80838F18
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -8198,6 +8368,7 @@ func_80837014:
 
 
 func_80837060:
+# MqDbg: func_80838F5C
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -8226,6 +8397,7 @@ func_80837060:
 
 
 func_808370C4:
+# MqDbg: func_80838FB8
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lui     t6, 0x0001                 # t6 = 00010000
@@ -8261,6 +8433,7 @@ lbl_80837130:
 
 
 func_80837140:
+# MqDbg: func_80839034
     addiu   $sp, $sp, 0xFFC0           # $sp -= 0x40
     sw      s0, 0x0018($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -8658,6 +8831,7 @@ lbl_808376D0:
 
 
 func_808376E4:
+# MqDbg: func_808395DC
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0020($sp)
@@ -8702,6 +8876,7 @@ func_808376E4:
 
 
 func_80837788:
+# MqDbg: Player_SpawnFairy
     addiu   $sp, $sp, 0xFFC0           # $sp -= 0x40
     sw      $ra, 0x002C($sp)
     sw      a0, 0x0040($sp)
@@ -8734,6 +8909,7 @@ func_80837788:
 
 
 func_808377FC:
+# MqDbg: func_808396F4
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -8756,6 +8932,7 @@ func_808377FC:
 
 
 func_80837848:
+# MqDbg: func_8083973C
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      $ra, 0x001C($sp)
     addiu   t6, $sp, 0x0024            # t6 = FFFFFFFC
@@ -8770,6 +8947,7 @@ func_80837848:
 
 
 func_80837874:
+# MqDbg: func_80839768
     addiu   $sp, $sp, 0xFFB0           # $sp -= 0x50
     sw      s0, 0x0030($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -8812,6 +8990,7 @@ func_80837874:
 
 
 func_80837910:
+# MqDbg: func_80839800
     addiu   $sp, $sp, 0xFF78           # $sp -= 0x88
     sw      s0, 0x0024($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -9272,6 +9451,7 @@ lbl_80837F90:
 
 
 func_80837FA4:
+# MqDbg: func_80839E88
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -9318,6 +9498,7 @@ lbl_8083801C:
 
 
 func_80838048:
+# MqDbg: func_80839F30
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -9344,6 +9525,7 @@ func_80838048:
 
 
 func_808380A4:
+# MqDbg: func_80839F90
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a1, 0x001C($sp)
@@ -9377,6 +9559,7 @@ lbl_80838104:
 
 
 func_80838110:
+# MqDbg: func_80839FFC
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -9409,6 +9592,7 @@ lbl_80838158:
 
 
 func_80838178:
+# MqDbg: func_8083A060
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -9428,6 +9612,7 @@ lbl_808381A4:
 
 
 func_808381B4:
+# MqDbg: func_8083A098
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -9447,6 +9632,7 @@ func_808381B4:
 
 
 func_808381F4:
+# MqDbg: func_8083A0D4
     lw      v0, 0x0428(a0)             # 00000428
     sltu    v0, $zero, v0
     beq     v0, $zero, lbl_8083820C
@@ -9459,6 +9645,7 @@ lbl_8083820C:
 
 
 func_80838214:
+# MqDbg: func_8083A0F4
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s0, 0x0018($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -9601,6 +9788,7 @@ lbl_80838408:
 
 
 func_80838418:
+# MqDbg: func_8083A2F8
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -9633,6 +9821,7 @@ lbl_80838474:
 
 
 func_80838488:
+# MqDbg: func_8083A360
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lui     a2, %hi(func_8084AD34)     # a2 = 80850000
@@ -9646,6 +9835,7 @@ func_80838488:
 
 
 func_808384B0:
+# MqDbg: func_8083A388
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lui     a2, %hi(func_80849810)     # a2 = 80850000
@@ -9659,6 +9849,7 @@ func_808384B0:
 
 
 func_808384D8:
+# MqDbg: func_8083A3B0
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x0014($sp)
     lh      t6, 0x0840(a1)             # 00000840
@@ -9684,6 +9875,7 @@ func_808384D8:
 
 
 func_80838530:
+# MqDbg: func_8083A40C
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lui     a2, %hi(func_8084A7EC)     # a2 = 80850000
@@ -9697,6 +9889,7 @@ func_80838530:
 
 
 func_80838558:
+# MqDbg: func_8083A434
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lui     a2, %hi(func_8084C7A4)     # a2 = 80850000
@@ -9732,6 +9925,7 @@ lbl_808385BC:
 
 
 func_808385CC:
+# MqDbg: func_8083A4A8
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x001C($sp)
     or      a3, a1, $zero              # a3 = 00000000
@@ -9811,6 +10005,7 @@ lbl_808386B8:
 
 
 func_808386E8:
+# MqDbg: func_8083A5C4
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s0, 0x0018($sp)
     lui     $at, %hi(var_80853118)     # $at = 80850000
@@ -9875,6 +10070,7 @@ func_808386E8:
 
 
 func_808387DC:
+# MqDbg: func_8083A6AC
     addiu   $sp, $sp, 0xFF78           # $sp -= 0x88
     sw      s0, 0x0030($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -10083,6 +10279,7 @@ lbl_80838AD0:
 
 
 func_80838AE4:
+# MqDbg: func_8083A9B8
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -10108,6 +10305,7 @@ func_80838AE4:
 
 
 func_80838B3C:
+# MqDbg: func_8083AA10
     addiu   $sp, $sp, 0xFFA0           # $sp -= 0x60
     sw      s0, 0x0020($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -10331,6 +10529,7 @@ lbl_80838E68:
 
 
 func_80838E78:
+# MqDbg: func_8083AD4C
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0020($sp)
@@ -10371,6 +10570,7 @@ lbl_80838ECC:
 
 
 func_80838F00:
+# MqDbg: func_8083ADD4
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lbu     t6, 0x069D(a1)             # 0000069D
@@ -10403,6 +10603,7 @@ lbl_80838F5C:
 
 
 func_80838F6C:
+# MqDbg: func_8083AE40
     addiu   $sp, $sp, 0xFFC0           # $sp -= 0x40
     sw      s0, 0x0028($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -10441,6 +10642,7 @@ lbl_80838FE0:
 
 
 func_80838FF4:
+# MqDbg: func_8083AF44
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s0, 0x0020($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -10499,6 +10701,7 @@ lbl_808390B4:
 
 
 func_808390C8:
+# MqDbg: func_8083B010
     sh      $zero, 0x06B0(a0)          # 000006B0
     lh      v0, 0x06B0(a0)             # 000006B0
     lh      t6, 0x00B6(a0)             # 000000B6
@@ -10515,6 +10718,7 @@ func_808390C8:
 
 
 func_808390FC:
+# MqDbg: func_8083B040
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -10941,6 +11145,7 @@ lbl_808396EC:
 
 
 func_80839700:
+# MqDbg: func_8083B644
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -11140,6 +11345,7 @@ lbl_80839998:
 
 
 func_808399AC:
+# MqDbg: func_8083B8F4
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     or      a2, a0, $zero              # a2 = 00000000
@@ -11188,6 +11394,7 @@ lbl_80839A44:
 
 
 func_80839A54:
+# MqDbg: func_8083B998
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lbu     t6, 0x069D(a0)             # 0000069D
@@ -11258,6 +11465,7 @@ lbl_80839B3C:
 
 
 func_80839B4C:
+# MqDbg: func_8083BA90
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -11299,6 +11507,7 @@ func_80839B4C:
 
 
 func_80839BE4:
+# MqDbg: func_8083BB20
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lw      t6, 0x066C(a0)             # 0000066C
@@ -11337,6 +11546,7 @@ lbl_80839C54:
 
 
 func_80839C64:
+# MqDbg: func_8083BBA0
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x001C($sp)
     sw      a0, 0x0020($sp)
@@ -11368,6 +11578,7 @@ lbl_80839CBC:
 
 
 func_80839CCC:
+# MqDbg: func_8083BC04
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -11401,6 +11612,7 @@ func_80839CCC:
 
 
 func_80839D44:
+# MqDbg: func_8083BC7C
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lbu     t6, 0x0836(a0)             # 00000836
@@ -11426,6 +11638,7 @@ lbl_80839D88:
 
 
 func_80839D98:
+# MqDbg: func_8083BCD0
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      s0, 0x0020($sp)
     or      s0, a2, $zero              # s0 = 00000000
@@ -11494,6 +11707,7 @@ lbl_80839E68:
 
 
 func_80839E84:
+# MqDbg: func_8083BDBC
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s0, 0x0020($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -11605,6 +11819,7 @@ lbl_8083A004:
 
 
 func_8083A018:
+# MqDbg: func_8083BF50
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      s0, 0x0028($sp)
     mtc1    $zero, $f2                 # $f2 = 0.00
@@ -11702,6 +11917,7 @@ lbl_8083A110:
 
 
 func_8083A17C:
+# MqDbg: func_8083C0B8
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -11719,6 +11935,7 @@ func_8083A17C:
 
 
 func_8083A1B4:
+# MqDbg: func_8083C0E8
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -11745,6 +11962,7 @@ func_8083A1B4:
 
 
 func_8083A210:
+# MqDbg: func_8083C148
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -11790,6 +12008,7 @@ lbl_8083A288:
 
 
 func_8083A2AC:
+# MqDbg: func_8083C1DC
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a1, 0x001C($sp)
@@ -11851,6 +12070,7 @@ lbl_8083A374:
 
 
 func_8083A384:
+# MqDbg: func_8083C2B0
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      s0, 0x0028($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -11981,6 +12201,7 @@ lbl_8083A548:
 
 
 func_8083A55C:
+# MqDbg: func_8083C484
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a1, 0x001C($sp)
@@ -12022,6 +12243,7 @@ lbl_8083A5D4:
 
 
 func_8083A5E4:
+# MqDbg: func_8083C50C
     lb      v0, 0x0834(a0)             # 00000834
     lui     t6, %hi(var_80856734)      # t6 = 80850000
     blez    v0, lbl_8083A614
@@ -12040,6 +12262,7 @@ lbl_8083A614:
 
 
 func_8083A61C:
+# MqDbg: func_8083C544
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a1, 0x001C($sp)
@@ -12103,6 +12326,7 @@ lbl_8083A6E8:
 
 
 func_8083A6F8:
+# MqDbg: func_8083C61C
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lui     t6, 0x0001                 # t6 = 00010000
@@ -12146,6 +12370,7 @@ lbl_8083A784:
 
 
 func_8083A794:
+# MqDbg: func_8083C6B8
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s0, 0x0018($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -12247,6 +12472,7 @@ lbl_8083A8F4:
 
 
 func_8083A908:
+# MqDbg: func_8083C858
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -12285,6 +12511,7 @@ lbl_8083A940:
 
 
 func_8083A98C:
+# MqDbg: func_8083C8DC
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      a2, 0x0020($sp)
     sll     a2, a2, 16
@@ -12301,6 +12528,7 @@ func_8083A98C:
 
 
 func_8083A9C0:
+# MqDbg: func_8083C910
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s1, 0x0020($sp)
     sw      s0, 0x001C($sp)
@@ -12376,6 +12604,7 @@ lbl_8083AAC0:
 
 
 func_8083AAD4:
+# MqDbg: func_8083CA20
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a1, 0x001C($sp)
@@ -12394,6 +12623,7 @@ lbl_8083AAFC:
 
 
 func_8083AB0C:
+# MqDbg: func_8083CA54
     lui     $at, 0x4000                # $at = 40000000
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     mtc1    $at, $f0                   # $f0 = 2.00
@@ -12416,6 +12646,7 @@ lbl_8083AB44:
 
 
 func_8083AB54:
+# MqDbg: func_8083CA9C
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     lui     v0, 0x8012                 # v0 = 80120000
     lui     $at, %hi(var_80853124)     # $at = 80850000
@@ -12459,6 +12690,7 @@ lbl_8083ABDC:
 
 
 func_8083ABE8:
+# MqDbg: func_8083CB2C
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -12487,6 +12719,7 @@ func_8083ABE8:
 
 
 func_8083AC4C:
+# MqDbg: func_8083CB94
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      a1, 0x001C($sp)
     or      a1, a0, $zero              # a1 = 00000000
@@ -12513,6 +12746,7 @@ func_8083AC4C:
 
 
 func_8083ACA8:
+# MqDbg: func_8083CBF0
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      $ra, 0x0024($sp)
     sw      a0, 0x0028($sp)
@@ -12558,6 +12792,7 @@ func_8083ACA8:
 
 
 func_8083AD50:
+# MqDbg: func_8083CC9C
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -12585,6 +12820,7 @@ func_8083AD50:
 
 
 func_8083ADB0:
+# MqDbg: func_8083CD00
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -12609,6 +12845,7 @@ func_8083ADB0:
 
 
 func_8083AE04:
+# MqDbg: func_8083CD54
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s0, 0x0028($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -12659,6 +12896,7 @@ func_8083AE04:
 
 
 func_8083AEC0:
+# MqDbg: func_8083CE0C
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      a1, 0x001C($sp)
     or      a1, a0, $zero              # a1 = 00000000
@@ -12703,6 +12941,7 @@ lbl_8083AF3C:
 
 
 func_8083AF5C:
+# MqDbg: func_8083CEAC
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -12730,6 +12969,7 @@ func_8083AF5C:
 
 
 func_8083AFBC:
+# MqDbg: func_8083CF10
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     mtc1    $zero, $f4                 # $f4 = 0.00
@@ -12753,6 +12993,7 @@ lbl_8083AFF8:
 
 
 func_8083B004:
+# MqDbg: func_8083CF5C
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     mtc1    $zero, $f4                 # $f4 = 0.00
@@ -12776,6 +13017,7 @@ lbl_8083B040:
 
 
 func_8083B04C:
+# MqDbg: func_8083CFA8
     addiu   $sp, $sp, 0xFFC0           # $sp -= 0x40
     mtc1    a2, $f12                   # $f12 = 0.00
     sw      $ra, 0x001C($sp)
@@ -12848,6 +13090,7 @@ lbl_8083B144:
 
 
 func_8083B154:
+# MqDbg: func_8083D0A8
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -12886,6 +13129,7 @@ lbl_8083B1BC:
 
 
 func_8083B1DC:
+# MqDbg: func_8083D12C
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -13028,6 +13272,7 @@ lbl_8083B3CC:
 
 
 func_8083B3E0:
+# MqDbg: func_8083D330
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lui     a2, 0x0400                 # a2 = 04000000
@@ -13046,6 +13291,7 @@ func_8083B3E0:
 
 
 func_8083B41C:
+# MqDbg: func_8083D36C
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -13176,6 +13422,7 @@ lbl_8083B5A0:
 
 
 func_8083B5F0:
+# MqDbg: func_8083D53C
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -13295,6 +13542,7 @@ lbl_8083B794:
 
 
 func_8083B7A0:
+# MqDbg: func_8083D6EC
     addiu   $sp, $sp, 0xFF98           # $sp -= 0x68
     sw      s0, 0x0028($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -13623,6 +13871,7 @@ lbl_8083BC40:
 
 
 func_8083BC50:
+# MqDbg: func_8083DB98
     addiu   $sp, $sp, 0xFFC0           # $sp -= 0x40
     sw      s0, 0x0020($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -13673,6 +13922,7 @@ func_8083BC50:
 
 
 func_8083BD0C:
+# MqDbg: func_8083DC54
     addiu   $sp, $sp, 0xFFB8           # $sp -= 0x48
     sw      s0, 0x0020($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -13780,6 +14030,7 @@ lbl_8083BE70:
 
 
 func_8083BE80:
+# MqDbg: func_8083DDC8
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -13898,6 +14149,7 @@ lbl_8083C018:
 
 
 func_8083C028:
+# MqDbg: func_8083DF68
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     mtc1    a1, $f12                   # $f12 = 0.00
     sw      $ra, 0x0014($sp)
@@ -13932,6 +14184,7 @@ func_8083C028:
 
 
 func_8083C0A4:
+# MqDbg: func_8083DFE0
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -14013,6 +14266,7 @@ lbl_8083C1B0:
 
 
 func_8083C1C4:
+# MqDbg: func_8083E0FC
     addiu   $sp, $sp, 0xFFB8           # $sp -= 0x48
     sw      s2, 0x0020($sp)
     sw      s0, 0x0018($sp)
@@ -14122,6 +14376,7 @@ lbl_8083C348:
 
 
 func_8083C360:
+# MqDbg: Player_GetSlopeDirection
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     lui     $at, %hi(var_80853148)     # $at = 80850000
     lwc1    $f0, %lo(var_80853148)($at)
@@ -14156,6 +14411,7 @@ func_8083C360:
 
 
 func_8083C3DC:
+# MqDbg: func_8083E318
     addiu   $sp, $sp, 0xFFB0           # $sp -= 0x50
     sw      s0, 0x0018($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -14274,6 +14530,7 @@ lbl_8083C57C:
 
 
 func_8083C590:
+# MqDbg: func_8083E4C4
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x0014($sp)
     sw      a1, 0x0024($sp)
@@ -14339,6 +14596,7 @@ lbl_8083C660:
 
 
 func_8083C678:
+# MqDbg: func_8083E5A8
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -14652,6 +14910,7 @@ lbl_8083CAF8:
 
 
 func_8083CB0C:
+# MqDbg: func_8083EA94
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      a1, 0x001C($sp)
     or      a1, a0, $zero              # a1 = 00000000
@@ -14678,6 +14937,7 @@ func_8083CB0C:
 
 
 func_8083CB68:
+# MqDbg: func_8083EAF0
     beq     a1, $zero, lbl_8083CBB4
     addiu   v0, $zero, 0x0001          # v0 = 00000001
     lw      t6, 0x0004(a1)             # 00000004
@@ -14704,6 +14964,7 @@ lbl_8083CBB4:
 
 
 func_8083CBBC:
+# MqDbg: func_8083EB44
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -14763,6 +15024,7 @@ lbl_8083CC7C:
 
 
 func_8083CC90:
+# MqDbg: func_8083EC18
     addiu   $sp, $sp, 0xFF70           # $sp -= 0x90
     sw      s0, 0x0020($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -15066,6 +15328,7 @@ lbl_8083D0D8:
 
 
 func_8083D0EC:
+# MqDbg: func_8083F070
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -15091,6 +15354,7 @@ func_8083D0EC:
 
 
 func_8083D144:
+# MqDbg: Player_TryEnteringCrawlspace
     addiu   $sp, $sp, 0xFF88           # $sp -= 0x78
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -15268,6 +15532,7 @@ lbl_8083D3C8:
 
 
 func_8083D3DC:
+# MqDbg: func_8083F360
     addiu   $sp, $sp, 0xFF80           # $sp -= 0x80
     sw      s0, 0x0030($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -15386,6 +15651,7 @@ lbl_8083D58C:
 
 
 func_8083D5A0:
+# MqDbg: func_8083F524
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x001C($sp)
     lw      t6, 0x0668(a1)             # 00000668
@@ -15408,6 +15674,7 @@ func_8083D5A0:
 
 
 func_8083D5EC:
+# MqDbg: Player_TryLeavingCrawlspace
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s1, 0x0028($sp)
     sw      s0, 0x0024($sp)
@@ -15528,6 +15795,7 @@ lbl_8083D794:
 
 
 func_8083D7A8:
+# MqDbg: func_8083F72C
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -15567,6 +15835,7 @@ lbl_8083D7F0:
 
 
 func_8083D834:
+# MqDbg: func_8083F7BC
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -15712,6 +15981,7 @@ lbl_8083DA34:
 
 
 func_8083DA48:
+# MqDbg: func_8083F9D0
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -15777,6 +16047,7 @@ lbl_8083DB18:
 
 
 func_8083DB2C:
+# MqDbg: func_8083FAB8
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      a1, 0x001C($sp)
     or      a1, a0, $zero              # a1 = 00000000
@@ -15803,6 +16074,7 @@ func_8083DB2C:
 
 
 func_8083DB88:
+# MqDbg: func_8083FB14
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      a1, 0x001C($sp)
     or      a1, a0, $zero              # a1 = 00000000
@@ -15832,6 +16104,7 @@ func_8083DB88:
 
 
 func_8083DBF0:
+# MqDbg: func_8083FB7C
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lw      t6, 0x066C(a0)             # 0000066C
@@ -15851,6 +16124,7 @@ func_8083DBF0:
 
 
 func_8083DC30:
+# MqDbg: func_8083FBC0
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a1, 0x001C($sp)
@@ -15901,6 +16175,7 @@ lbl_8083DCCC:
 
 
 func_8083DCDC:
+# MqDbg: func_8083FC68
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      a2, 0x0028($sp)
     sll     a2, a2, 16
@@ -15976,6 +16251,7 @@ lbl_8083DDE4:
 
 
 func_8083DDEC:
+# MqDbg: func_8083FD78
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s0, 0x0020($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -16137,6 +16413,7 @@ lbl_8083E020:
 
 
 func_8083E030:
+# MqDbg: func_8083FFB8
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lh      t6, 0x0000(a2)             # 00000000
@@ -16184,6 +16461,7 @@ lbl_8083E0C8:
 
 
 func_8083E0D0:
+# MqDbg: func_80840058
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -16251,6 +16529,7 @@ lbl_8083E1A8:
 
 
 func_8083E1B8:
+# MqDbg: func_80840138
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      a2, 0x0020($sp)
     sll     a2, a2, 16
@@ -16286,6 +16565,7 @@ lbl_8083E210:
 
 
 func_8083E230:
+# MqDbg: func_808401B0
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      s0, 0x0028($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -16316,6 +16596,7 @@ func_8083E230:
 
 
 func_8083E29C:
+# MqDbg: func_8084021C
     mtc1    $zero, $f2                 # $f2 = 0.00
     sw      a2, 0x0008($sp)
     sw      a3, 0x000C($sp)
@@ -16353,6 +16634,7 @@ lbl_8083E314:
 
 
 func_8083E31C:
+# MqDbg: func_8084029C
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     mtc1    a1, $f14                   # $f14 = 0.00
@@ -16475,6 +16757,7 @@ lbl_8083E4C4:
 
 
 func_8083E4D4:
+# MqDbg: func_80840450
     addiu   $sp, $sp, 0xFFB8           # $sp -= 0x48
     sw      s0, 0x0020($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -16721,6 +17004,7 @@ lbl_8083E840:
 
 
 func_8083E850:
+# MqDbg: func_808407CC
     addiu   $sp, $sp, 0xFFC0           # $sp -= 0x40
     sw      s1, 0x0020($sp)
     sw      s0, 0x001C($sp)
@@ -16863,6 +17147,7 @@ lbl_8083EA40:
 
 
 func_8083EA50:
+# MqDbg: func_808409CC
     addiu   $sp, $sp, 0xFFB8           # $sp -= 0x48
     sw      s0, 0x0028($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -17005,6 +17290,7 @@ lbl_8083EBDC:
 
 
 func_8083EC4C:
+# MqDbg: func_80840BC8
     addiu   $sp, $sp, 0xFFB8           # $sp -= 0x48
     sw      s0, 0x0020($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -17157,6 +17443,7 @@ lbl_8083EE5C:
 
 
 func_8083EE6C:
+# MqDbg: func_80840DE4
     addiu   $sp, $sp, 0xFFB0           # $sp -= 0x50
     sw      s0, 0x0020($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -17389,6 +17676,7 @@ lbl_8083F1B0:
 
 
 func_8083F1C0:
+# MqDbg: func_80841138
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sdc1    $f22, 0x0018($sp)
     lui     $at, 0x3F80                # $at = 3F800000
@@ -17582,6 +17870,7 @@ lbl_8083F484:
 
 
 func_8083F49C:
+# MqDbg: func_8084140C
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -17604,6 +17893,7 @@ func_8083F49C:
 
 
 func_8083F4E8:
+# MqDbg: func_80841458
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a2, 0x0020($sp)
@@ -17651,6 +17941,7 @@ lbl_8083F578:
 
 
 func_8083F588:
+# MqDbg: func_808414F8
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      s1, 0x0020($sp)
     sw      s0, 0x001C($sp)
@@ -17777,6 +18068,7 @@ lbl_8083F74C:
 
 
 func_8083F75C:
+# MqDbg: func_808416C0
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -17799,6 +18091,7 @@ func_8083F75C:
 
 
 func_8083F7A8:
+# MqDbg: func_8084170C
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      s1, 0x0020($sp)
     sw      s0, 0x001C($sp)
@@ -17866,6 +18159,7 @@ lbl_8083F888:
 
 
 func_8083F898:
+# MqDbg: func_808417FC
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0020($sp)
@@ -17895,6 +18189,7 @@ lbl_8083F8EC:
 
 
 func_8083F8FC:
+# MqDbg: func_80841860
     addiu   $sp, $sp, 0xFFC0           # $sp -= 0x40
     lui     $at, 0x447A                # $at = 447A0000
     sw      s0, 0x0028($sp)
@@ -17953,6 +18248,7 @@ func_8083F8FC:
 
 
 func_8083F9D8:
+# MqDbg: func_8084193C
     addiu   $sp, $sp, 0xFFC0           # $sp -= 0x40
     sw      s0, 0x0020($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -18122,6 +18418,7 @@ lbl_8083FC2C:
 
 
 func_8083FC3C:
+# MqDbg: func_80841BA8
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      s1, 0x0020($sp)
     sw      s0, 0x001C($sp)
@@ -18201,6 +18498,7 @@ lbl_8083FD44:
 
 
 func_8083FD58:
+# MqDbg: func_80841CC4
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s0, 0x0028($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -18355,6 +18653,7 @@ lbl_8083FF6C:
 
 
 func_8083FF7C:
+# MqDbg: func_80841EE4
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sdc1    $f22, 0x0020($sp)
     lui     $at, 0x3F80                # $at = 3F800000
@@ -18534,6 +18833,7 @@ lbl_8084020C:
 
 
 func_80840220:
+# MqDbg: func_80842180
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s1, 0x0020($sp)
     sw      s0, 0x001C($sp)
@@ -18605,6 +18905,7 @@ lbl_80840314:
 
 
 func_80840324:
+# MqDbg: func_8084227C
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s0, 0x0020($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -18706,6 +19007,7 @@ lbl_80840488:
 
 
 func_80840498:
+# MqDbg: func_808423EC
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      s1, 0x0020($sp)
     sw      s0, 0x001C($sp)
@@ -18789,6 +19091,7 @@ lbl_808405B8:
 
 
 func_808405C8:
+# MqDbg: func_8084251C
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      s1, 0x0020($sp)
     sw      s0, 0x001C($sp)
@@ -18856,6 +19159,7 @@ lbl_808406A8:
 
 
 func_808406B8:
+# MqDbg: func_8084260C
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -18895,6 +19199,7 @@ func_808406B8:
 
 
 func_80840748:
+# MqDbg: func_8084269C
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      s0, 0x0020($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -18964,6 +19269,7 @@ lbl_80840834:
 
 
 func_80840848:
+# MqDbg: func_8084279C
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -19019,6 +19325,7 @@ lbl_808408F8:
 
 
 func_80840908:
+# MqDbg: func_8084285C
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     mtc1    a1, $f12                   # $f12 = 0.00
     mtc1    a3, $f14                   # $f14 = 0.00
@@ -19056,6 +19363,7 @@ lbl_80840974:
 
 
 func_80840984:
+# MqDbg: func_808428D8
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -19097,6 +19405,7 @@ lbl_80840A00:
 
 
 func_80840A14:
+# MqDbg: func_80842964
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -19123,6 +19432,7 @@ lbl_80840A5C:
 
 
 func_80840A6C:
+# MqDbg: Player_RequestQuake
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      $ra, 0x001C($sp)
     sw      a1, 0x0034($sp)
@@ -19155,6 +19465,7 @@ func_80840A6C:
 
 
 func_80840AE0:
+# MqDbg: func_80842A28
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x001C($sp)
     sw      a0, 0x0020($sp)
@@ -19183,6 +19494,7 @@ func_80840AE0:
 
 
 func_80840B44:
+# MqDbg: func_80842A88
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -19201,6 +19513,7 @@ func_80840B44:
 
 
 func_80840B80:
+# MqDbg: func_80842AC4
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -19253,6 +19566,7 @@ lbl_80840C2C:
 
 
 func_80840C3C:
+# MqDbg: func_80842B7C
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -19357,6 +19671,7 @@ lbl_80840DA4:
 
 
 func_80840DB4:
+# MqDbg: func_80842CF0
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -19374,6 +19689,7 @@ func_80840DB4:
 
 
 func_80840DEC:
+# MqDbg: func_80842D20
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s0, 0x0020($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -19434,6 +19750,7 @@ lbl_80840E80:
 
 
 func_80840EC4:
+# MqDbg: func_80842DF4
     addiu   $sp, $sp, 0xFF80           # $sp -= 0x80
     sw      s0, 0x0030($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -19679,6 +19996,7 @@ lbl_80841244:
 
 
 func_80841258:
+# MqDbg: func_80843188
     addiu   $sp, $sp, 0xFFA8           # $sp -= 0x58
     sw      s0, 0x0028($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -19972,6 +20290,7 @@ lbl_80841684:
 
 
 func_80841694:
+# MqDbg: func_808435C4
     addiu   $sp, $sp, 0xFFC0           # $sp -= 0x40
     sw      s1, 0x0028($sp)
     sw      s0, 0x0024($sp)
@@ -20063,6 +20382,7 @@ lbl_808417D0:
 
 
 func_808417E0:
+# MqDbg: func_8084370C
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0020($sp)
@@ -20098,6 +20418,7 @@ lbl_80841848:
 
 
 func_80841854:
+# MqDbg: func_8084377C
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -20231,6 +20552,7 @@ lbl_80841A20:
 
 
 func_80841A30:
+# MqDbg: func_80843954
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -20296,6 +20618,7 @@ lbl_80841B08:
 
 
 func_80841B18:
+# MqDbg: func_80843A38
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -20344,6 +20667,7 @@ lbl_80841BAC:
 
 
 func_80841BBC:
+# MqDbg: func_80843AE8
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s0, 0x0028($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -20485,6 +20809,7 @@ lbl_80841DB0:
 
 
 func_80841DC0:
+# MqDbg: func_80843CEC
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -20554,6 +20879,7 @@ lbl_80841EA4:
 
 
 func_80841EB4:
+# MqDbg: func_80843E14
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      a1, 0x001C($sp)
     andi    a1, a1, 0xFFFF             # a1 = 00000000
@@ -20579,6 +20905,7 @@ lbl_80841EFC:
 
 
 func_80841F08:
+# MqDbg: func_80843E64
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      s0, 0x0020($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -20735,6 +21062,7 @@ lbl_8084212C:
 
 
 func_80842140:
+# MqDbg: func_8084409C
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s0, 0x0018($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -20773,6 +21101,7 @@ lbl_808421B4:
 
 
 func_808421C8:
+# MqDbg: func_8084411C
     addiu   $sp, $sp, 0xFFB0           # $sp -= 0x50
     sw      s0, 0x0028($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -21184,6 +21513,7 @@ lbl_808427AC:
 
 
 func_808427BC:
+# MqDbg: func_80844708
     addiu   $sp, $sp, 0xFFB0           # $sp -= 0x50
     sw      s0, 0x0020($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -21411,6 +21741,7 @@ lbl_80842AE8:
 
 
 func_80842AF8:
+# MqDbg: func_80844A44
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s0, 0x0028($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -21460,6 +21791,7 @@ lbl_80842B94:
 
 
 func_80842BA8:
+# MqDbg: func_80844AF4
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s1, 0x0020($sp)
     sw      s0, 0x001C($sp)
@@ -21526,6 +21858,7 @@ lbl_80842C88:
 
 
 func_80842C98:
+# MqDbg: func_80844BE4
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -21606,6 +21939,7 @@ lbl_80842D9C:
 
 
 func_80842DB0:
+# MqDbg: func_80844CF8
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      a1, 0x001C($sp)
     or      a1, a0, $zero              # a1 = 00000000
@@ -21623,6 +21957,7 @@ func_80842DB0:
 
 
 func_80842DE8:
+# MqDbg: func_80844D30
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      a1, 0x001C($sp)
     or      a1, a0, $zero              # a1 = 00000000
@@ -21640,6 +21975,7 @@ func_80842DE8:
 
 
 func_80842E20:
+# MqDbg: func_80844D68
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -21668,6 +22004,7 @@ func_80842E20:
 
 
 func_80842E84:
+# MqDbg: func_80844DC8
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -21700,6 +22037,7 @@ func_80842E84:
 
 
 func_80842EF8:
+# MqDbg: func_80844E3C
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     or      a3, a0, $zero              # a3 = 00000000
@@ -21715,6 +22053,7 @@ func_80842EF8:
 
 
 func_80842F28:
+# MqDbg: func_80844E68
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      s1, 0x0020($sp)
     sw      s0, 0x001C($sp)
@@ -21826,6 +22165,7 @@ lbl_808430B0:
 
 
 func_808430C0:
+# MqDbg: func_80845000
     addiu   $sp, $sp, 0xFF98           # $sp -= 0x68
     sw      s0, 0x0028($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -22036,6 +22376,7 @@ lbl_808433B8:
 
 
 func_808433C8:
+# MqDbg: func_80845308
     addiu   $sp, $sp, 0xFFA0           # $sp -= 0x60
     sw      s0, 0x0028($sp)
     mtc1    $zero, $f16                # $f16 = 0.00
@@ -22270,6 +22611,7 @@ lbl_80843718:
 
 
 func_80843728:
+# MqDbg: func_80845668
     addiu   $sp, $sp, 0xFFC0           # $sp -= 0x40
     sw      s0, 0x0020($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -22446,6 +22788,7 @@ lbl_80843984:
 
 
 func_80843994:
+# MqDbg: func_808458D0
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a1, 0x001C($sp)
@@ -22489,6 +22832,7 @@ lbl_80843A18:
 
 
 func_80843A28:
+# MqDbg: func_80845964
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      s0, 0x0018($sp)
     mtc1    a3, $f12                   # $f12 = 0.00
@@ -22644,6 +22988,7 @@ lbl_80843C5C:
 
 
 func_80843C6C:
+# MqDbg: func_80845BA0
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      s0, 0x0020($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -22701,6 +23046,7 @@ lbl_80843D2C:
 
 
 func_80843D38:
+# MqDbg: func_80845C68
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     or      a3, a1, $zero              # a3 = 00000000
@@ -22721,6 +23067,7 @@ lbl_80843D5C:
 
 
 func_80843D78:
+# MqDbg: func_80845CA4
     addiu   $sp, $sp, 0xFFC0           # $sp -= 0x40
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -22886,6 +23233,7 @@ lbl_80843FC8:
 
 
 func_80843FD8:
+# MqDbg: func_80845EF8
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s0, 0x0018($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -22982,6 +23330,7 @@ lbl_80844120:
 
 
 func_80844130:
+# MqDbg: func_80846050
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -23043,6 +23392,7 @@ lbl_808441F8:
 
 
 func_80844208:
+# MqDbg: func_80846120
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -23131,6 +23481,7 @@ lbl_80844338:
 
 
 func_80844348:
+# MqDbg: func_80846260
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -23203,6 +23554,7 @@ lbl_80844438:
 
 
 func_80844448:
+# MqDbg: func_80846358
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -23253,6 +23605,7 @@ lbl_808444E8:
 
 
 func_808444F8:
+# MqDbg: func_80846408
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -23300,6 +23653,7 @@ lbl_8084458C:
 
 
 func_808445A0:
+# MqDbg: func_808464B0
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s1, 0x0018($sp)
     sw      s0, 0x0014($sp)
@@ -23357,6 +23711,7 @@ lbl_8084465C:
 
 
 func_8084466C:
+# MqDbg: func_80846578
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      s0, 0x0020($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -23414,6 +23769,7 @@ lbl_80844724:
 
 
 func_80844734:
+# MqDbg: func_8084663C
     sw      a0, 0x0000($sp)
     sw      a1, 0x0004($sp)
     jr      $ra
@@ -23421,6 +23777,7 @@ func_80844734:
 
 
 func_80844744:
+# MqDbg: func_80846648
     sw      a0, 0x0000($sp)
     lui     t6, %hi(func_80844734)     # t6 = 80840000
     addiu   t6, t6, %lo(func_80844734) # t6 = 80844734
@@ -23431,6 +23788,7 @@ func_80844744:
 
 
 func_80844760:
+# MqDbg: func_80846660
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s0, 0x0028($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -23484,6 +23842,7 @@ lbl_808447C8:
 
 
 func_80844820:
+# MqDbg: func_80846720
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s0, 0x0018($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -23533,6 +23892,7 @@ lbl_808448C4:
 
 
 func_808448D4:
+# MqDbg: func_808467D4
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s0, 0x0028($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -23592,6 +23952,7 @@ lbl_80844998:
 
 
 func_808449B0:
+# MqDbg: func_808468A8
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -23613,6 +23974,7 @@ func_808449B0:
 
 
 func_808449F8:
+# MqDbg: func_808468E8
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s0, 0x0020($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -23652,6 +24014,7 @@ func_808449F8:
 
 
 func_80844A88:
+# MqDbg: func_80846978
     lui     $at, 0x4000                # $at = 40000000
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     mtc1    $at, $f0                   # $f0 = 2.00
@@ -23672,6 +24035,7 @@ func_80844A88:
 
 
 func_80844ACC:
+# MqDbg: func_808469BC
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lui     a2, %hi(func_8084D798)     # a2 = 80850000
@@ -23691,6 +24055,7 @@ func_80844ACC:
 
 
 func_80844B0C:
+# MqDbg: func_80846A00
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      a1, 0x0034($sp)
     or      a1, a0, $zero              # a1 = 00000000
@@ -23721,6 +24086,7 @@ func_80844B0C:
 
 
 func_80844B78:
+# MqDbg: func_80846A68
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      $zero, 0x0134(a1)          # 00000134
@@ -23740,6 +24106,7 @@ func_80844B78:
 
 
 func_80844BB8:
+# MqDbg: Player_InitCommon
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      s1, 0x0028($sp)
     sw      s0, 0x0024($sp)
@@ -23883,6 +24250,7 @@ func_80844BB8:
 
 
 func_80844DE8:
+# MqDbg: Player_Init
 # Inner Init function
 # A0 = Global Context
 # A1 = Link Instance
@@ -24236,6 +24604,7 @@ lbl_808452CC:
 
 
 func_808452F8:
+# MqDbg: func_808471F4
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     or      a3, a0, $zero              # a3 = 00000000
@@ -24284,6 +24653,7 @@ lbl_80845384:
 
 
 func_8084539C:
+# MqDbg: func_80847298
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -24377,6 +24747,7 @@ lbl_808454C4:
 
 
 func_808454D8:
+# MqDbg: func_808473D4
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0030($sp)
@@ -24864,6 +25235,7 @@ lbl_80845B7C:
 
 
 func_80845B88:
+# MqDbg: func_80847A78
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     or      a1, a0, $zero              # a1 = 00000000
@@ -24950,6 +25322,7 @@ lbl_80845CA0:
 
 
 func_80845CB0:
+# MqDbg: func_80847BA0
     addiu   $sp, $sp, 0xFF38           # $sp -= 0xC8
     sw      s0, 0x0028($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -25712,6 +26085,7 @@ lbl_808467A4:
 
 
 func_808467B8:
+# MqDbg: Player_UpdateCamAndSeqModes
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0028($sp)
@@ -25961,6 +26335,7 @@ lbl_80846B0C:
 
 
 func_80846B18:
+# MqDbg: func_80848A04
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      s0, 0x0030($sp)
     mtc1    $zero, $f2                 # $f2 = 0.00
@@ -26054,6 +26429,7 @@ lbl_80846C50:
 
 
 func_80846C60:
+# MqDbg: func_80848B44
     addiu   $sp, $sp, 0xFFB8           # $sp -= 0x48
     sw      s0, 0x0020($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -26135,6 +26511,7 @@ lbl_80846D7C:
 
 
 func_80846D90:
+# MqDbg: func_80848C74
     addiu   $sp, $sp, 0xFF88           # $sp -= 0x78
     sw      s3, 0x0040($sp)
     or      s3, a0, $zero              # s3 = 00000000
@@ -26317,6 +26694,7 @@ lbl_80846FEC:
 
 
 func_80847014:
+# MqDbg: func_80848EF8
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x001C($sp)
     lui     t6, 0x8010                 # t6 = 80100000
@@ -26364,6 +26742,7 @@ lbl_808470B0:
 
 
 func_808470BC:
+# MqDbg: Player_UpdateCommon
     addiu   $sp, $sp, 0xFF80           # $sp -= 0x80
     sw      s0, 0x0020($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -27425,6 +27804,7 @@ lbl_80847F68:
 
 
 func_80847FC8:
+# MqDbg: Player_Update
 # Inner Main Update function
 # A0 = Global Context
 # A1 = Link Instance
@@ -27580,6 +27960,7 @@ lbl_80848188:
 
 
 func_80848200:
+# MqDbg: Player_DrawGameplay
     addiu   $sp, $sp, 0xFF78           # $sp -= 0x88
     sw      s0, 0x0034($sp)
     lui     t2, 0xDB06                 # t2 = DB060000
@@ -27878,6 +28259,7 @@ lbl_80848670:
 
 
 func_80848680:
+# MqDbg: Player_Draw
 # Inner Main Draw function
 # A0 = Global Context
 # A1 = Link Instance
@@ -28234,6 +28616,7 @@ lbl_80848BA4:
 
 
 func_80848BB4:
+# MqDbg: Player_Destroy
 # Inner Destruct function
 # A0 = Global Context
 # A1 = Link Instance
@@ -28273,6 +28656,7 @@ func_80848BB4:
 
 
 func_80848C38:
+# MqDbg: func_8084ABD8
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      s1, 0x0020($sp)
     sw      s0, 0x001C($sp)
@@ -28489,6 +28873,7 @@ lbl_80848F20:
 
 
 func_80848F4C:
+# MqDbg: func_8084AEEC
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     lui     $at, 0x4120                # $at = 41200000
     mtc1    $at, $f16                  # $f16 = 10.00
@@ -28566,6 +28951,7 @@ lbl_8084900C:
 
 
 func_80849068:
+# MqDbg: func_8084B000
     mtc1    $zero, $f2                 # $f2 = 0.00
     nop
     lwc1    $f0, 0x0060(a0)            # 00000060
@@ -28669,6 +29055,7 @@ lbl_808491C0:
 
 
 func_808491C8:
+# MqDbg: func_8084B158
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     mtc1    a3, $f12                   # $f12 = 0.00
     or      a3, a1, $zero              # a3 = 00000000
@@ -28708,6 +29095,7 @@ lbl_80849230:
 
 
 func_80849248:
+# MqDbg: func_8084B1D8
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -28851,6 +29239,7 @@ lbl_80849424:
 
 
 func_80849438:
+# MqDbg: func_8084B3CC
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s1, 0x0018($sp)
     sw      s0, 0x0014($sp)
@@ -28910,6 +29299,7 @@ lbl_808494F8:
 
 
 func_8084950C:
+# MqDbg: func_8084B498
     lui     t6, 0x8010                 # t6 = 80100000
     lbu     t6, -0x70C5(t6)            # 800F8F3B
     lui     t7, 0x8012                 # t7 = 80120000
@@ -28930,6 +29320,7 @@ lbl_80849540:
 
 
 func_80849548:
+# MqDbg: func_8084B4D4
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -28959,6 +29350,7 @@ lbl_80849598:
 
 
 func_808495A8:
+# MqDbg: func_8084B530
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s1, 0x0018($sp)
     sw      s0, 0x0014($sp)
@@ -29131,6 +29523,7 @@ lbl_80849800:
 
 
 func_80849810:
+# MqDbg: func_8084B78C
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      s1, 0x0020($sp)
     sw      s0, 0x001C($sp)
@@ -29182,6 +29575,7 @@ lbl_808498B4:
 
 
 func_808498C4:
+# MqDbg: func_8084B840
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -29209,6 +29603,7 @@ lbl_80849910:
 
 
 func_80849920:
+# MqDbg: func_8084B898
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      s0, 0x0020($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -29302,6 +29697,7 @@ lbl_80849A5C:
 
 
 func_80849A6C:
+# MqDbg: func_8084B9E4
     addiu   $sp, $sp, 0xFF88           # $sp -= 0x78
     sw      s0, 0x0030($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -29446,6 +29842,7 @@ lbl_80849C60:
 
 
 func_80849C70:
+# MqDbg: func_8084BBE4
     addiu   $sp, $sp, 0xFFC0           # $sp -= 0x40
     sw      s0, 0x0020($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -29598,6 +29995,7 @@ lbl_80849E74:
 
 
 func_80849E84:
+# MqDbg: func_8084BDFC
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -29663,6 +30061,7 @@ lbl_80849F5C:
 
 
 func_80849F6C:
+# MqDbg: func_8084BEE4
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lb      t6, 0x083F(a0)             # 0000083F
@@ -29681,6 +30080,7 @@ lbl_80849F8C:
 
 
 func_80849FA4:
+# MqDbg: func_8084BF1C
     addiu   $sp, $sp, 0xFF78           # $sp -= 0x88
     sw      s0, 0x0028($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -30160,6 +30560,7 @@ lbl_8084A674:
 
 
 func_8084A684:
+# MqDbg: func_8084C5F8
     addiu   $sp, $sp, 0xFFC0           # $sp -= 0x40
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -30260,6 +30661,7 @@ lbl_8084A7DC:
 
 
 func_8084A7EC:
+# MqDbg: func_8084C760
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a1, 0x001C($sp)
@@ -30314,6 +30716,7 @@ lbl_8084A89C:
 
 
 func_8084A8A8:
+# MqDbg: func_8084C81C
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a1, 0x001C($sp)
@@ -30351,6 +30754,7 @@ lbl_8084A918:
 
 
 func_8084A928:
+# MqDbg: func_8084C89C
     addiu   $sp, $sp, 0xFFA8           # $sp -= 0x58
     lui     $at, 0x41A0                # $at = 41A00000
     mtc1    $at, $f2                   # $f2 = 20.00
@@ -30433,6 +30837,7 @@ lbl_8084AA48:
 
 
 func_8084AA54:
+# MqDbg: func_8084C9BC
     addiu   $sp, $sp, 0xFFC0           # $sp -= 0x40
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -30595,6 +31000,7 @@ lbl_8084AC78:
 
 
 func_8084AC8C:
+# MqDbg: func_8084CBF4
     mtc1    a1, $f14                   # $f14 = 0.00
     mtc1    a2, $f12                   # $f12 = 0.00
     mtc1    $zero, $f16                # $f16 = 0.00
@@ -30644,6 +31050,7 @@ lbl_8084AD2C:
 
 
 func_8084AD34:
+# MqDbg: func_8084CC98
     addiu   $sp, $sp, 0xFFB0           # $sp -= 0x50
     sw      s0, 0x0020($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -31164,6 +31571,7 @@ lbl_8084B474:
 
 
 func_8084B484:
+# MqDbg: func_8084D3E4
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -31257,6 +31665,7 @@ lbl_8084B5C8:
 
 
 func_8084B5D8:
+# MqDbg: func_8084D530
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      a3, 0x0024($sp)
     sll     a3, a3, 16
@@ -31278,6 +31687,7 @@ func_8084B5D8:
 
 
 func_8084B620:
+# MqDbg: func_8084D574
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -31304,6 +31714,7 @@ func_8084B620:
 
 
 func_8084B67C:
+# MqDbg: func_8084D5CC
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -31326,6 +31737,7 @@ func_8084B67C:
 
 
 func_8084B6C8:
+# MqDbg: func_8084D610
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      s0, 0x0020($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -31445,6 +31857,7 @@ lbl_8084B868:
 
 
 func_8084B878:
+# MqDbg: func_8084D7C4
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -31488,6 +31901,7 @@ lbl_8084B8F8:
 
 
 func_8084B908:
+# MqDbg: func_8084D84C
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      s0, 0x0020($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -31574,6 +31988,7 @@ lbl_8084BA28:
 
 
 func_8084BA3C:
+# MqDbg: func_8084D980
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s0, 0x0018($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -31662,6 +32077,7 @@ lbl_8084BB60:
 
 
 func_8084BB74:
+# MqDbg: func_8084DAB4
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s1, 0x0020($sp)
     sw      s0, 0x001C($sp)
@@ -31737,6 +32153,7 @@ lbl_8084BC70:
 
 
 func_8084BC84:
+# MqDbg: func_8084DBC4
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s0, 0x0020($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -31773,6 +32190,7 @@ func_8084BC84:
 
 
 func_8084BD08:
+# MqDbg: func_8084DC48
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s1, 0x0018($sp)
     sw      s0, 0x0014($sp)
@@ -31990,6 +32408,7 @@ lbl_8084C01C:
 
 
 func_8084C02C:
+# MqDbg: func_8084DF6C
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     or      a2, a1, $zero              # a2 = 00000000
@@ -32010,6 +32429,7 @@ func_8084C02C:
 
 
 func_8084C070:
+# MqDbg: func_8084DFAC
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -32032,6 +32452,7 @@ func_8084C070:
 
 
 func_8084C0BC:
+# MqDbg: func_8084DFF4
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      $ra, 0x001C($sp)
     or      a3, a0, $zero              # a3 = 00000000
@@ -32175,6 +32596,7 @@ lbl_8084C2A4:
 
 
 func_8084C2B4:
+# MqDbg: func_8084E1EC
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s1, 0x0018($sp)
     sw      s0, 0x0014($sp)
@@ -32255,6 +32677,7 @@ lbl_8084C3A4:
 
 
 func_8084C3D4:
+# MqDbg: func_8084E30C
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -32283,6 +32706,7 @@ lbl_8084C40C:
 
 
 func_8084C434:
+# MqDbg: func_8084E368
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -32311,6 +32735,7 @@ lbl_8084C46C:
 
 
 func_8084C494:
+# MqDbg: func_8084E3C4
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      s1, 0x0030($sp)
     sw      s0, 0x002C($sp)
@@ -32468,6 +32893,7 @@ lbl_8084C6C4:
 
 
 func_8084C6D4:
+# MqDbg: func_8084E604
     addiu   $sp, $sp, 0xFFC0           # $sp -= 0x40
     sw      s0, 0x0030($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -32525,6 +32951,7 @@ lbl_8084C788:
 
 
 func_8084C7A4:
+# MqDbg: func_8084E6D4
     addiu   $sp, $sp, 0xFFB8           # $sp -= 0x48
     sw      s1, 0x0030($sp)
     sw      s0, 0x002C($sp)
@@ -32716,6 +33143,7 @@ lbl_8084CA48:
 
 
 func_8084CA58:
+# MqDbg: func_8084E988
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lui     a1, %hi(var_808528A8)      # a1 = 80850000
@@ -32728,6 +33156,7 @@ func_8084CA58:
 
 
 func_8084CA7C:
+# MqDbg: func_8084E9AC
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x0014($sp)
     sw      a1, 0x0024($sp)
@@ -32815,6 +33244,7 @@ lbl_8084CBA0:
 
 
 func_8084CBAC:
+# MqDbg: func_8084EAC0
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -32955,6 +33385,7 @@ lbl_8084CD88:
 
 
 func_8084CD98:
+# MqDbg: func_8084ECA4
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -33112,6 +33543,7 @@ lbl_8084CFC0:
 
 
 func_8084CFD0:
+# MqDbg: func_8084EED8
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s1, 0x0020($sp)
     sw      s0, 0x001C($sp)
@@ -33177,6 +33609,7 @@ lbl_8084D0A8:
 
 
 func_8084D0B8:
+# MqDbg: func_8084EFC0
     addiu   $sp, $sp, 0xFFB0           # $sp -= 0x50
     sw      s1, 0x0030($sp)
     sw      s0, 0x002C($sp)
@@ -33265,6 +33698,7 @@ lbl_8084D1F0:
 
 
 func_8084D200:
+# MqDbg: func_8084F104
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -33411,6 +33845,7 @@ lbl_8084D3F8:
 
 
 func_8084D408:
+# MqDbg: func_8084F308
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -33450,6 +33885,7 @@ lbl_8084D47C:
 
 
 func_8084D490:
+# MqDbg: func_8084F390
     addiu   $sp, $sp, 0xFFA8           # $sp -= 0x58
     sw      s0, 0x0020($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -33624,6 +34060,7 @@ lbl_8084D6F8:
 
 
 func_8084D708:
+# MqDbg: func_8084F608
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -33667,6 +34104,7 @@ lbl_8084D788:
 
 
 func_8084D798:
+# MqDbg: func_8084F698
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      $ra, 0x002C($sp)
     sw      a0, 0x0030($sp)
@@ -33700,6 +34138,7 @@ func_8084D798:
 
 
 func_8084D810:
+# MqDbg: func_8084F710
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s1, 0x0020($sp)
     sw      s0, 0x001C($sp)
@@ -33808,6 +34247,7 @@ lbl_8084D97C:
 
 
 func_8084D98C:
+# MqDbg: func_8084F88C
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -33888,6 +34328,7 @@ lbl_8084DA90:
 
 
 func_8084DAA0:
+# MqDbg: func_8084F9A0
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     jal     func_80837910
@@ -33899,6 +34340,7 @@ func_8084DAA0:
 
 
 func_8084DAC0:
+# MqDbg: func_8084F9C0
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a1, 0x001C($sp)
@@ -33941,6 +34383,7 @@ lbl_8084DB48:
 
 
 func_8084DB54:
+# MqDbg: func_8084FA54
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s1, 0x0018($sp)
     sw      s0, 0x0014($sp)
@@ -33993,6 +34436,7 @@ lbl_8084DC00:
 
 
 func_8084DC10:
+# MqDbg: func_8084FB10
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -34059,6 +34503,7 @@ lbl_8084DCE4:
 
 
 func_8084DCF4:
+# MqDbg: func_8084FBF4
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -34113,6 +34558,7 @@ lbl_8084DD7C:
 
 
 func_8084DDAC:
+# MqDbg: func_8084FF7C
     mtc1    $zero, $f14                # $f14 = 0.00
     nop
     lwc1    $f2, 0x084C(a0)            # 0000084C
@@ -34165,6 +34611,7 @@ lbl_8084DE58:
 
 
 func_8084DE60:
+# MqDbg: Player_UpdateBunnyEars
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s0, 0x0018($sp)
     lui     s0, %hi(var_808567E0)      # s0 = 80850000
@@ -34300,6 +34747,7 @@ lbl_8084E044:
 
 
 func_8084E058:
+# MqDbg: func_80850224
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -34348,6 +34796,7 @@ lbl_8084E0F0:
 
 
 func_8084E104:
+# MqDbg: func_808502D0
     addiu   $sp, $sp, 0xFFB8           # $sp -= 0x48
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -34562,6 +35011,7 @@ lbl_8084E404:
 
 
 func_8084E414:
+# MqDbg: func_808505DC
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -34590,6 +35040,7 @@ lbl_8084E468:
 
 
 func_8084E474:
+# MqDbg: func_8085063C
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s1, 0x0018($sp)
     sw      s0, 0x0014($sp)
@@ -34674,6 +35125,7 @@ lbl_8084E594:
 
 
 func_8084E5A4:
+# MqDbg: func_8085076C
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     lui     a3, 0x8012                 # a3 = 80120000
     addiu   a3, a3, 0xA5D0             # a3 = 8011A5D0
@@ -34714,6 +35166,7 @@ lbl_8084E620:
 
 
 func_8084E62C:
+# MqDbg: func_808507F4
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -34920,6 +35373,7 @@ lbl_8084E90C:
 
 
 func_8084E928:
+# MqDbg: func_80850AEC
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s0, 0x0020($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -35024,6 +35478,7 @@ lbl_8084EA98:
 
 
 func_8084EAA8:
+# MqDbg: func_80850C68
     addiu   $sp, $sp, 0xFFB8           # $sp -= 0x48
     sw      s0, 0x0028($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -35172,6 +35627,7 @@ lbl_8084ECB4:
 
 
 func_8084ECC4:
+# MqDbg: func_80850E84
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a1, 0x001C($sp)
@@ -35197,6 +35653,7 @@ lbl_8084ED08:
 
 
 func_8084ED18:
+# MqDbg: func_80850ED8
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -35217,6 +35674,7 @@ func_8084ED18:
 
 
 func_8084ED5C:
+# MqDbg: func_80850F1C
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      $ra, 0x0024($sp)
     sw      a0, 0x0028($sp)
@@ -35252,6 +35710,7 @@ func_8084ED5C:
 
 
 func_8084EDDC:
+# MqDbg: func_80850F9C
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      $ra, 0x0024($sp)
     sw      a0, 0x0028($sp)
@@ -35282,6 +35741,7 @@ func_8084EDDC:
 
 
 func_8084EE48:
+# MqDbg: func_80851008
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -35295,6 +35755,7 @@ func_8084EE48:
 
 
 func_8084EE70:
+# MqDbg: func_80851030
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     jal     func_8084ED18
@@ -35306,6 +35767,7 @@ func_8084EE70:
 
 
 func_8084EE90:
+# MqDbg: func_80851050
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -35326,6 +35788,7 @@ func_8084EE90:
 
 
 func_8084EED4:
+# MqDbg: func_80851094
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     jal     func_8084ED5C
@@ -35337,6 +35800,7 @@ func_8084EED4:
 
 
 func_8084EEF4:
+# MqDbg: func_808510B4
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     jal     func_8084EDDC
@@ -35348,6 +35812,7 @@ func_8084EEF4:
 
 
 func_8084EF14:
+# MqDbg: func_808510D4
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     jal     func_80831070
@@ -35359,6 +35824,7 @@ func_8084EF14:
 
 
 func_8084EF34:
+# MqDbg: func_808510F4
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     jal     func_80831020
@@ -35370,6 +35836,7 @@ func_8084EF34:
 
 
 func_8084EF54:
+# MqDbg: func_80851114
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     jal     func_80831128
@@ -35381,6 +35848,7 @@ func_8084EF54:
 
 
 func_8084EF74:
+# MqDbg: func_80851134
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     jal     func_808310D8
@@ -35392,6 +35860,7 @@ func_8084EF74:
 
 
 func_8084EF94:
+# MqDbg: func_80851154
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     jal     func_8083021C
@@ -35403,6 +35872,7 @@ func_8084EF94:
 
 
 func_8084EFB4:
+# MqDbg: func_80851174
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     jal     func_80830240
@@ -35414,6 +35884,7 @@ func_8084EFB4:
 
 
 func_8084EFD4:
+# MqDbg: func_80851194
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     jal     func_80830294
@@ -35425,6 +35896,7 @@ func_8084EFD4:
 
 
 func_8084EFF4:
+# MqDbg: func_808511B4
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     jal     func_80830264
@@ -35436,6 +35908,7 @@ func_8084EFF4:
 
 
 func_8084F014:
+# MqDbg: func_808511D4
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      a2, 0x0020($sp)
     or      a2, a1, $zero              # a2 = 00000000
@@ -35450,6 +35923,7 @@ func_8084F014:
 
 
 func_8084F040:
+# MqDbg: func_808511FC
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -35475,6 +35949,7 @@ lbl_8084F084:
 
 
 func_8084F094:
+# MqDbg: func_80851248
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -35500,6 +35975,7 @@ lbl_8084F0DC:
 
 
 func_8084F0E8:
+# MqDbg: func_80851294
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -35525,6 +36001,7 @@ lbl_8084F12C:
 
 
 func_8084F13C:
+# MqDbg: func_808512E0
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a1, 0x001C($sp)
@@ -35542,6 +36019,7 @@ func_8084F13C:
 
 
 func_8084F174:
+# MqDbg: func_80851314
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lw      v0, 0x0438(a0)             # 00000438
@@ -35569,6 +36047,7 @@ lbl_8084F1B8:
 
 
 func_8084F1C8:
+# MqDbg: func_80851368
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a2, 0x0020($sp)
@@ -35593,6 +36072,7 @@ func_8084F1C8:
 
 
 func_8084F21C:
+# MqDbg: func_808513BC
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -35668,6 +36148,7 @@ lbl_8084F314:
 
 
 func_8084F324:
+# MqDbg: func_808514C0
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -35722,6 +36203,7 @@ lbl_8084F3D0:
 
 
 func_8084F3E0:
+# MqDbg: func_8085157C
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      a2, 0x0020($sp)
     or      a2, a1, $zero              # a2 = 00000000
@@ -35736,6 +36218,7 @@ func_8084F3E0:
 
 
 func_8084F40C:
+# MqDbg: func_808515A4
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      s0, 0x0028($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -35801,6 +36284,7 @@ lbl_8084F4E0:
 
 
 func_8084F4F0:
+# MqDbg: func_80851688
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s1, 0x0018($sp)
     sw      s0, 0x0014($sp)
@@ -35860,6 +36344,7 @@ lbl_8084F5B0:
 
 
 func_8084F5C0:
+# MqDbg: func_80851750
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a1, 0x001C($sp)
@@ -35878,6 +36363,7 @@ func_8084F5C0:
 
 
 func_8084F5FC:
+# MqDbg: func_80851788
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      a2, 0x0020($sp)
     or      a2, a1, $zero              # a2 = 00000000
@@ -35924,6 +36410,7 @@ lbl_8084F690:
 
 
 func_8084F69C:
+# MqDbg: func_80851828
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0020($sp)
@@ -35978,6 +36465,7 @@ lbl_8084F748:
 
 
 func_8084F754:
+# MqDbg: func_808518DC
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      a1, 0x001C($sp)
     sw      a2, 0x0020($sp)
@@ -35994,6 +36482,7 @@ func_8084F754:
 
 
 func_8084F788:
+# MqDbg: func_8085190C
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -36035,6 +36524,7 @@ lbl_8084F804:
 
 
 func_8084F814:
+# MqDbg: func_80851998
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x001C($sp)
     addiu   a3, $zero, 0x0000          # a3 = 00000000
@@ -36048,6 +36538,7 @@ func_8084F814:
 
 
 func_8084F83C:
+# MqDbg: func_808519C0
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x001C($sp)
     addiu   t6, $zero, 0x0001          # t6 = 00000001
@@ -36062,6 +36553,7 @@ func_8084F83C:
 
 
 func_8084F868:
+# MqDbg: func_808519EC
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -36090,6 +36582,7 @@ func_8084F868:
 
 
 func_8084F8CC:
+# MqDbg: func_80851A50
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s0, 0x0018($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -36174,6 +36667,7 @@ lbl_8084F9E4:
 
 
 func_8084F9F4:
+# MqDbg: func_80851B90
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     lui     $at, 0x4140                # $at = 41400000
     mtc1    $at, $f0                   # $f0 = 12.00
@@ -36200,6 +36694,7 @@ func_8084F9F4:
 
 
 func_8084FA50:
+# MqDbg: func_80851BE8
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      s0, 0x0028($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -36253,6 +36748,7 @@ lbl_8084FAFC:
 
 
 func_8084FB10:
+# MqDbg: func_80851CA4
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -36294,6 +36790,7 @@ lbl_8084FB90:
 
 
 func_8084FB9C:
+# MqDbg: func_80851D2C
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -36319,6 +36816,7 @@ func_8084FB9C:
 
 
 func_8084FBF4:
+# MqDbg: func_80851D80
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0020($sp)
@@ -36353,6 +36851,7 @@ lbl_8084FC5C:
 
 
 func_8084FC68:
+# MqDbg: func_80851DEC
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a1, 0x001C($sp)
@@ -36372,6 +36871,7 @@ func_8084FC68:
 
 
 func_8084FCA8:
+# MqDbg: func_80851E28
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a1, 0x001C($sp)
@@ -36391,6 +36891,7 @@ func_8084FCA8:
 
 
 func_8084FCE8:
+# MqDbg: func_80851E64
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a2, 0x0020($sp)
@@ -36405,6 +36906,7 @@ func_8084FCE8:
 
 
 func_8084FD14:
+# MqDbg: func_80851E90
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a1, 0x001C($sp)
@@ -36424,6 +36926,7 @@ func_8084FD14:
 
 
 func_8084FD54:
+# MqDbg: func_80851ECC
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -36448,6 +36951,7 @@ lbl_8084FD94:
 
 
 func_8084FDA4:
+# MqDbg: func_80851F14
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -36483,6 +36987,7 @@ lbl_8084FE08:
 
 
 func_8084FE18:
+# MqDbg: func_80851F84
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a2, 0x0020($sp)
@@ -36497,6 +37002,7 @@ func_8084FE18:
 
 
 func_8084FE44:
+# MqDbg: func_80851FB0
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s0, 0x0018($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -36542,6 +37048,7 @@ lbl_8084FED0:
 
 
 func_8084FEE0:
+# MqDbg: func_80852048
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a1, 0x001C($sp)
@@ -36560,6 +37067,7 @@ func_8084FEE0:
 
 
 func_8084FF1C:
+# MqDbg: func_80852080
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a1, 0x001C($sp)
@@ -36579,6 +37087,7 @@ func_8084FF1C:
 
 
 func_8084FF5C:
+# MqDbg: func_808520BC
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     lw      t6, 0x000C(a2)             # 0000000C
     lw      t9, 0x0018(a2)             # 00000018
@@ -36628,6 +37137,7 @@ func_8084FF5C:
 
 
 func_80850014:
+# MqDbg: func_80852174
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -36650,6 +37160,7 @@ func_80850014:
 
 
 func_80850060:
+# MqDbg: func_808521B8
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -36670,6 +37181,7 @@ lbl_80850080:
 
 
 func_808500A0:
+# MqDbg: func_808521F4
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a2, 0x0020($sp)
@@ -36689,6 +37201,7 @@ func_808500A0:
 
 
 func_808500E0:
+# MqDbg: func_80852234
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      a2, 0x0020($sp)
     or      a2, a1, $zero              # a2 = 00000000
@@ -36703,6 +37216,7 @@ func_808500E0:
 
 
 func_8085010C:
+# MqDbg: func_8085225C
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a2, 0x0020($sp)
@@ -36715,6 +37229,7 @@ func_8085010C:
 
 
 func_80850130:
+# MqDbg: func_80852280
     sw      a0, 0x0000($sp)
     sw      a2, 0x0008($sp)
     lui     t6, %hi(func_80848680)     # t6 = 80850000
@@ -36725,6 +37240,7 @@ func_80850130:
 
 
 func_8085014C:
+# MqDbg: func_80852298
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s0, 0x0018($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -36768,6 +37284,7 @@ lbl_808501D0:
 
 
 func_808501E0:
+# MqDbg: either func_80852328 or func_80852358?
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a2, 0x0020($sp)
@@ -36783,6 +37300,7 @@ func_808501E0:
 
 
 func_80850210:
+# MqDbg: func_80852388
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -36824,6 +37342,7 @@ lbl_80850290:
 
 
 func_808502A0:
+# MqDbg: func_80852414
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a1, 0x001C($sp)
@@ -36844,6 +37363,7 @@ lbl_808502D4:
 
 
 func_808502E0:
+# MqDbg: func_80852450
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a2, 0x0020($sp)
@@ -36859,6 +37379,7 @@ func_808502E0:
 
 
 func_80850310:
+# MqDbg: func_80852480
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a2, 0x0020($sp)
@@ -36874,6 +37395,7 @@ func_80850310:
 
 
 func_80850340:
+# MqDbg: func_808524B0
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a2, 0x0020($sp)
@@ -36886,6 +37408,7 @@ func_80850340:
 
 
 func_80850364:
+# MqDbg: func_808524D0
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      a1, 0x001C($sp)
     sw      a2, 0x0020($sp)
@@ -36907,6 +37430,7 @@ func_80850364:
 
 
 func_808503AC:
+# MqDbg: func_80852514
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      a1, 0x001C($sp)
     sw      a2, 0x0020($sp)
@@ -36923,6 +37447,7 @@ func_808503AC:
 
 
 func_808503E0:
+# MqDbg: func_80852544
     sw      a0, 0x0000($sp)
     sw      a1, 0x0004($sp)
     sw      a2, 0x0008($sp)
@@ -36931,6 +37456,7 @@ func_808503E0:
 
 
 func_808503F4:
+# MqDbg: func_80852554
     sw      a0, 0x0000($sp)
     sw      a1, 0x0004($sp)
     sw      a2, 0x0008($sp)
@@ -36939,6 +37465,7 @@ func_808503F4:
 
 
 func_80850408:
+# MqDbg: func_80852564
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a2, 0x0020($sp)
@@ -36967,6 +37494,7 @@ func_80850408:
 
 
 func_8085046C:
+# MqDbg: func_808525C0
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      a1, 0x001C($sp)
     sw      a2, 0x0020($sp)
@@ -36989,6 +37517,7 @@ func_8085046C:
 
 
 func_808504B8:
+# MqDbg: func_80852608
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -37010,6 +37539,7 @@ func_808504B8:
 
 
 func_80850500:
+# MqDbg: func_80852648
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s0, 0x0018($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -37056,6 +37586,7 @@ lbl_80850594:
 
 
 func_808505A8:
+# MqDbg: func_808526EC
     addiu   $sp, $sp, 0xFFB0           # $sp -= 0x50
     sw      $ra, 0x002C($sp)
     sw      s0, 0x0028($sp)
@@ -37147,6 +37678,7 @@ lbl_808506EC:
 
 
 func_80850700:
+# MqDbg: func_8085283C
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -37189,6 +37721,7 @@ lbl_80850784:
 
 
 func_80850790:
+# MqDbg: func_808528C8
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -37226,6 +37759,7 @@ lbl_808507FC:
 
 
 func_80850810:
+# MqDbg: func_80852944
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s1, 0x0018($sp)
     sw      s0, 0x0014($sp)
@@ -37267,6 +37801,7 @@ lbl_80850884:
 
 
 func_8085089C:
+# MqDbg: func_808529D0
     lw      t6, 0x000C(a2)             # 0000000C
     addiu   $at, $zero, 0x0055         # $at = 00000055
     lui     t9, 0x8012                 # t9 = 80120000
@@ -37305,6 +37840,7 @@ lbl_80850900:
 
 
 func_80850924:
+# MqDbg: func_80852A54
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lwc1    $f4, 0x0024(a1)            # 00000024
@@ -37374,6 +37910,7 @@ lbl_80850A04:
 
 
 func_80850A1C:
+# MqDbg: func_80852B4C
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lb      v0, 0x0000(a3)             # 00000000
@@ -37428,6 +37965,7 @@ lbl_80850AD0:
 
 
 func_80850ADC:
+# MqDbg: func_80852C0C
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     addiu   $at, $zero, 0x0001         # $at = 00000001
@@ -37450,6 +37988,7 @@ lbl_80850B14:
 
 
 func_80850B20:
+# MqDbg: func_80852C50
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s1, 0x0018($sp)
     sw      a2, 0x0038($sp)
@@ -37578,6 +38117,7 @@ lbl_80850CCC:
 
 
 func_80850CDC:
+# MqDbg: func_80852E14
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -37624,6 +38164,7 @@ lbl_80850D50:
 
 
 func_80850D84:
+# MqDbg: Player_IsDroppingFish
     lw      v1, 0x1C44(a0)             # 00001C44
     lui     t7, %hi(func_8084D0B8)     # t7 = 80850000
     addiu   t7, t7, %lo(func_8084D0B8) # t7 = 8084D0B8
@@ -37641,6 +38182,7 @@ lbl_80850DB0:
 
 
 func_80850DB8:
+# MqDbg: Player_StartFishing
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x0014($sp)
     lw      a1, 0x1C44(a0)             # 00001C44
@@ -37659,6 +38201,7 @@ func_80850DB8:
 
 
 func_80850DF4:
+# MqDbg: func_80852F38
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -37714,6 +38257,7 @@ lbl_80850EAC:
 
 
 func_80850EC0:
+# MqDbg: func_80852FFC
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x001C($sp)
     sw      s0, 0x0018($sp)
@@ -37752,6 +38296,7 @@ lbl_80850F30:
 
 
 func_80850F44:
+# MqDbg: func_80853080
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -37778,6 +38323,7 @@ func_80850F44:
 
 
 func_80850FA0:
+# MqDbg: Player_InflictDamage
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x0014($sp)
     sw      a1, 0x0024($sp)
@@ -37809,6 +38355,7 @@ lbl_80850FF8:
 
 
 func_80851008:
+# MqDbg: func_80853148
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      $ra, 0x001C($sp)
     sw      s0, 0x0018($sp)

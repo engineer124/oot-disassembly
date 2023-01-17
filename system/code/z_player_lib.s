@@ -10,6 +10,7 @@
 
 .section .text
 func_80079200:
+# MqDbg: Player_SetBootData
 # Initializes Static Context physics variables for Link
 # called on every room load or jump into water
     lui     a2, 0x8012                 # a2 = 80120000
@@ -119,6 +120,7 @@ lbl_80079384:
 
 
 func_8007938C:
+# MqDbg: Player_InBlockingCsMode
 # Tests if Link is busy?
 # A0 = Global Context
 # A1 = Link Instance
@@ -171,6 +173,7 @@ lbl_80079430:
 
 
 func_8007943C:
+# MqDbg: Player_InCsMode
 # Tests if Link is busy (Calls 8007938C, but also checks if talking?)
 # A0 = Global Context
 # V0 = 1 if true, else 0
@@ -193,6 +196,7 @@ lbl_80079468:
 
 
 func_80079478:
+# MqDbg: func_8008E9C4
 # Tests if Link State I 0x0010 is set
 # A0 = Link Instance
 # V0 = 1 if true, else 0
@@ -203,6 +207,7 @@ func_80079478:
 
 
 func_80079488:
+# MqDbg: Player_IsChildWithHylianShield
 # Test if Link is a Child with Hylian Shield Equipped
 # A0 = Link Instance
 # V0 = 1 if true, else 0
@@ -220,6 +225,7 @@ lbl_800794A8:
 
 
 func_800794B0:
+# MqDbg: Player_ActionToModelGroup
 # Seems to test if Child Link has Hylian Shield "In Hand" (Calls 80079488)
 # A0 = Link Instance
 # A1 = s8 Action Parameter
@@ -248,6 +254,7 @@ lbl_800794EC:
 
 
 func_800794FC:
+# MqDbg: Player_SetModelsForHoldingShield
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lw      t6, 0x066C(a0)             # 0000066C
@@ -315,6 +322,7 @@ lbl_800795DC:
 
 
 func_800795E8:
+# MqDbg: Player_SetModels
 # Update Link's Held Item?
 # A0 = Link Instance
 # A1 = Held Item Index
@@ -375,6 +383,7 @@ func_800795E8:
 
 
 func_800796C0:
+# MqDbg: Player_SetModelGroup
 # ? Related to updating Child Link's state if Hylian Shield is equipped
 # A0 = Link Instance
 # A1 = 1 if 800794B0 returns 1, else 0
@@ -411,6 +420,7 @@ lbl_80079714:
 
 
 func_8007972C:
+# MqDbg: func_8008EC70
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lb      a1, 0x0141(a0)             # 00000141
@@ -428,6 +438,7 @@ func_8007972C:
 
 
 func_80079764:
+# MqDbg: Player_SetEquipmentData
 # Update Link Instance's Equipment
 # A0 = Global Context
 # A1 = Link Instance
@@ -498,6 +509,7 @@ lbl_80079844:
 
 
 func_80079854:
+# MqDbg: Player_UpdateBottleHeld
 # Update Bottle Contents, Link's Action State
 # Calls 80071B7C
 # A0 = Global Context
@@ -529,6 +541,7 @@ lbl_80079894:
 
 
 func_800798A8:
+# MqDbg: func_8008EDF0
 # Unsets Link State II 0x00008000
 # A0 = Link Instance
     lw      t6, 0x0670(a0)             # 00000670
@@ -541,6 +554,7 @@ func_800798A8:
 
 
 func_800798C4:
+# MqDbg: func_8008EE08
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lhu     t6, 0x0088(a0)             # 00000088
@@ -589,6 +603,7 @@ lbl_80079950:
 
 
 func_80079968:
+# MqDbg: func_8008EEAC
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0020($sp)
@@ -625,6 +640,7 @@ func_80079968:
 
 
 func_800799EC:
+# MqDbg: func_8008EF30
 # Test if Link State I 0x0080 is set (death)
 # A0 = Global Context
 # V0 = 1 if true, else 0
@@ -637,6 +653,7 @@ func_800799EC:
 
 
 func_80079A04:
+# MqDbg: func_8008EF44
 # Increments A1 by 1 and writes it to GC + 0x11E5C
 # A0 = Global Context
 # A1 = u8 value to increment then write
@@ -651,6 +668,7 @@ func_80079A04:
 
 
 func_80079A20:
+# MqDbg: Player_IsBurningStickInRange
 # Test if Link Item Action is Flaming Deku Stick (06) and properly positioned to light something
 # Seems to be used by bombs, webs and bombflower bombs to check if they should trigger
 # A0 = Global Context
@@ -722,6 +740,7 @@ lbl_80079AEC:
 
 
 func_80079AF8:
+# MqDbg: Player_GetStrength
 # Get Strength Upgrade Power Level
 # V0 = 0 if no upgrades, Highest Upgrade if Adult, or 1 if Child and Upgrade > 0
     lui     v0, 0x8012                 # v0 = 80120000
@@ -748,6 +767,7 @@ lbl_80079B3C:
 
 
 func_80079B44:
+# MqDbg: Player_GetMask
 # Get Link's Current Mask (Instance + 0x14F)
 # A0 = Global Context
 # V0 = Id
@@ -758,6 +778,7 @@ func_80079B44:
 
 
 func_80079B54:
+# MqDbg: Player_UnsetMask
 # Unset Link's Current Mask (Instance + 0x14F)
 # A0 = Global Context
     lw      v0, 0x1C44(a0)             # 00001C44
@@ -767,6 +788,7 @@ func_80079B54:
 
 
 func_80079B64:
+# MqDbg: Player_HasMirrorShieldEquipped
 # Test if Link is wearing the Mirror Shield (Instance + 0x13E)
 # A0 = Global Context
 # V0 = 1 if true, else 0
@@ -779,6 +801,7 @@ func_80079B64:
 
 
 func_80079B7C:
+# MqDbg: Player_HasMirrorShieldSetToDraw
 # Test if Link is holding a Shield, and Mirror Shield is equipped
 # A0 = Global Context
 # V0 = 1 if true, else 0
@@ -797,6 +820,7 @@ lbl_80079BA0:
 
 
 func_80079BA8:
+# MqDbg: Player_ActionToMagicSpell
 # Test if Action Parameter is Magic Spell (15-1A)
 # A0 = Link Instance
 # A1 = s8 Action Parameter
@@ -817,6 +841,7 @@ lbl_80079BCC:
 
 
 func_80079BD4:
+# MqDbg: Player_HoldsHookshot
 # Test if Link Item Action (Instance + 0x141) is Hookshot/Longshot (10/11)
 # A0 = Link Instance
 # V0 = 1 if true, else 0
@@ -833,6 +858,7 @@ lbl_80079BF0:
 
 
 func_80079BF8:
+# MqDbg: func_8008F128
 # Test if Link Item Action (Instance + 0x141) is Hookshot/Longshot (10/11), and is not holding an item (Instance + 0x039C)
 # A0 = Link Instance
 # V0 = 1 if true, else 0
@@ -853,6 +879,7 @@ lbl_80079C24:
 
 
 func_80079C2C:
+# MqDbg: Player_ActionToMeleeWeapon
 # Test if Action Parameter is Sword-Like (03 to 07)
 # A0 = s8 Action Parameter
 # V0 = 1 if true, else 0
@@ -871,6 +898,7 @@ lbl_80079C4C:
 
 
 func_80079C54:
+# MqDbg: Player_GetMeleeWeaponHeld
 # Test if Link Item Action (Instance + 0x141) is Sword-Like (03 to 07)
 # A0 = Link Instance
 # V0 = 1 if true, else 0
@@ -886,6 +914,7 @@ func_80079C54:
 
 
 func_80079C78:
+# MqDbg: Player_HoldsTwoHandedWeapon
 # Test if Link Item Action (Instance + 0x141) is Two-handed Sword-Like (05 to 07)
 # A0 = Link Instance
 # V0 = 1 if true, else 0
@@ -905,6 +934,7 @@ lbl_80079C9C:
 
 
 func_80079CA4:
+# MqDbg: Player_HoldsBrokenKnife
 # Test if Link Item Action is Giant's Knife with enough durability to hit?
 # A0 = Link Instance
 # V0 = 1 if true, else 0
@@ -935,6 +965,7 @@ lbl_80079CF4:
 
 
 func_80079CFC:
+# MqDbg: Player_ActionToBottle
 # Test if Action Parameter is any Bottle (1E to 2A)
 # A0 = Link Instance
 # A1 = s8 Action Parameter
@@ -955,6 +986,7 @@ lbl_80079D20:
 
 
 func_80079D28:
+# MqDbg: Player_GetBottleHeld
 # Test if Link Item Action is any Bottle (1E to 2A)
 # A0 = Link Instance
 # V0 = Link Item Action - 0x1E if true, else -1
@@ -969,6 +1001,7 @@ func_80079D28:
 
 
 func_80079D48:
+# MqDbg: Player_ActionToExplosive
 # Test if Action Parameter is Bomb (12) or Bombchu (13)
 # A0 = Link Instance
 # A1 = s8 Action Parameter
@@ -989,6 +1022,7 @@ lbl_80079D6C:
 
 
 func_80079D74:
+# MqDbg: Player_GetExplosiveHeld
 # Test if Link Item Action is Bomb (12) or Bombchu (13)
 # Wrapper for 80079D48 (A0 = Link Instance + 0x141)
 # A0 = Link Instance
@@ -1004,6 +1038,7 @@ func_80079D74:
 
 
 func_80079D94:
+# MqDbg: func_8008F2BC
 # Test if Action Parameter is 01 or a Sword (03 to 05)?
 # A0 = Link Instance
 # A1 = s8 Action Parameter
@@ -1029,6 +1064,7 @@ lbl_80079DC8:
 
 
 func_80079DD0:
+# MqDbg: Player_GetEnvironmentalHazard
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      $ra, 0x0014($sp)
     lui     t6, 0x0001                 # t6 = 00010000
@@ -1138,6 +1174,7 @@ lbl_80079F38:
 
 
 func_80079F48:
+# MqDbg: Player_DrawImpl
 # Draw Link (Both Child And Adult Link)
 # 0x140 instructions starting with G_MW_SEGMENT #08
 # A0 = Global Context
@@ -1391,6 +1428,7 @@ lbl_8007A2E8:
 
 
 func_8007A2F4:
+# MqDbg: func_8008F87C
     addiu   $sp, $sp, 0xFF50           # $sp -= 0xB0
     sw      $ra, 0x0024($sp)
     sdc1    $f20, 0x0018($sp)
@@ -1678,6 +1716,7 @@ lbl_8007A730:
 
 
 func_8007A740:
+# MqDbg: Player_OverrideLimbDrawGameplayCommon
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s1, 0x0028($sp)
     or      s1, a3, $zero              # s1 = 00000000
@@ -1910,6 +1949,7 @@ lbl_8007AA80:
 
 
 func_8007AA94:
+# MqDbg: Player_OverrideLimbDrawGameplayDefault
 # ?
 # A0 = Global Context
 # A1 = ? (0x01 to 0x15 in testing, possibly limbs?)
@@ -2120,6 +2160,7 @@ lbl_8007AD6C:
 
 
 func_8007AD80:
+# MqDbg: Player_OverrideLimbDrawGameplayFirstPerson
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x001C($sp)
     lw      t6, 0x0030($sp)
@@ -2214,6 +2255,7 @@ lbl_8007AEBC:
 
 
 func_8007AED0:
+# MqDbg: Player_OverrideLimbDrawGameplayCrawling
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x001C($sp)
     sw      a2, 0x0028($sp)
@@ -2235,6 +2277,7 @@ lbl_8007AF00:
 
 
 func_8007AF14:
+# MqDbg: func_80090480
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s1, 0x0020($sp)
     sw      s0, 0x001C($sp)
@@ -2342,6 +2385,7 @@ lbl_8007B088:
 
 
 func_8007B09C:
+# MqDbg: Player_UpdateShieldCollider
     addiu   $sp, $sp, 0xFFA8           # $sp -= 0x58
     sw      $ra, 0x001C($sp)
     sw      a0, 0x0058($sp)
@@ -2399,6 +2443,7 @@ lbl_8007B164:
 
 
 func_8007B170:
+# MqDbg: func_800906D4
     addiu   $sp, $sp, 0xFFB0           # $sp -= 0x50
     sw      s0, 0x0020($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -2473,6 +2518,7 @@ lbl_8007B270:
 
 
 func_8007B280:
+# MqDbg: Player_DrawGetItemImpl
 # Render Get Item Model
 # A0 = Global Context
 # A1 = Link instance
@@ -2584,6 +2630,7 @@ lbl_8007B2C4:
 
 
 func_8007B414:
+# MqDbg: Player_DrawGetItem
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -2621,6 +2668,7 @@ lbl_8007B47C:
 
 
 func_8007B48C:
+# MqDbg: func_80090A28
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     lui     a2, 0x800F                 # a2 = 800F0000
     lui     a3, 0x800F                 # a3 = 800F0000
@@ -2678,6 +2726,7 @@ lbl_8007B4FC:
 
 
 func_8007B560:
+# MqDbg: Player_DrawHookshotReticle
     addiu   $sp, $sp, 0xFF68           # $sp -= 0x98
     sw      s0, 0x0034($sp)
     sdc1    $f20, 0x0028($sp)
@@ -2801,6 +2850,7 @@ lbl_8007B720:
 
 
 func_8007B734:
+# MqDbg: Player_PostLimbDrawGameplay
     addiu   $sp, $sp, 0xFE90           # $sp -= 0x170
     sw      $ra, 0x0024($sp)
     sw      s0, 0x0020($sp)
@@ -3443,6 +3493,7 @@ lbl_8007C08C:
 
 
 func_8007C09C:
+# MqDbg: func_80091738
     addiu   $sp, $sp, 0xFFB8           # $sp -= 0x48
     lui     v1, 0x8010                 # v1 = 80100000
     addiu   v1, v1, 0x8FF8             # v1 = 800F8FF8
@@ -3521,6 +3572,7 @@ func_8007C09C:
 
 
 func_8007C1C8:
+# MqDbg: Player_OverrideLimbDrawPause
     sw      a0, 0x0000($sp)
     sw      a3, 0x000C($sp)
     or      a3, a2, $zero              # a3 = 00000000
@@ -3638,6 +3690,7 @@ lbl_8007C340:
 
 
 func_8007C36C:
+# MqDbg: Player_DrawPauseImpl
     addiu   $sp, $sp, 0xFEC8           # $sp -= 0x138
     sw      s3, 0x0040($sp)
     or      s3, a0, $zero              # s3 = 00000000
@@ -4083,6 +4136,7 @@ func_8007C36C:
 
 
 func_8007CA54:
+# MqDbg: Player_DrawPause
     addiu   $sp, $sp, 0xFFA8           # $sp -= 0x58
     sw      s0, 0x0050($sp)
     lui     t0, 0x8012                 # t0 = 80120000

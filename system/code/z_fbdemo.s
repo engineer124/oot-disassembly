@@ -1,132 +1,13 @@
-# "Player" part of the code file
 #
-# The purpose of this file's content is unclear but it contains the 4 main functions of the player actor (init, destruct, update, draw).
+# @file z_fbdemo.c
 #
-# Starts at VRAM: 80097650 / VROM: B0D5B0
-#
+# This file implements an unused transition system that takes the current screen, partitions it into large tiles, and
+# can apply an effect to them.
+
 
 .section .text
-func_80097650:
-# Set 4 inner main functions of the player actor at 8011D030 in memory
-    addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
-    sw      $ra, 0x0014($sp)
-    lui     a0, 0x8084                 # a0 = 80840000
-    jal     func_80099DBC
-    addiu   a0, a0, 0x4DE8             # a0 = 80844DE8
-    lui     $at, 0x8012                # $at = 80120000
-    lui     a0, 0x8085                 # a0 = 80850000
-    sw      v0, -0x2FD0($at)           # 8011D030
-    jal     func_80099DBC
-    addiu   a0, a0, 0x8BB4             # a0 = 80848BB4
-    lui     $at, 0x8012                # $at = 80120000
-    lui     a0, 0x8084                 # a0 = 80840000
-    sw      v0, -0x2FCC($at)           # 8011D034
-    jal     func_80099DBC
-    addiu   a0, a0, 0x7FC8             # a0 = 80847FC8
-    lui     $at, 0x8012                # $at = 80120000
-    lui     a0, 0x8085                 # a0 = 80850000
-    sw      v0, -0x2FC8($at)           # 8011D038
-    jal     func_80099DBC
-    addiu   a0, a0, 0x8680             # a0 = 80848680
-    lui     $at, 0x8012                # $at = 80120000
-    sw      v0, -0x2FC4($at)           # 8011D03C
-    lw      $ra, 0x0014($sp)
-    addiu   $sp, $sp, 0x0018           # $sp += 0x18
-    jr      $ra
-    nop
-
-
-func_800976B8:
-# Link, Init Routine (Primary, Wrapper for 80844DE8)
-# A0 = Link Instance
-# A1 = Global Context
-    addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
-    sw      $ra, 0x0014($sp)
-    sw      a0, 0x0018($sp)
-    sw      a1, 0x001C($sp)
-    jal     func_80099E90
-    nop
-    jal     func_80097650
-    nop
-    lui     t9, 0x8012                 # t9 = 80120000
-    lw      t9, -0x2FD0(t9)            # 8011D030
-    lw      a0, 0x0018($sp)
-    lw      a1, 0x001C($sp)
-    jalr    $ra, t9
-    nop
-    lw      $ra, 0x0014($sp)
-    addiu   $sp, $sp, 0x0018           # $sp += 0x18
-    jr      $ra
-    nop
-
-
-func_80097700:
-# Link, Destruct Routine (Primary, Wrapper for 80848BB4)
-# A0 = Link Instance
-# A1 = Global Context
-    addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
-    sw      $ra, 0x0014($sp)
-    sw      a0, 0x0018($sp)
-    sw      a1, 0x001C($sp)
-    jal     func_80099E90
-    nop
-    lui     t9, 0x8012                 # t9 = 80120000
-    lw      t9, -0x2FCC(t9)            # 8011D034
-    lw      a0, 0x0018($sp)
-    lw      a1, 0x001C($sp)
-    jalr    $ra, t9
-    nop
-    lw      $ra, 0x0014($sp)
-    addiu   $sp, $sp, 0x0018           # $sp += 0x18
-    jr      $ra
-    nop
-
-
-func_80097740:
-# Link, Update Routine (Primary Wrapper for 80847FC8)
-# A0 = Link Instance
-# A1 = Global Context
-    addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
-    sw      $ra, 0x0014($sp)
-    sw      a0, 0x0018($sp)
-    sw      a1, 0x001C($sp)
-    jal     func_80099E90
-    nop
-    lui     t9, 0x8012                 # t9 = 80120000
-    lw      t9, -0x2FC8(t9)            # 8011D038
-    lw      a0, 0x0018($sp)
-    lw      a1, 0x001C($sp)
-    jalr    $ra, t9
-    nop
-    lw      $ra, 0x0014($sp)
-    addiu   $sp, $sp, 0x0018           # $sp += 0x18
-    jr      $ra
-    nop
-
-
-func_80097780:
-# Link, Draw Routine (Primary, Wrapper for 80848680)
-# A0 = Link Instance
-# A1 = Global Context
-    addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
-    sw      $ra, 0x0014($sp)
-    sw      a0, 0x0018($sp)
-    sw      a1, 0x001C($sp)
-    jal     func_80099E90
-    nop
-    lui     t9, 0x8012                 # t9 = 80120000
-    lw      t9, -0x2FC4(t9)            # 8011D03C
-    lw      a0, 0x0018($sp)
-    lw      a1, 0x001C($sp)
-    jalr    $ra, t9
-    nop
-    lw      $ra, 0x0014($sp)
-    addiu   $sp, $sp, 0x0018           # $sp += 0x18
-    jr      $ra
-    nop
-
-
 func_800977C0:
+# MqDbg: TransitionTile_InitGraphics
     addiu   $sp, $sp, 0xFFB0           # $sp -= 0x50
     sw      s0, 0x0028($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -383,6 +264,7 @@ lbl_80097B38:
 
 
 func_80097B88:
+# MqDbg: TransitionTile_InitVtxData
     lw      v1, 0x0004(a0)             # 00000004
     or      v0, $zero, $zero           # v0 = 00000000
     addiu   v1, v1, 0x0001             # v1 = 00000001
@@ -438,6 +320,7 @@ lbl_80097C40:
 
 
 func_80097C48:
+# MqDbg: TransitionTile_Destroy
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -480,6 +363,7 @@ lbl_80097CC4:
 
 
 func_80097CD4:
+# MqDbg: TransitionTile_Init
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -584,6 +468,7 @@ lbl_80097E38:
 
 
 func_80097E4C:
+# MqDbg: TransitionTile_SetVtx
     lw      v1, 0x0004(a0)             # 00000004
     or      v0, $zero, $zero           # v0 = 00000000
     addiu   v1, v1, 0x0001             # v1 = 00000001
@@ -662,6 +547,7 @@ lbl_80097F58:
 
 
 func_80097F60:
+# MqDbg: TransitionTile_Draw
     addiu   $sp, $sp, 0xFFC0           # $sp -= 0x40
     sw      $ra, 0x0014($sp)
     sw      a1, 0x0044($sp)
@@ -742,6 +628,7 @@ lbl_80098020:
 
 
 func_8009808C:
+# MqDbg: TransitionTile_Suck
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sdc1    $f22, 0x0010($sp)
     sdc1    $f20, 0x0008($sp)
@@ -828,12 +715,14 @@ lbl_800981B4:
 
 
 func_800981C0:
+# MqDbg: TransitionTile_Update
     sw      a0, 0x0000($sp)
     jr      $ra
     nop
 
 
 func_800981CC:
+# MqDbg: func_800B23F0
     sw      a0, 0x0000($sp)
     or      v0, $zero, $zero           # v0 = 00000000
     jr      $ra
