@@ -19,7 +19,7 @@ This directory contains all files composing the massive "code" file which holds 
 | [**code_80051AA0.s**](code_80051AA0.s)                 | Unknown (80051AA0)                   |  80051AA0  |   AC7A00   |  B0   |
 | [**debug.s**](debug.s)                                 | Static Context                       |  80051B50  |   AC7AB0   |  310  |
 | [**debug_display.s**](debug_display.s)                 | Debugger Display                     |  80051E60  |   AC7DC0   |  4B0  |
-| [**demo.s**](demo.s)                                   | Cutscene                             |  80052310  |   AC8270   | 4D20  |
+| [**z_demo.s**](z_demo.s)                               | Cutscene                             |  80052310  |   AC8270   | 4D20  |
 | [**mem.s**](mem.s)                                     | Memory Util                          |  80057030  |   ACCF90   |  90   |
 | [**draw.s**](draw.s)                                   | Draw Items                           |  800570C0  |   ACD020   | 1E60  |
 | [**code_80058F20.s**](code_80058F20.s)                 | Unknown (80058F20)                   |  80058F20  |   ACEE80   |  1C0  |
@@ -42,7 +42,8 @@ This directory contains all files composing the massive "code" file which holds 
 | [**vector.s**](vector.s)                               | Vector Util                          |  80067580  |   ADD4E0   |  6F0  |
 | [**onepointdemo.s**](onepointdemo.s)                   | Single Focus Cutscene                |  80067C70  |   ADDBD0   | 4000  |
 | [**map_exp.s**](map_exp.s)                             | Minimap                              |  8006BC70  |   AE1BD0   | 1C70  |
-| [**parameter.s**](parameter.s)                         | Parameter                            |  8006D8E0  |   AE3840   | B920  |
+| [**z_parameter.s**](z_parameter.s)                     | Interface, Hud, Items                |  8006D8E0  |   AE3840   | B7D0  |
+| [**z_path.s**](z_path.s)                               | Paths                                |  800790B0  |   ??????   |  150  |
 | [**z_player_lib.s**](z_player_lib.s)                   | Player Library                       |  80079200  |   AEF160   | 3A30  |
 | [**prenmi.s**](prenmi.s)                               | PreNMI                               |  8007CC30  |   AF2B90   | 1010  |
 | [**rcp.s**](rcp.s)                                     | Reality Co-Processor                 |  8007DC40  |   AF3BA0   | 1900  |

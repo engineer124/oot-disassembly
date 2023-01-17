@@ -7,6 +7,7 @@
 
 .section .text
 func_8006D8E0:
+# MqDbg: Interface_ChangeHudVisibilityMode
 # HUD related, affects HUD visibility
 # A0 = Hud State
     sw      a0, 0x0000($sp)
@@ -26,6 +27,7 @@ lbl_8006D90C:
 
 
 func_8006D914:
+# MqDbg: Interface_RaiseButtonAlphas
     sw      a1, 0x0004($sp)
     sll     a1, a1, 16
     lui     a2, 0x8012                 # a2 = 80120000
@@ -122,6 +124,7 @@ lbl_8006DA44:
 
 
 func_8006DA4C:
+# MqDbg: Interface_DimButtonAlphas
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      a1, 0x001C($sp)
     sw      a2, 0x0020($sp)
@@ -189,6 +192,7 @@ lbl_8006DB14:
 
 
 func_8006DB20:
+# MqDbg: Interface_UpdateHudAlphas
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      a1, 0x002C($sp)
     sll     a1, a1, 16
@@ -822,6 +826,7 @@ lbl_8006E334:
 
 
 func_8006E340:
+# MqDbg: func_80083108
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     lui     a2, 0x8012                 # a2 = 80120000
     addiu   a2, a2, 0xA5D0             # a2 = 8011A5D0
@@ -1927,6 +1932,7 @@ lbl_8006F250:
 
 
 func_8006F25C:
+# MqDbg: Interface_SetSceneRestrictions
     lui     $at, 0x0001                # $at = 00010000
     addu    v1, a0, $at
     sb      $zero, 0x075D(v1)          # 0000075D
@@ -2014,6 +2020,7 @@ lbl_8006F380:
 
 
 func_8006F3A4:
+# MqDbg: Gfx_TextureIA8
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      a2, 0x0028($sp)
     sw      a3, 0x002C($sp)
@@ -2164,6 +2171,7 @@ lbl_8006F4B4:
 
 
 func_8006F5D4:
+# MqDbg: Gfx_TextureI8
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      a2, 0x0028($sp)
     sw      a3, 0x002C($sp)
@@ -2314,6 +2322,7 @@ lbl_8006F6E4:
 
 
 func_8006F804:
+# MqDbg: Inventory_SwapAgeEquipment
 # Swap Link's Age Equipment
     lui     a1, 0x8012                 # a1 = 80120000
     addiu   a1, a1, 0xA5D0             # a1 = 8011A5D0
@@ -2505,6 +2514,7 @@ lbl_8006FA80:
 
 
 func_8006FA88:
+# MqDbg: Interface_InitHorsebackArchery
     lui     a1, 0x8012                 # a1 = 80120000
     lui     a2, 0x800F                 # a2 = 800F0000
     addiu   a2, a2, 0x74E4             # a2 = 800F74E4
@@ -2526,6 +2536,7 @@ func_8006FA88:
 
 
 func_8006FAD0:
+# MqDbg: func_800849EC
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     lui     v1, 0x8012                 # v1 = 80120000
     lui     a1, 0x8010                 # a1 = 80100000
@@ -2563,6 +2574,7 @@ lbl_8006FB38:
 
 
 func_8006FB50:
+# MqDbg: Interface_LoadItemIcon1
 # Update B/C-Button Texture
 # ROM st: icon_item_static
 # A0 = Global Context
@@ -2614,6 +2626,7 @@ func_8006FB50:
 
 
 func_8006FC00:
+# MqDbg: Interface_LoadItemIcon2
 # Update B/C-Button Texture (Unused?, Identical to 8006FB50)
 # ROM st: icon_item_static
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
@@ -2663,6 +2676,7 @@ func_8006FC00:
 
 
 func_8006FCB0:
+# MqDbg: func_80084BF4
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      a1, 0x001C($sp)
     andi    a1, a1, 0xFFFF             # a1 = 00000000
@@ -2745,6 +2759,7 @@ lbl_8006FDC0:
 
 
 func_8006FDCC:
+# MqDbg: Item_Give
 # Item Giving Routine
 # one of them at least
 # A0 = Global Context
@@ -4299,6 +4314,7 @@ lbl_80071410:
 
 
 func_80071420:
+# MqDbg: Item_CheckObtainability
 # ? Check if player has item?
 # A0 = Item Index
 # V0 = 0xFF if no Item?
@@ -4712,6 +4728,7 @@ lbl_8007194C:
 
 
 func_80071960:
+# MqDbg: Inventory_DeleteItem
 # Inventory Editor, Remove Item (Inventory and C-Buttons)
 # A0 = Item Index
 # A1 = Inventory Slot Index
@@ -4753,6 +4770,7 @@ lbl_800719CC:
 
 
 func_800719E0:
+# MqDbg: Inventory_ReplaceItem
 # Try Update Trade Quest Item
 # (Egg -> Chicken/Pocket Cucco, Ruto's Letter -> Bottle)
 # A0 = Global Context
@@ -4812,6 +4830,7 @@ lbl_80071A84:
 
 
 func_80071A94:
+# MqDbg: Inventory_HasEmptyBottle
     lui     t6, 0x8012                 # t6 = 80120000
     lbu     t6, -0x59AA(t6)            # 8011A656
     addiu   v0, $zero, 0x0014          # v0 = 00000014
@@ -4848,6 +4867,7 @@ lbl_80071AFC:
 
 
 func_80071B04:
+# MqDbg: Inventory_HasSpecificBottle
     sw      a0, 0x0000($sp)
     andi    a0, a0, 0x00FF             # a0 = 00000000
     lui     t6, 0x8012                 # t6 = 80120000
@@ -4886,6 +4906,7 @@ lbl_80071B74:
 
 
 func_80071B7C:
+# MqDbg: Inventory_UpdateBottleItem
 # Update Bottle Contents
 # A0 = Global Context
 # A1 = Item Slot Index (C-Item)
@@ -4933,6 +4954,7 @@ lbl_80071BD4:
 
 
 func_80071C14:
+# MqDbg: Inventory_ConsumeFairy
 # Related to checking if Link should revive from a fairy
 # A0 = Global Context
 # V0 = 1 if should revive from fairy, else 0?
@@ -4999,6 +5021,7 @@ lbl_80071CDC:
 
 
 func_80071CEC:
+# MqDbg: func_80086D5C
     sw      a1, 0x0004($sp)
     andi    a1, a1, 0xFFFF             # a1 = 00000000
     or      v0, $zero, $zero           # v0 = 00000000
@@ -5018,6 +5041,7 @@ lbl_80071D1C:
 
 
 func_80071D24:
+# MqDbg: Interface_LoadActionLabel
 # ROM st: do_action_static
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      s0, 0x0028($sp)
@@ -5108,6 +5132,7 @@ lbl_80071E5C:
 
 
 func_80071E6C:
+# MqDbg: Interface_SetDoAction
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      a1, 0x002C($sp)
     andi    a1, a1, 0xFFFF             # a1 = 00000000
@@ -5147,6 +5172,7 @@ lbl_80071EE8:
 
 
 func_80071EF4:
+# MqDbg: Interface_SetNaviCall
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      a1, 0x0034($sp)
     andi    a1, a1, 0xFFFF             # a1 = 00000000
@@ -5222,6 +5248,7 @@ lbl_80071FEC:
 
 
 func_80071FF8:
+# MqDbg: Interface_LoadActionLabelB
 # ROM st: do_action_static
     addiu   $sp, $sp, 0xFFC0           # $sp -= 0x40
     sw      $ra, 0x002C($sp)
@@ -5276,6 +5303,7 @@ lbl_80072030:
 
 
 func_800720BC:
+# MqDbg: Health_ChangeBy
 # Update Player Health
 # A0 = Global Context
 # A1 = s16 Increment Health (e.g. -4 deals 1/4th heart damage)
@@ -5347,6 +5375,7 @@ lbl_8007218C:
 
 
 func_800721A0:
+# MqDbg: Health_GiveHearts
     sw      a0, 0x0000($sp)
     sll     a0, a0, 16
     lui     v0, 0x8012                 # v0 = 80120000
@@ -5361,6 +5390,7 @@ func_800721A0:
 
 
 func_800721CC:
+# MqDbg: Rupees_ChangeBy
 # Adds or removes rupees from the rupee accumulator (negative values subtract, positive add)
 # A0 = s32 rupee amount
     sw      a0, 0x0000($sp)
@@ -5376,6 +5406,7 @@ func_800721CC:
 
 
 func_800721F4:
+# MqDbg: Inventory_ChangeAmmo
     sw      a0, 0x0000($sp)
     sw      a1, 0x0004($sp)
     sll     a1, a1, 16
@@ -5588,6 +5619,7 @@ lbl_800724F8:
 
 
 func_80072500:
+# MqDbg: Magic_Fill
     lui     v0, 0x8012                 # v0 = 80120000
     addiu   v0, v0, 0xA5D0             # v0 = 8011A5D0
     sw      a0, 0x0000($sp)
@@ -5610,6 +5642,7 @@ lbl_80072540:
 
 
 func_80072548:
+# MqDbg: Magic_Reset
     lui     v1, 0x8012                 # v1 = 80120000
     addiu   v1, v1, 0xA5D0             # v1 = 8011A5D0
     sw      a0, 0x0000($sp)
@@ -5630,6 +5663,7 @@ lbl_80072580:
 
 
 func_80072588:
+# MqDbg: Magic_RequestChange
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      a1, 0x0024($sp)
     sw      a2, 0x0028($sp)
@@ -5825,6 +5859,7 @@ lbl_80072830:
 
 
 func_80072840:
+# MqDbg: Magic_Update
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     lui     v1, 0x8012                 # v1 = 80120000
     addiu   v1, v1, 0xA5D0             # v1 = 8011A5D0
@@ -6437,6 +6472,7 @@ lbl_800730E0:
 
 
 func_800730EC:
+# MqDbg: Magic_DrawMeter
 # parameter_static texture: Magic Meter Side & Middle & Fill
     addiu   $sp, $sp, 0xFF10           # $sp -= 0xF0
     sw      $ra, 0x002C($sp)
@@ -6957,6 +6993,7 @@ lbl_800738DC:
 
 
 func_800738E8:
+# MqDbg: Interface_SetSubTimer
     sw      a0, 0x0000($sp)
     sll     a0, a0, 16
     lui     v0, 0x8012                 # v0 = 80120000
@@ -6981,6 +7018,7 @@ lbl_80073928:
 
 
 func_80073938:
+# MqDbg: Interface_SetSubTimerToFinalSecond
     lui     v0, 0x8012                 # v0 = 80120000
     addiu   v0, v0, 0xA5D0             # v0 = 8011A5D0
     sw      a0, 0x0000($sp)
@@ -7003,6 +7041,7 @@ lbl_80073974:
 
 
 func_8007397C:
+# MqDbg: Interface_SetTimer
     sw      a0, 0x0000($sp)
     sll     a0, a0, 16
     lui     v0, 0x8012                 # v0 = 80120000
@@ -7027,6 +7066,7 @@ lbl_800739BC:
 
 
 func_800739CC:
+# MqDbg: Interface_DrawActionLabel
     lw      v0, 0x02B0(a0)             # 000002B0
     lui     t7, 0xFD70                 # t7 = FD700000
     addiu   t6, v0, 0x0008             # t6 = 00000008
@@ -7088,6 +7128,7 @@ func_800739CC:
 
 
 func_80073AB4:
+# MqDbg: Interface_DrawItemButtons
 # HUD Draw Function Related
 # Contains draw commands for displaying "Navi" text from parameter_static, parameter_static texture: Action Button
     addiu   $sp, $sp, 0xFEB0           # $sp -= 0x150
@@ -8014,6 +8055,7 @@ lbl_800748AC:
 
 
 func_800748DC:
+# MqDbg: Interface_DrawItemIconTexture
     sw      a2, 0x0008($sp)
     sll     a2, a2, 16
     sra     a2, a2, 16
@@ -8123,6 +8165,7 @@ func_800748DC:
 
 
 func_80074A84:
+# MqDbg: Interface_DrawAmmoCount
 # Item upgrade related. parameter_static texture: Item Amount Digit 0 x2
     addiu   $sp, $sp, 0xFFB0           # $sp -= 0x50
     lui     a3, 0x8012                 # a3 = 80120000
@@ -8444,6 +8487,7 @@ lbl_80074F14:
 
 
 func_80074F24:
+# MqDbg: Interface_DrawActionButton
 # parameter_static texture: Action Button
     addiu   $sp, $sp, 0xFFA8           # $sp -= 0x58
     mtc1    $zero, $f12                # $f12 = 0.00
@@ -8569,6 +8613,7 @@ func_80074F24:
 
 
 func_80075108:
+# MqDbg: Interface_InitVertices
     lui     t2, 0x8012                 # t2 = 80120000
     addiu   t2, t2, 0xBA00             # t2 = 8011BA00
     lw      a1, 0x0000(a0)             # 00000000
@@ -8879,6 +8924,7 @@ lbl_80075264:
 
 
 func_800755C8:
+# MqDbg: func_8008A8B8
     addiu   $sp, $sp, 0xFFB0           # $sp -= 0x50
     mtc1    $zero, $f0                 # $f0 = 0.00
     sw      $ra, 0x001C($sp)
@@ -8938,6 +8984,7 @@ func_800755C8:
 
 
 func_800756A8:
+# MqDbg: func_8008A994
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0028($sp)
@@ -8959,6 +9006,7 @@ func_800756A8:
 
 
 func_800756F0:
+# MqDbg: Interface_Draw
 # Draw HUD
 # parameter_static texture: Rupee & Key & Counter Digit 0 x3 & Carrot & Score Target & Counter Digit 0 & Timer & Counter Digit 0
     addiu   $sp, $sp, 0xFD90           # $sp -= 0x270
@@ -11910,6 +11958,7 @@ lbl_80078268:
 
 
 func_80078290:
+# MqDbg: Interface_Update
     addiu   $sp, $sp, 0xFFC0           # $sp -= 0x40
     sw      $ra, 0x001C($sp)
     sw      a0, 0x0040($sp)
@@ -12814,6 +12863,7 @@ lbl_80078F64:
 
 
 func_80078F80:
+# MqDbg: Path_GetByIndex
 # Pathway related
 # A0 = Global Context
 # A1 = s16 ?
@@ -12840,6 +12890,7 @@ lbl_80078FB8:
 
 
 func_80078FC4:
+# MqDbg: Path_OrientAndGetDistSq
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      a2, 0x0028($sp)
     sll     a2, a2, 16
@@ -12900,102 +12951,4 @@ lbl_80078FF4:
 lbl_800790A4:
     addiu   $sp, $sp, 0x0020           # $sp += 0x20
     jr      $ra
-    nop
-
-
-func_800790B0:
-    beq     a0, $zero, lbl_8007913C
-    lui     t9, 0x8012                 # t9 = 80120000
-    lw      v1, 0x0004(a0)             # 00000004
-    lbu     t2, 0x0000(a0)             # 00000000
-    lui     $at, 0x00FF                # $at = 00FF0000
-    sll     t6, v1,  4
-    srl     t7, t6, 28
-    sll     t8, t7,  2
-    addu    t9, t9, t8
-    lw      t9, 0x0C38(t9)             # 80120C38
-    ori     $at, $at, 0xFFFF           # $at = 00FFFFFF
-    and     t0, v1, $at
-    sll     t3, t2,  2
-    subu    t3, t3, t2
-    sll     t3, t3,  1
-    lui     $at, 0x7FFF                # $at = 7FFF0000
-    addu    t1, t9, t0
-    addu    v0, t1, t3
-    ori     $at, $at, 0xFFFA           # $at = 7FFFFFFA
-    addu    v0, v0, $at
-    lh      t4, 0x0000(v0)             # 00000000
-    mtc1    t4, $f4                    # $f4 = 0.00
-    nop
-    cvt.s.w $f6, $f4
-    swc1    $f6, 0x0000(a1)            # 00000000
-    lh      t5, 0x0002(v0)             # 00000002
-    mtc1    t5, $f8                    # $f8 = 0.00
-    nop
-    cvt.s.w $f10, $f8
-    swc1    $f10, 0x0004(a1)           # 00000004
-    lh      t6, 0x0004(v0)             # 00000004
-    mtc1    t6, $f16                   # $f16 = 0.00
-    nop
-    cvt.s.w $f18, $f16
-    swc1    $f18, 0x0008(a1)           # 00000008
-lbl_8007913C:
-    jr      $ra
-    nop
-    nop
-    nop
-    nop
-
-
-func_80079150:
-    sw      $zero, 0x0004(a0)          # 00000004
-    sw      $zero, 0x0000(a0)          # 00000000
-    jr      $ra
-    nop
-
-
-func_80079160:
-    addiu   v1, $zero, 0x0010          # v1 = 00000010
-    lhu     t6, 0x0000(a1)             # 00000000
-    andi    t7, t6, 0x0010             # t7 = 00000000
-    bnel    v1, t7, lbl_80079198
-    lw      t0, 0x0000(a0)             # 00000000
-    lhu     t8, 0x000C(a1)             # 0000000C
-    addiu   $at, $zero, 0x0400         # $at = 00000400
-    andi    t9, t8, 0x0400             # t9 = 00000000
-    bnel    t9, $at, lbl_80079198
-    lw      t0, 0x0000(a0)             # 00000000
-    lw      v0, 0x0000(a0)             # 00000000
-    sltiu   v0, v0, 0x0001
-    sw      v0, 0x0000(a0)             # 00000000
-    lw      t0, 0x0000(a0)             # 00000000
-lbl_80079198:
-    beql    t0, $zero, lbl_800791E8
-    sw      $zero, 0x0004(a0)          # 00000004
-    lhu     v0, 0x0000(a1)             # 00000000
-    addiu   $at, $zero, 0x2000         # $at = 00002000
-    andi    t1, v0, 0x2000             # t1 = 00000000
-    bnel    t1, $at, lbl_800791F4
-    or      v0, $zero, $zero           # v0 = 00000000
-    lhu     t2, 0x000C(a1)             # 0000000C
-    andi    t4, v0, 0x0010             # t4 = 00000000
-    andi    t3, t2, 0x0010             # t3 = 00000000
-    beql    v1, t3, lbl_800791E8
-    sw      $zero, 0x0004(a0)          # 00000004
-    bnel    v1, t4, lbl_800791F4
-    or      v0, $zero, $zero           # v0 = 00000000
-    lw      t5, 0x0004(a0)             # 00000004
-    addiu   t6, t5, 0x0001             # t6 = 00000001
-    slti    $at, t6, 0x0009
-    bne     $at, $zero, lbl_800791F0
-    sw      t6, 0x0004(a0)             # 00000004
-    sw      $zero, 0x0004(a0)          # 00000004
-lbl_800791E8:
-    jr      $ra
-    addiu   v0, $zero, 0x0001          # v0 = 00000001
-lbl_800791F0:
-    or      v0, $zero, $zero           # v0 = 00000000
-lbl_800791F4:
-    jr      $ra
-    nop
     nop

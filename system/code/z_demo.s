@@ -11,6 +11,7 @@
 
 .section .text
 func_80052310:
+# MqDbg: Cutscene_InitContext
     sw      a0, 0x0000($sp)
     mtc1    $zero, $f4                 # $f4 = 0.00
     sb      $zero, 0x0008(a1)          # 00000008
@@ -20,6 +21,7 @@ func_80052310:
 
 
 func_80052328:
+# MqDbg: Cutscene_StartManual
     sw      a0, 0x0000($sp)
     addiu   t6, $zero, 0x0001          # t6 = 00000001
     sb      t6, 0x0008(a1)             # 00000008
@@ -29,6 +31,7 @@ func_80052328:
 
 
 func_80052340:
+# MqDbg: Cutscene_StopManual
     sw      a0, 0x0000($sp)
     lbu     t6, 0x0008(a1)             # 00000008
     addiu   $at, $zero, 0x0004         # $at = 00000004
@@ -42,6 +45,7 @@ lbl_8005235C:
 
 
 func_80052364:
+# MqDbg: Cutscene_UpdateManual
 # Uses Cutscene Struct + 0x08 to index jump table at 800EFCD8 if Cutscene Number < 0xFFF0
 # A0 = Global Context
 # A1 = Cutscene Struct ptr
@@ -68,6 +72,7 @@ lbl_800523A4:
 
 
 func_800523B0:
+# MqDbg: Cutscene_UpdateScripted
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     lui     v1, 0x8012                 # v1 = 80120000
     addiu   v1, v1, 0xA5D0             # v1 = 8011A5D0
@@ -119,6 +124,7 @@ lbl_80052458:
 
 
 func_80052464:
+# MqDbg: CutsceneHandler_DoNothing
 # Related to 80052364
 # Stores Global Context, Cutscene Struct ptrs on Stack
 # A0 = Global Context
@@ -130,6 +136,7 @@ func_80052464:
 
 
 func_80052474:
+# MqDbg: Cutscene_StepTimer
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     mtc1    a2, $f12                   # $f12 = 0.00
     sw      $ra, 0x0014($sp)
@@ -147,6 +154,7 @@ func_80052474:
 
 
 func_800524AC:
+# MqDbg: CutsceneHandler_StartManual
 # Related to 80052364
 # A0 = Global Context
 # A1 = Cutscene Struct ptr
@@ -178,6 +186,7 @@ lbl_80052500:
 
 
 func_8005250C:
+# MqDbg: CutsceneHandler_StartScript
 # Related to 80052364
 # A0 = Global Context
 # A1 = Cutscene Struct ptr
@@ -212,6 +221,7 @@ lbl_8005256C:
 
 
 func_80052578:
+# MqDbg: CutsceneCmd_Misc
 # Cutscene command 0x03 (special execution)
     addiu   $sp, $sp, 0xFFB8           # $sp -= 0x48
     sw      s0, 0x0028($sp)
@@ -753,6 +763,7 @@ lbl_80052D04:
 
 
 func_80052D14:
+# MqDbg: CutsceneCmd_SetLightSetting
 # Cutscene command 0x04 (lighting), parse action record
 # A0 = Global Context
 # A1 = Cutscene Struct
@@ -777,6 +788,7 @@ lbl_80052D4C:
 
 
 func_80052D54:
+# MqDbg: CutsceneCmd_StartSequence
 # Cutscene: Check if new song should play
 # A0 = Global Context
 # A1 = Cutscene Struct
@@ -800,6 +812,7 @@ lbl_80052D84:
 
 
 func_80052D90:
+# MqDbg: CutsceneCmd_StopSequence
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -819,6 +832,7 @@ lbl_80052DC0:
 
 
 func_80052DCC:
+# MqDbg: CutsceneCmd_FadeOutSequence
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -856,6 +870,7 @@ lbl_80052E40:
 
 
 func_80052E4C:
+# MqDbg: CutsceneCmd_RumbleController
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      a0, 0x0018($sp)
     or      a0, a2, $zero              # a0 = 00000000
@@ -877,6 +892,7 @@ lbl_80052E84:
 
 
 func_80052E90:
+# MqDbg: CutsceneCmd_SetTime
 # Cutscene Command 0x8C
 # A0 = Global Context
 # A1 = Cutscene Struct
@@ -927,6 +943,7 @@ lbl_80052F2C:
 
 
 func_80052F34:
+# MqDbg: CutsceneCmd_Destination
 # Cutscene Command 0x3E8.
 # A0 = Global Context
 # A1 = Cutscene Struct
@@ -2921,6 +2938,7 @@ lbl_80054C40:
 
 
 func_80054C50:
+# MqDbg: CutsceneCmd_Transition
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x001C($sp)
     sw      a0, 0x0020($sp)
@@ -3612,6 +3630,7 @@ lbl_80055624:
 
 
 func_80055630:
+# MqDbg: CutsceneCmd_UpdateCamEyeSpline
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s3, 0x0028($sp)
     sw      s0, 0x001C($sp)
@@ -3704,6 +3723,7 @@ lbl_8005575C:
 
 
 func_80055784:
+# MqDbg: CutsceneCmd_UpdateCamAtSpline
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s3, 0x0028($sp)
     sw      s0, 0x001C($sp)
@@ -3798,6 +3818,7 @@ lbl_800558B8:
 
 
 func_800558E0:
+# MqDbg: CutsceneCmd_SetCamEye
 # Cutscene Command 0x07. Camera Related
 # A0 = Global Context
 # A1 = Cutscene Struct
@@ -3928,6 +3949,7 @@ lbl_80055AA8:
 
 
 func_80055ABC:
+# MqDbg: CutsceneCmd_SetCamAt
     addiu   $sp, $sp, 0xFFB0           # $sp -= 0x50
     sw      s1, 0x0018($sp)
     sw      s0, 0x0014($sp)
@@ -4040,6 +4062,7 @@ lbl_80055C50:
 
 
 func_80055C64:
+# MqDbg: CutsceneCmd_Text
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0030($sp)
@@ -4240,6 +4263,7 @@ lbl_80055F2C:
 
 
 func_80055F38:
+# MqDbg: Cutscene_ProcessScript
 # Parse Cutscene Commands
 # A0 = Global Context
 # A1 = Cutscene Struct (GC + 0x1D64)
@@ -4942,6 +4966,7 @@ lbl_800568E4:
 
 
 func_80056908:
+# MqDbg: CutsceneHandler_RunScript
 # Related to 80052364
 # A0 = Global Context
 # A1 = Cutscene Struct ptr
@@ -4966,6 +4991,7 @@ lbl_80056940:
 
 
 func_8005694C:
+# MqDbg: CutsceneHandler_StopManual
 # Related to 80052364
 # A0 = Global Context
 # A1 = Cutscene Struct ptr
@@ -4989,6 +5015,7 @@ lbl_80056980:
 
 
 func_8005698C:
+# MqDbg: CutsceneHandler_StopScript
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -5063,6 +5090,7 @@ lbl_80056A80:
 
 
 func_80056A94:
+# MqDbg: Cutscene_SetupScripted
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -5168,6 +5196,7 @@ lbl_80056C04:
 
 
 func_80056C14:
+# MqDbg: func_80069048
     sw      a0, 0x0000($sp)
     lui     $at, 0x8012                # $at = 80120000
     sh      $zero, -0x43CE($at)        # 8011BC32
@@ -5186,6 +5215,7 @@ lbl_80056C28:
 
 
 func_80056C4C:
+# MqDbg: func_8006907C
     lui     v0, 0x8012                 # v0 = 80120000
     addiu   v0, v0, 0xBC32             # v0 = 8011BC32
     sw      a0, 0x0000($sp)
@@ -5199,6 +5229,7 @@ lbl_80056C68:
 
 
 func_80056C70:
+# MqDbg: Cutscene_HandleEntranceTriggers
 # Calls entrance cutscene table in code.
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      $ra, 0x0034($sp)
@@ -5280,6 +5311,7 @@ lbl_80056D64:
 
 
 func_80056D90:
+# MqDbg: Cutscene_HandleConditionalTriggers
 # Triggers Certain Conditional cutscenes
 # Handles the following cutscenes:
 # Learning Requiem, Starting Kakariko Fire -> Learning Nocturne,
@@ -5425,6 +5457,7 @@ lbl_80056F88:
 
 
 func_80056F98:
+# MqDbg: Cutscene_SetScript
 # Set Cutscene Pointer (Area Intro Cutscenes Only?)
 # Contains Disk Drive Hook
 # A0 = Global Context
