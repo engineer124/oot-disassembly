@@ -10,6 +10,7 @@
 
 .section .text
 func_8005BC90:
+# MqDbg: func_8006EE50
 # Load jpn_font_static character into memory
 # Uses 800AF790 (kancode.s) to map the character to its font offset
 # A0 = Current Message Context (GC + 0x2200)
@@ -39,6 +40,7 @@ func_8005BC90:
 
 
 func_8005BCE4:
+# MqDbg: Font_LoadChar
 # Load nes_font_static character into memory
 # Maps the character to its font offset directly (offset = (code & 0xFF) << 7)
 # A0 = Current Message Context (GC + 0x2200)
@@ -67,6 +69,7 @@ func_8005BCE4:
 
 
 func_8005BD34:
+# MqDbg: Font_LoadMessageBoxIcon
 # Load message_static character into memory
 # Maps the character to its font offset directly (offset = code << 7 + 0x4000)
 # A0 = Current Message Context (GC + 0x2200)
@@ -91,6 +94,7 @@ func_8005BD34:
 
 
 func_8005BD78:
+# MqDbg: Font_LoadOrderedFont
 # Load "File Select" Character Set Data into memory
 # A0 = some message context ptr?
     addiu   $sp, $sp, 0xFFC0           # $sp -= 0x40

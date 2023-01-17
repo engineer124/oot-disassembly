@@ -7,6 +7,7 @@
 
 .section .text
 func_8005BEA0:
+# MqDbg: Environment_ZBufValToFixedPoint
     sra     t6, a0, 15
     andi    t7, t6, 0x0007             # t7 = 00000000
     lui     t9, 0x800F                 # t9 = 800F0000
@@ -24,6 +25,7 @@ func_8005BEA0:
 
 
 func_8005BED8:
+# MqDbg: Environment_GetPixelDepth
 # Get Z-Buffer "Pixel"
 # A0 = X
 # A1 = Y
@@ -42,6 +44,7 @@ func_8005BED8:
 
 
 func_8005BF04:
+# MqDbg: Environment_GraphCallback
 # Graph?
 # A0 = Graphics Context
 # A1 = Global Context
@@ -65,6 +68,7 @@ func_8005BF04:
 
 
 func_8005BF48:
+# MqDbg: Environment_Init
     addiu   $sp, $sp, 0xFFA8           # $sp -= 0x58
     sw      s1, 0x0028($sp)
     sw      s0, 0x0024($sp)
@@ -391,6 +395,7 @@ lbl_8005C3F8:
 
 
 func_8005C418:
+# MqDbg: Environment_SmoothStepToU8
     sw      a1, 0x0004($sp)
     sw      a2, 0x0008($sp)
     andi    a2, a2, 0x00FF             # a2 = 00000000
@@ -481,6 +486,7 @@ lbl_8005C548:
 
 
 func_8005C550:
+# MqDbg: Environment_SmoothStepToS8
     sw      a1, 0x0004($sp)
     sll     a1, a1, 24
     sw      a2, 0x0008($sp)
@@ -574,6 +580,7 @@ lbl_8005C688:
 
 
 func_8005C690:
+# MqDbg: Environment_LerpWeight
 # Compute Linear Tween
 # A0 = s16 end frame
 # A1 = s16 start frame?
@@ -617,6 +624,7 @@ lbl_8005C704:
 
 
 func_8005C714:
+# MqDbg: Environment_LerpWeightAccelDecel
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      a0, 0x0018($sp)
     sw      a1, 0x001C($sp)
@@ -743,6 +751,7 @@ lbl_8005C8C8:
 
 
 func_8005C8D4:
+# MqDbg: Environment_UpdateStorm
     sw      a1, 0x0004($sp)
     lbu     v0, 0x00DD(a0)             # 000000DD
     beq     v0, $zero, lbl_8005C9C0
@@ -810,6 +819,7 @@ lbl_8005C9C0:
 
 
 func_8005C9C8:
+# MqDbg: Environment_UpdateSkybox
     addiu   $sp, $sp, 0xFFA8           # $sp -= 0x58
     sw      s0, 0x0028($sp)
     sw      a0, 0x0058($sp)
@@ -1424,6 +1434,7 @@ lbl_8005D2A4:
 
 
 func_8005D2B4:
+# MqDbg: Environment_EnableUnderwaterLights
     addiu   $at, $zero, 0x001F         # $at = 0000001F
     bnel    a1, $at, lbl_8005D2C8
     lui     $at, 0x0001                # $at = 00010000
@@ -1461,6 +1472,7 @@ lbl_8005D324:
 
 
 func_8005D32C:
+# MqDbg: Environment_DisableUnderwaterLights
     lui     t6, 0x0001                 # t6 = 00010000
     addu    t6, t6, a0
     lbu     t6, 0x0A42(t6)             # 00010A42
@@ -1496,6 +1508,7 @@ lbl_8005D370:
 
 
 func_8005D3A4:
+# MqDbg: Environment_Update
 # Sets environment lighting
 # A0 = Glboal Context
 # A1 = Ptr to Global Context + 0x10A24
@@ -3559,6 +3572,7 @@ lbl_8005F1C4:
 
 
 func_8005F1D4:
+# MqDbg: Environment_DrawSunAndMoon
 # gameplay_keep d. list: Sun I & Sun II [?], Moon
     addiu   $sp, $sp, 0xFF88           # $sp -= 0x78
     sw      s1, 0x0020($sp)
@@ -4117,6 +4131,7 @@ lbl_8005FA08:
 
 
 func_8005FA18:
+# MqDbg: Environment_DrawSunLensFlare
     addiu   $sp, $sp, 0xFFC0           # $sp -= 0x40
     sw      s0, 0x0038($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -4174,6 +4189,7 @@ lbl_8005FADC:
 
 
 func_8005FAEC:
+# MqDbg: Environment_DrawLensFlare
 # gameplay_keep d. list: Effect_Ss_Dead_Dd & Ss_Dead_Ds, 37C38
     addiu   $sp, $sp, 0xFE40           # $sp -= 0x1C0
     sw      s7, 0x0068($sp)
@@ -5005,6 +5021,7 @@ lbl_800606F0:
 
 
 func_80060730:
+# MqDbg: Environment_RandCentered
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     jal     func_800CDCCC              # Rand.Next() float
@@ -5018,6 +5035,7 @@ func_80060730:
 
 
 func_80060758:
+# MqDbg: Environment_DrawRain
 # gameplay_keep d. list: 4D690, Effect_Ss_Blast [?]
     addiu   $sp, $sp, 0xFEE0           # $sp -= 0x120
     sw      s7, 0x0064($sp)
@@ -5390,6 +5408,7 @@ lbl_80060CA4:
 
 
 func_80060CE8:
+# MqDbg: Environment_ChangeLightSetting
     lui     $at, 0x0001                # $at = 00010000
     addu    v0, a0, $at
     lbu     t6, 0x0AE1(v0)             # 00000AE1
@@ -5428,6 +5447,7 @@ lbl_80060D64:
 
 
 func_80060D6C:
+# MqDbg: Environment_DrawSkyboxFilters
     addiu   $sp, $sp, 0xFFC0           # $sp -= 0x40
     sw      $ra, 0x0014($sp)
     or      a2, a0, $zero              # a2 = 00000000
@@ -5576,6 +5596,7 @@ lbl_80060F80:
 
 
 func_80060F8C:
+# MqDbg: Environment_DrawLightningFlash
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0020($sp)
@@ -5617,6 +5638,7 @@ func_80060F8C:
 
 
 func_80061024:
+# MqDbg: Environment_UpdateLightningStrike
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x001C($sp)
     sw      a0, 0x0020($sp)
@@ -5826,6 +5848,7 @@ lbl_80061320:
 
 
 func_8006132C:
+# MqDbg: Environment_AddLightningBolts
     sw      a1, 0x0004($sp)
     andi    a1, a1, 0x00FF             # a1 = 00000000
     sw      a0, 0x0000($sp)
@@ -5858,6 +5881,7 @@ lbl_8006138C:
 
 
 func_80061394:
+# MqDbg: Environment_DrawLightning
 # gameplay_keep d. list: 2D3D0
     addiu   $sp, $sp, 0xFF28           # $sp -= 0xD8
     sw      s4, 0x0058($sp)
@@ -6145,6 +6169,7 @@ lbl_8006177C:
 
 
 func_800617DC:
+# MqDbg: Environment_PlaySceneSequence
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     lui     a1, 0x8012                 # a1 = 80120000
     addiu   a1, a1, 0xA5D0             # a1 = 8011A5D0
@@ -6288,6 +6313,7 @@ lbl_800619C0:
 
 
 func_800619CC:
+# MqDbg: Environment_PlayTimeBasedSequence
 # Update Weather/Sun events?
 # Update rain count, hatches eggs
 # Updates the number of rain drops that should be drawn
@@ -6512,6 +6538,7 @@ lbl_80061CD4:
 
 
 func_80061CE4:
+# MqDbg: Environment_DrawCustomLensFlare
     addiu   $sp, $sp, 0xFFB8           # $sp -= 0x48
     sw      $ra, 0x0034($sp)
     lui     t6, 0x8012                 # t6 = 80120000
@@ -6559,6 +6586,7 @@ lbl_80061D80:
 
 
 func_80061D90:
+# MqDbg: Environment_InitGameOverLights
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     lui     $at, 0x4120                # $at = 41200000
     mtc1    $at, $f0                   # $f0 = 10.00
@@ -6684,6 +6712,7 @@ func_80061D90:
 
 
 func_80061F78:
+# MqDbg: Environment_FadeInGameOverLights
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     lui     $at, 0x4120                # $at = 41200000
     sw      s0, 0x0028($sp)
@@ -6866,6 +6895,7 @@ lbl_80062218:
 
 
 func_8006222C:
+# MqDbg: Environment_FadeOutGameOverLights
     addiu   $sp, $sp, 0xFFC0           # $sp -= 0x40
     sw      s2, 0x002C($sp)
     lui     s2, 0x8012                 # s2 = 80120000
@@ -7076,6 +7106,7 @@ lbl_80062528:
 
 
 func_80062548:
+# MqDbg: Environment_UpdateRain
     lui     $at, 0x0001                # $at = 00010000
     addu    v0, a0, $at
     lbu     v1, 0x0B16(v0)             # 00000B16
@@ -7108,6 +7139,7 @@ lbl_800625A8:
 
 
 func_800625B0:
+# MqDbg: Environment_FillScreen
     addiu   $sp, $sp, 0xFFB0           # $sp -= 0x50
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -7230,6 +7262,7 @@ lbl_8006276C:
 
 
 func_80062780:
+# MqDbg: Environment_DrawSandstorm
     addiu   $sp, $sp, 0xFF70           # $sp -= 0x90
     sw      a1, 0x0094($sp)
     andi    a1, a1, 0x00FF             # a1 = 00000000
@@ -7949,6 +7982,7 @@ lbl_80062F6C:
 
 
 func_800631D8:
+# MqDbg: Environment_AdjustLights
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      a2, 0x0030($sp)
     mtc1    a1, $f12                   # $f12 = 0.00
@@ -8104,6 +8138,7 @@ lbl_800633F8:
 
 
 func_80063404:
+# MqDbg: Environment_GetBgsDayCount
 # Return s32 at 8011A5E8 (Event Days)
 # V0 = s32 at 8011A5E8
     lui     v0, 0x8012                 # v0 = 80120000
@@ -8113,6 +8148,7 @@ func_80063404:
 
 
 func_80063414:
+# MqDbg: Environment_ClearBgsDayCount
 # Zero s32 at 8011A5E8 (Event Days)
     lui     $at, 0x8012                # $at = 80120000
     sw      $zero, -0x5A18($at)        # 8011A5E8
@@ -8121,6 +8157,7 @@ func_80063414:
 
 
 func_80063424:
+# MqDbg: Environment_GetTotalDays
 # Return s32 at 8011A5E4 (Days Passed)
 # V0 = s32 at 8011A5E4
     lui     v0, 0x8012                 # v0 = 80120000
@@ -8130,6 +8167,7 @@ func_80063424:
 
 
 func_80063434:
+# MqDbg: Environment_ForcePlaySequence
 # Update Background Music
 # A0 = s32? value to write to 8011B9DE
     sw      a0, 0x0000($sp)
@@ -8141,6 +8179,7 @@ func_80063434:
 
 
 func_8006344C:
+# MqDbg: Environment_IsForcedSequenceDisabled
 # Test if Background Music should change
 # V0 = 1 if 8011B9DE == 0xFFFF, else 0
     lui     t6, 0x8012                 # t6 = 80120000
@@ -8157,6 +8196,7 @@ lbl_8006346C:
 
 
 func_80063474:
+# MqDbg: Environment_PlayStormNatureAmbience
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lbu     a1, 0x07A5(a0)             # 000007A5
@@ -8186,6 +8226,7 @@ lbl_800634A8:
 
 
 func_800634D4:
+# MqDbg: Environment_StopStormNatureAmbience
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -8214,6 +8255,7 @@ lbl_80063524:
 
 
 func_80063534:
+# MqDbg: Environment_WarpSongLeave
 # Update Next Spawn (Warp Songs)
 # Copies entrance index from "grotto" portion of zoneout spawns
 # A0 = Global Context

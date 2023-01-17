@@ -7,6 +7,7 @@
 
 .section .text
 func_8005B0A0:
+# MqDbg: Jpeg_ScheduleDecoderTask
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      $ra, 0x0014($sp)
     or      a3, a0, $zero              # a3 = 00000000
@@ -90,6 +91,7 @@ lbl_8005B16C:
 
 
 func_8005B1DC:
+# MqDbg: Jpeg_CopyToZbuffer
     sll     t6, a3,  2
     addu    t6, t6, a3
     sll     t6, t6,  6
@@ -172,6 +174,7 @@ lbl_8005B1FC:
 
 
 func_8005B314:
+# MqDbg: Jpeg_GetUnalignedU16
     andi    t6, a0, 0x0001             # t6 = 00000000
     bnel    t6, $zero, lbl_8005B32C
     lbu     $at, 0x0001(a0)            # 00000001
@@ -196,6 +199,7 @@ lbl_8005B32C:
 
 
 func_8005B360:
+# MqDbg: Jpeg_ParseMarkers
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      s1, 0x001C($sp)
     sw      s0, 0x0018($sp)
@@ -329,6 +333,7 @@ lbl_8005B508:
 
 
 func_8005B52C:
+# MqDbg: Jpeg_Decode
     addiu   $sp, $sp, 0xFD40           # $sp -= 0x2C0
     sw      s7, 0x003C($sp)
     sw      s5, 0x0034($sp)

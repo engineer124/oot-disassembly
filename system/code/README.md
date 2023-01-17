@@ -28,10 +28,10 @@ This directory contains all files composing the massive "code" file which holds 
 | [**env_flag.s**](env_flag.s)                           | Environment Flags                    |  80059810  |   ACF770   |  180  |
 | [**fcurve_data_skelanime.s**](fcurve_data_skelanime.s) | FCurve Animation Data                |  80059990  |   ACF8F0   |  A30  |
 | [**horse.s**](horse.s)                                 | Horse                                |  8005A3C0  |   AD0320   |  CE0  |
-| [**jpeg.s**](jpeg.s)                                   | JPEG                                 |  8005B0A0  |   AD1000   |  7C0  |
-| [**code_8005B860.s**](code_8005B860.s)                 | Unknown (8005B860)                   |  8005B860  |   AD17C0   |  430  |
-| [**kanfont.s**](kanfont.s)                             | Kanji Font                           |  8005BC90  |   AD1BF0   |  210  |
-| [**kankyo.s**](kankyo.s)                               | Kankyo (Environment)                 |  8005BEA0  |   AD1E00   | 7790  |
+| [**z_jpeg.s**](z_jpeg.s)                               | JPEG                                 |  8005B0A0  |   AD1000   |  7C0  |
+| [**z_kaleido_setup.s**](z_kaleido_setup.s)             | Pause Menu Setup                     |  8005B860  |   AD17C0   |  430  |
+| [**z_kanfont.s**](z_kanfont.s)                         | Kanji Font                           |  8005BC90  |   AD1BF0   |  210  |
+| [**z_kankyo.s**](z_kankyo.s)                           | Environment                          |  8005BEA0  |   AD1E00   | 7790  |
 | [**lib.s**](lib.s)                                     | General Library                      |  80063630  |   AD9590   | 11A0  |
 | [**lifemeter.s**](lifemeter.s)                         | Player Health                        |  800647D0  |   ADA730   | 13A0  |
 | [**lights.s**](lights.s)                               | Lights                               |  80065B70  |   ADBAD0   | 10A0  |

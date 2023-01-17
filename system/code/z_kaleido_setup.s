@@ -7,6 +7,7 @@
 
 .section .text
 func_8005B860:
+# MqDbg: KaleidoSetup_Update
 # Pausing related
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      $ra, 0x0014($sp)
@@ -175,6 +176,7 @@ lbl_8005BAC0:
 
 
 func_8005BACC:
+# MqDbg: KaleidoSetup_Init
     lui     $at, 0x4320                # $at = 43200000
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     lui     a3, 0x8012                 # a3 = 80120000
@@ -273,6 +275,7 @@ lbl_8005BC38:
 
 
 func_8005BC44:
+# MqDbg: KaleidoSetup_Destroy
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
