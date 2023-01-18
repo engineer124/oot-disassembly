@@ -7,6 +7,7 @@
 
 .section .text
 func_800CB9C0:
+# MqDbg: GfxPrint_Setup
     addiu   $sp, $sp, 0xFF78           # $sp -= 0x88
     sw      s3, 0x0014($sp)
     sw      s2, 0x0010($sp)
@@ -308,6 +309,7 @@ lbl_800CBDF8:
 
 
 func_800CBE58:
+# MqDbg: GfxPrint_SetColor
 # SetTextRGBA (?)
     lw      v1, 0x0004(a0)             # 00000004
     sb      a1, 0x0010(a0)             # 00000010
@@ -331,6 +333,7 @@ func_800CBE58:
 
 
 func_800CBEA4:
+# MqDbg: GfxPrint_SetPosPx
     lhu     t6, 0x000C(a0)             # 0000000C
     lbu     t9, 0x000E(a0)             # 0000000E
     sll     t7, a1,  2
@@ -343,6 +346,7 @@ func_800CBEA4:
 
 
 func_800CBEC8:
+# MqDbg: GfxPrint_SetPos
 # SetTextXY (?)
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
@@ -357,6 +361,7 @@ func_800CBEC8:
 
 
 func_800CBEF0:
+# MqDbg: GfxPrint_SetBasePosPx
     sll     t6, a1,  2
     sll     t7, a2,  2
     sh      t6, 0x000C(a0)             # 0000000C
@@ -365,6 +370,7 @@ func_800CBEF0:
 
 
 func_800CBF04:
+# MqDbg: GfxPrint_PrintCharImpl
     sw      a1, 0x0004($sp)
     lbu     v1, 0x000F(a0)             # 0000000F
     andi    a1, a1, 0x00FF             # a1 = 00000000
@@ -566,6 +572,7 @@ lbl_800CC150:
 
 
 func_800CC210:
+# MqDbg: GfxPrint_PrintChar
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      a1, 0x0024($sp)
     andi    a1, a1, 0x00FF             # a1 = 00000000
@@ -695,6 +702,7 @@ lbl_800CC3BC:
 
 
 func_800CC3CC:
+# MqDbg: GfxPrint_PrintStringWithSize
     multu   a2, a3
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s1, 0x001C($sp)
@@ -723,6 +731,7 @@ lbl_800CC410:
 
 
 func_800CC428:
+# MqDbg: GfxPrint_PrintString
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      $ra, 0x0024($sp)
     sw      s2, 0x0020($sp)
@@ -750,6 +759,7 @@ lbl_800CC468:
 
 
 func_800CC480:
+# MqDbg: GfxPrint_Callback
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     or      a3, a2, $zero              # a3 = 00000000
@@ -764,6 +774,7 @@ func_800CC480:
 
 
 func_800CC4AC:
+# MqDbg: GfxPrint_Init
     lbu     t6, 0x000F(a0)             # 0000000F
     lui     t8, 0x800D                 # t8 = 800D0000
     addiu   t8, t8, 0xC480             # t8 = 800CC480
@@ -788,12 +799,14 @@ func_800CC4AC:
 
 
 func_800CC500:
+# MqDbg: GfxPrint_Destroy
 # Store A0 on stack
     jr      $ra
     sw      a0, 0x0000($sp)
 
 
 func_800CC508:
+# MqDbg: GfxPrint_Open
 # gfxprint_open:２重オープンです related.
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
@@ -818,6 +831,7 @@ lbl_800CC544:
 
 
 func_800CC550:
+# MqDbg: GfxPrint_Close
     lbu     t6, 0x000F(a0)             # 0000000F
     lw      v0, 0x0004(a0)             # 00000004
     sw      $zero, 0x0004(a0)          # 00000004
@@ -827,6 +841,7 @@ func_800CC550:
 
 
 func_800CC568:
+# MqDbg: GfxPrint_VPrintf
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     jal     func_800CE810
@@ -838,6 +853,7 @@ func_800CC568:
 
 
 func_800CC588:
+# MqDbg: GfxPrint_Printf
 # SetTextString (?)
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x0014($sp)

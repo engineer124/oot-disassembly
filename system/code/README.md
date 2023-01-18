@@ -107,7 +107,24 @@ This directory contains all files composing the massive "code" file which holds 
 | [**code_800C1F20.s**](code_800C1F20.s)                 | Audio External General               |  800C1F20  |   B37E80   | 6020  |
 | [**code_800C7F40.s**](code_800C7F40.s)                 | Audio External Sfx                   |  800C7F40  |   B3DEA0   | 1E60  |
 | [**code_800C9DA0.s**](code_800C9DA0.s)                 | Audio External Sequence              |  800C9DA0  |   B3FD00   | 1C20  |
-| [**text_draw.s**](text_draw.s)                         | Text Draw                            |  800CB9C0  |   B41920   |  C00  |
-| [**n64_lib.s**](n64_lib.s)                             | N64 Library                          |  800CC5C0  |   B42520   | 9930  |
+| [**gfxprint.s**](text_draw.s)                          | Text Draw                            |  800CB9C0  |   B41920   |  C00  |
+| [**rcp_utils.s**](rcp_utils.s)                         | Reality Co-Processor Utils           |  800CC5C0  |   B42520   |  330  |
+| [**relocation.s**](relocation.s)                       | Relocation and Load                  |  800CC8F0  |   B42850   |  4B0  |
+| [**padutils.s**](padutils.s)                           | Controller Utilities                 |  800CCDA0  |   B42D00   |  210  |
+| [**code_800CCFB0.s**](code_800CCFB0.s)                 | N64 Library                          |  800CCFB0  |   B42F10   |  420  |
+| [**padsetup.s**](padsetup.s)                           | Controller Setup                     |  800CD3D0  |   B43330   |  140  |
+| [**code_800CD510.s**](code_800CD510.s)                 | Math                                 |  800CD510  |   B43470   |  3B0  |
+| [**fp.s**](fp.s)                                       | Fixed Point                          |  800CD8C0  |   B43820   |  160  |
+| [**system_malloc.s**](system_malloc.s)                 | N64 Library                          |  800CDA20  |   B43980   |  270  |
+| [**code_800CDC90.s**](code_800CDC90.s)                 | N64 Library                          |  800CDC90  |   B43BF0   |  100  |
+| [**__osMalloc.s**](__osMalloc.s)                       | N64 Library                          |  800CDD90  |   B43CF0   |  9B0  |
+| [**sprintf.s**](sprintf.s)                             | N64 Library                          |  800CE740  |   B446A0   |   D0  |
+| [**printutils.s**](printutils.s)                       | N64 Library                          |  800CE810  |   B44770   |   60  |
+| [**jpegutils.s**](jpegutils.s)                         | N64 Library                          |  800CE870  |   B447D0   |  510  |
+| [**jpegdecoder.s**](jpegdecoder.s)                     | N64 Library                          |  800CED80  |   B44CE0   |  5F0  |
+| [**libultra.s**](libultra.s)                           | N64 Library                          |  800CF370  |   B452D0   | 6A70  |
+| [**fmodf.s**](fmodf.s)                                 | N64 Library                          |  800D5DE0  |   B4BD40   |   50  |
+| [**__osMemset.s**](__osMemset.s)                       | N64 Library                          |  800D5E30  |   B4BD90   |   30  |
+| [**__osMemmove.s**](__osMemmove.s)                     | N64 Library                          |  800D5E60  |   B4BDC0   |   90  |
 | [**message.s**](message.s)                             | Message                              |  800D5EF0  |   B4BE50   | BD00  |
 | [**lmap_mark.s**](lmap_mark.s)                         | Minimap Markers                      |  800E1BF0  |   B57B50   | 13D0  |

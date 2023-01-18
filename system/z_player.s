@@ -1699,7 +1699,7 @@ func_8083164C:
 
 
 func_80831678:
-# MqDbg: 
+# MqDbg: N/A
 # Test if Link Item Action (Instance + 0x141) is Sword-Like (03 to 07)
 # A0 = Link Instance
 # V0 = 1 if true, else 0
@@ -1808,7 +1808,7 @@ func_808317A4:
 
 
 func_808317B4:
-# MqDbg: 
+# MqDbg: N/A
 # Test if Link Item Action (Instance + 0x141) is Two-handed Sword-Like (05 to 07)
 # A0 = Link Instance
 # V0 = 1 if true, else 0
