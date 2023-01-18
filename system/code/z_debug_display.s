@@ -7,6 +7,7 @@
 
 .section .text
 func_80051E60:
+# MqDbg: DebugDisplay_Init
 # "gameplay" Main Update helper function
 # related to drawing Camera Debugger stuff
 # Zeros s32 8011BC20
@@ -17,6 +18,7 @@ func_80051E60:
 
 
 func_80051E70:
+# MqDbg: DebugDisplay_AddObject
 # related to drawing Camera Debugger stuff
     sw      a2, 0x0008($sp)
     sw      a3, 0x000C($sp)
@@ -76,6 +78,7 @@ func_80051E70:
 
 
 func_80051F4C:
+# MqDbg: DebugDisplay_DrawObjects
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s1, 0x0018($sp)
     or      s1, a0, $zero              # s1 = 00000000
@@ -117,6 +120,7 @@ lbl_80051FC0:
 
 
 func_80051FDC:
+# MqDbg: DebugDisplay_DrawSpriteI8
 # gameplay_keep d. list: 4298
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s1, 0x0018($sp)
@@ -241,6 +245,7 @@ func_80051FDC:
 
 
 func_800521BC:
+# MqDbg: DebugDisplay_DrawPolygon
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0014($sp)
     or      s0, a0, $zero              # s0 = 00000000

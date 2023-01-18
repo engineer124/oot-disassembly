@@ -16,22 +16,22 @@ This directory contains all files composing the massive "code" file which holds 
 | [**z_effect_soft_sprite.s**](z_effect_soft_sprite.s)   | Particle Effects                     |  8001B000  |   A90F60   |  AA0  |
 | [**z_effect_soft_sprite_old_init.s**](z_effect_soft_sprite_old_init.s) | Particle Effects     |  8001BAA0  |   A91A00   | 2B20  |
 | [**flg_set.s**](flg_set.s)                             | Flag Set                             |  8001E5C0  |   A94520   |  410  |
-| [**DLF.s**](DLF.s)                                     | Dynamically Linked File              |  8001E9D0  |   A94930   |  250  |
+| [**z_DLF.s**](z_DLF.s)                                 | Dynamically Linked File              |  8001E9D0  |   A94930   |  250  |
 | [**z_actor.s**](z_actor.s)                             | Actor                                |  8001EC20  |   A94B80   | C540  |
 | [**z_actor_dlftbls.s**](z_actor_dlftbls.s)             | Actor Overlay Tables                 |  8002B160  |   AA10C0   |  200  |
 | [**bgcheck.s**](bgcheck.s)                             | Background Check                     |  8002B360  |   AA12C0   | A290  |
 | [**camera.s**](camera.s)                               | Camera                               |  800355F0  |   AAB550   | 14820 |
 | [**collision_check.s**](collision_check.s)             | Collision Check                      |  80049E10  |   ABFD70   | 7C90  |
-| [**code_80051AA0.s**](code_80051AA0.s)                 | Unknown (80051AA0)                   |  80051AA0  |   AC7A00   |  B0   |
-| [**debug.s**](debug.s)                                 | Static Context                       |  80051B50  |   AC7AB0   |  310  |
-| [**debug_display.s**](debug_display.s)                 | Debugger Display                     |  80051E60  |   AC7DC0   |  4B0  |
+| [**z_common_data.s**](z_common_data.s)                 | Initialize Save Context              |  80051AA0  |   AC7A00   |  B0   |
+| [**z_debug.s**](z_debug.s)                             | Static Context                       |  80051B50  |   AC7AB0   |  310  |
+| [**z_debug_display.s**](z_debug_display.s)             | Debugger Display                     |  80051E60  |   AC7DC0   |  4B0  |
 | [**z_demo.s**](z_demo.s)                               | Cutscene                             |  80052310  |   AC8270   | 4D20  |
 | [**mem.s**](mem.s)                                     | Memory Util                          |  80057030  |   ACCF90   |  90   |
-| [**draw.s**](draw.s)                                   | Draw Items                           |  800570C0  |   ACD020   | 1E60  |
-| [**code_80058F20.s**](code_80058F20.s)                 | Unknown (80058F20)                   |  80058F20  |   ACEE80   |  1C0  |
-| [**elf_message.s**](elf_message.s)                     | Elf_Message                          |  800590E0  |   ACF040   |  6E0  |
-| [**mask_reaction.s**](mask_reaction.s)                 | Mask Reaction                        |  800597C0  |   ACF720   |  50   |
-| [**env_flag.s**](env_flag.s)                           | Environment Flags                    |  80059810  |   ACF770   |  180  |
+| [**z_draw.s**](z_draw.s)                               | Draw Items                           |  800570C0  |   ACD020   | 1E60  |
+| [**z_sfx_source.s**](z_sfx_source.s)                   | Sfx Source                           |  80058F20  |   ACEE80   |  1C0  |
+| [**z_elf_message.s**](z_elf_message.s)                 | Elf_Message                          |  800590E0  |   ACF040   |  6E0  |
+| [**z_face_reaction.s**](z_face_reaction.s)             | Mask Reaction                        |  800597C0  |   ACF720   |  50   |
+| [**z_env_flag.s**](z_env_flag.s)                       | Cutscene Flags                       |  80059810  |   ACF770   |  180  |
 | [**fcurve_data_skelanime.s**](fcurve_data_skelanime.s) | FCurve Animation Data                |  80059990  |   ACF8F0   |  A30  |
 | [**horse.s**](horse.s)                                 | Horse                                |  8005A3C0  |   AD0320   |  CE0  |
 | [**z_jpeg.s**](z_jpeg.s)                               | JPEG                                 |  8005B0A0  |   AD1000   |  7C0  |

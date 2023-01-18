@@ -7,6 +7,7 @@
 
 .section .text
 func_8001E5C0:
+# MqDbg: FlagSet_Update
     addiu   $sp, $sp, 0xFDD0           # $sp -= 0x230
     sw      $ra, 0x0024($sp)
     sw      s0, 0x0020($sp)

@@ -10,6 +10,7 @@
 
 .section .text
 func_800597C0:
+# MqDbg: Text_GetFaceReaction
 # Get NPC Mask Reaction
 # A0 = Global Context
 # A1 = ?

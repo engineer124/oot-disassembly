@@ -1,12 +1,11 @@
-# Unknown part of the code file
-#
-# The purpose of this file's content is currently unknown until further investigation.
+# Plays a sfx at a source point
 #
 # Starts at VRAM: 80058F20 / VROM: ACEE80
 #
 
 .section .text
 func_80058F20:
+# MqDbg: SfxSource_InitAll
     addiu   v1, a0, 0x1DB4             # v1 = 00001DB4
     addiu   a0, $zero, 0x0010          # a0 = 00000010
     or      v0, $zero, $zero           # v0 = 00000000
@@ -23,6 +22,7 @@ lbl_80058F2C:
 
 
 func_80058F50:
+# MqDbg: SfxSource_UpdateAll
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      s2, 0x0020($sp)
     or      s2, a0, $zero              # s2 = 00000000
@@ -73,6 +73,7 @@ lbl_80058FD0:
 
 
 func_80058FF8:
+# MqDbg: SfxSource_PlaySfxAtFixedWorldPos
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      $ra, 0x001C($sp)
     sw      a0, 0x0038($sp)

@@ -11,6 +11,7 @@
 
 .section .text
 func_80051B50:
+# MqDbg: Regs_Init
 # Initializes the "Static Context" on the main heap
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
@@ -52,6 +53,7 @@ lbl_80051B98:
 
 
 func_80051BE0:
+# MqDbg: DebugCamera_ScreenText
 # SW a0, a1, a2 on SP+0x00, 0x04, 0x08
     sw      a0, 0x0000($sp)
     sw      a1, 0x0004($sp)
@@ -61,6 +63,7 @@ func_80051BE0:
 
 
 func_80051BF4:
+# MqDbg: DebugCamera_ScreenTextColored
     addiu   $sp, $sp, 0xFFF8           # $sp -= 0x8
     sw      s0, 0x0004($sp)
     sw      a0, 0x0008($sp)
@@ -114,6 +117,7 @@ lbl_80051CA4:
 
 
 func_80051CB0:
+# MqDbg: DebugCamera_DrawScreenText
     addiu   $sp, $sp, 0xFFC0           # $sp -= 0x40
     sw      s6, 0x0038($sp)
     lui     s6, 0x800F                 # s6 = 800F0000
@@ -176,6 +180,7 @@ lbl_80051D6C:
 
 
 func_80051D94:
+# MqDbg: Debug_DrawText
     addiu   $sp, $sp, 0xFF98           # $sp -= 0x68
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0068($sp)

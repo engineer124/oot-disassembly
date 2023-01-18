@@ -1,6 +1,6 @@
 # "Environment Flags" part of the code file
 #
-# Provides functions to lookup and manipulate environment flags in Global Context.
+# Provides functions to lookup and manipulate cutscene flags in Global Context.
 #
 # These flags are set by proximity effects like the Song of Storms effect.
 #
@@ -9,6 +9,7 @@
 
 .section .text
 func_80059810:
+# MqDbg: CutsceneFlags_UnsetAll
 # Sets All Global Context + 0x120FC Flags to 0 (called every scene load?)
 # A0 = Global Context
     or      v0, $zero, $zero           # v0 = 00000000
@@ -27,6 +28,7 @@ lbl_80059818:
 
 
 func_80059840:
+# MqDbg: CutsceneFlags_Set
 # Sets Global Context + 0x120FC Flag to 1
 # A0 = Global Context
 # A1 = s16 Flag Id
@@ -62,6 +64,7 @@ lbl_8005988C:
 
 
 func_800598AC:
+# MqDbg: CutsceneFlags_Unset
 # Sets Global Context + 0x120FC Flag to 0
 # A0 = Global Context
 # A1 = s16 Flag Id
@@ -98,6 +101,7 @@ lbl_800598F8:
 
 
 func_8005991C:
+# MqDbg: CutsceneFlags_Get
 # Tests if Global Context + 0x120FC Flag is set
 # A0 = Global Context
 # A1 = s16 Flag Id

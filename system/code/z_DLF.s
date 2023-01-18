@@ -7,6 +7,7 @@
 
 .section .text
 func_8001E9D0:
+# MqDbg: Overlay_LoadGameState
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      s0, 0x0018($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -92,6 +93,7 @@ lbl_8001EAE8:
 
 
 func_8001EAF8:
+# MqDbg: Overlay_FreeGameState
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     or      a1, a0, $zero              # a1 = 00000000

@@ -12,6 +12,7 @@
 
 .section .text
 func_800590E0:
+# MqDbg: QuestHint_CheckCondition
 # parses elf_message code 0 of & E000 0000
 # 801077E8 is jump table, ending at 801078EC
 # A0 = ptr to current working record
@@ -190,6 +191,7 @@ lbl_80059354:
 
 
 func_8005935C:
+# MqDbg: QuestHint_CheckConditionChain
 # parses elf_message code 1 of & E000 0000
 # A0 = pointer to pointer of current working elf_message record's ram address
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
@@ -237,6 +239,7 @@ lbl_800593DC:
 
 
 func_800593F0:
+# MqDbg: QuestHint_CheckRandomCondition
     addiu   $sp, $sp, 0xFF90           # $sp -= 0x70
     sw      s1, 0x0018($sp)
     or      s1, a0, $zero              # s1 = 00000000
@@ -382,6 +385,7 @@ lbl_800595B4:
 
 
 func_800595D0:
+# MqDbg: QuestHint_GetTextIdFromScript
 # Parses an "elf_message_*" file
 # A0 = ptr to "elf_message_*" file
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
@@ -477,6 +481,7 @@ lbl_800596F4:
 
 
 func_80059714:
+# MqDbg: QuestHint_GetSariaTextId
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x001C($sp)
     lui     t6, 0x8012                 # t6 = 80120000
@@ -510,6 +515,7 @@ lbl_8005976C:
 
 
 func_8005977C:
+# MqDbg: QuestHint_GetNaviTextId
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lui     a1, 0x0001                 # a1 = 00010000

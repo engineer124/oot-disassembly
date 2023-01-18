@@ -11,6 +11,7 @@
 
 .section .text
 func_800570C0:
+# MqDbg: GetItem_Draw
 # Draw Get Item (aka. "GI")
 # References "GI Draw Table" at 800EFE30 and calls the corresponding draw function
 # A0 = Global Context
@@ -35,6 +36,7 @@ func_800570C0:
 
 
 func_80057104:
+# MqDbg: GetItem_DrawMaskOrBombchu
 # GI Draw Function for Bombchu and Goron/Zora/Gerudo Masks
 # A0 = Global Context
 # A1 = u16 GI Draw Id
@@ -79,6 +81,7 @@ func_80057104:
 
 
 func_8005719C:
+# MqDbg: GetItem_DrawSoldOut
 # GI Draw Function for SOLD OUT
 # A0 = Global Context
 # A1 = u16 GI Draw Id
@@ -124,6 +127,7 @@ func_8005719C:
 
 
 func_80057238:
+# MqDbg: GetItem_DrawBlueFire
 # GI Draw Function for Blue Fire
 # A0 = Global Context
 # A1 = u16 GI Draw Id
@@ -235,6 +239,7 @@ func_80057238:
 
 
 func_800573DC:
+# MqDbg: GetItem_DrawPoes
 # GI Draw Function for Poe and Big Poe
 # A0 = Global Context
 # A1 = u16 GI Draw Id
@@ -366,6 +371,7 @@ func_800573DC:
 
 
 func_800575D0:
+# MqDbg: GetItem_DrawFairy
 # GI Draw Function for Fairy
 # A0 = Global Context
 # A1 = u16 GI Draw Id
@@ -490,6 +496,7 @@ func_800575D0:
 
 
 func_800577A8:
+# MqDbg: GetItem_DrawMirrorShield
 # GI Draw Function for Mirror Shield
 # A0 = Global Context
 # A1 = u16 GI Draw Id
@@ -588,6 +595,7 @@ func_800577A8:
 
 
 func_80057918:
+# MqDbg: GetItem_DrawSkullToken
 # GI Draw Function for Gold Skulltula Token
 # A0 = Global Context
 # A1 = u16 GI Draw Id
@@ -684,6 +692,7 @@ func_80057918:
 
 
 func_80057A80:
+# MqDbg: GetItem_DrawEggOrMedallion
 # GI Draw Function for Medallions and Pocket/Weird Eggs
 # A0 = Global Context
 # A1 = u16 GI Draw Id
@@ -735,6 +744,7 @@ func_80057A80:
 
 
 func_80057B34:
+# MqDbg: GetItem_DrawCompass
 # GI Draw Function for Compass
 # A0 = Global Context
 # A1 = u16 GI Draw Id
@@ -803,6 +813,7 @@ func_80057B34:
 
 
 func_80057C2C:
+# MqDbg: GetItem_DrawPotion
 # GI Draw Function for Red/Green/Blue Potions
 # A0 = Global Context
 # A1 = u16 GI Draw Id
@@ -921,6 +932,7 @@ func_80057C2C:
 
 
 func_80057DEC:
+# MqDbg: GetItem_DrawGoronSword
 # GI Draw Function for Giant's Knife & Biggoron's Sword (Normal & Broken)
 # A0 = Global Context
 # A1 = u16 GI Draw Id
@@ -993,6 +1005,7 @@ func_80057DEC:
 
 
 func_80057EF4:
+# MqDbg: GetItem_DrawDekuNuts
 # GI Draw Function for Deku Nut
 # A0 = Global Context
 # A1 = u16 GI Draw Id
@@ -1068,6 +1081,7 @@ func_80057EF4:
 
 
 func_80058008:
+# MqDbg: GetItem_DrawRecoveryHeart
 # GI Draw Function for Recovery Heart
 # A0 = Global Context
 # A1 = u16 GI Draw Id
@@ -1144,6 +1158,7 @@ func_80058008:
 
 
 func_80058120:
+# MqDbg: GetItem_DrawFish
 # GI Draw Function for Fish
 # A0 = Global Context
 # A1 = u16 GI Draw Id
@@ -1216,6 +1231,7 @@ func_80058120:
 
 
 func_80058228:
+# MqDbg: GetItem_DrawOpa0
 # GI Draw Function for various "single DList" items such as Kokiri Sword, Bomb & Megaton Hammer
 # A0 = Global Context
 # A1 = u16 GI Draw Id
@@ -1260,6 +1276,7 @@ func_80058228:
 
 
 func_800582C0:
+# MqDbg: GetItem_DrawOpa0Xlu1
 # GI Draw Function for various double DList items such as Empty Bottle, Boss Key & Ocarinas
 # A0 = Global Context
 # A1 = u16 GI Draw Id
@@ -1329,6 +1346,7 @@ func_800582C0:
 
 
 func_800583BC:
+# MqDbg: GetItem_DrawXlu01
 # GI Draw Function for Heart Container, Piece of Heart & Music Notes
 # A0 = Global Context
 # A1 = u16 GI Draw Id
@@ -1380,6 +1398,7 @@ func_800583BC:
 
 
 func_80058470:
+# MqDbg: GetItem_DrawOpa10Xlu2
 # GI Draw Function for Cojiro, Chicken & Pocket Cucco and Coins
 # A0 = Global Context
 # A1 = u16 GI Draw Id
@@ -1455,6 +1474,7 @@ func_80058470:
 
 
 func_80058584:
+# MqDbg: GetItem_DrawMagicArrow
 # GI Draw Function for Fire/Ice/Light Arrows
 # A0 = Global Context
 # A1 = u16 GI Draw Id
@@ -1530,6 +1550,7 @@ func_80058584:
 
 
 func_80058698:
+# MqDbg: GetItem_DrawMagicSpell
 # GI Draw Function for Magic Spells (Din's Fire, Farore's Wind & Nayru's Love)
 # A0 = Global Context
 # A1 = u16 GI Draw Id
@@ -1620,6 +1641,7 @@ func_80058698:
 
 
 func_800587E8:
+# MqDbg: GetItem_DrawOpa1023
 # GI Draw Function for Goron/Zora Tunics, Bomb Bags & Quivers
 # A0 = Global Context
 # A1 = u16 GI Draw Id
@@ -1683,6 +1705,7 @@ func_800587E8:
 
 
 func_800588CC:
+# MqDbg: GetItem_DrawOpa10Xlu32
 # GI Draw Function for Silver/Golden Gauntlets & Purple/Gold Rupees
 # A0 = Global Context
 # A1 = u16 GI Draw Id
@@ -1764,6 +1787,7 @@ func_800588CC:
 
 
 func_800589F8:
+# MqDbg: GetItem_DrawSmallRupee
 # GI Draw Function for Green/Blue/Red Rupees
 # A0 = Global Context
 # A1 = u16 GI Draw Id
@@ -1849,6 +1873,7 @@ func_800589F8:
 
 
 func_80058B34:
+# MqDbg: GetItem_DrawScale
 # GI Draw Function for Silver/Gold Scales
 # A0 = Global Context
 # A1 = u16 GI Draw Id
@@ -1943,6 +1968,7 @@ func_80058B34:
 
 
 func_80058C94:
+# MqDbg: GetItem_DrawBulletBag
 # GI Draw Function for Bullet Bags
 # A0 = Global Context
 # A1 = u16 GI Draw Id
@@ -2030,6 +2056,7 @@ func_80058C94:
 
 
 func_80058DD8:
+# MqDbg: GetItem_DrawWallet
 # GI Draw Function for Adult/Giant's Wallets
 # A0 = Global Context
 # A1 = u16 GI Draw Id

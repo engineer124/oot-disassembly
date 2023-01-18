@@ -1,12 +1,11 @@
-# Unknown part of the code file
-#
-# The purpose of this file's content is currently unknown until further investigation.
+# Initialize Save Context
 #
 # Starts at VRAM: 80051AA0 / VROM: AC7A00
 #
 
 .section .text
 func_80051AA0:
+# MqDbg: SaveContext_Init
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     lui     a0, 0x8012                 # a0 = 80120000
     addiu   a0, a0, 0xA5D0             # a0 = 8011A5D0

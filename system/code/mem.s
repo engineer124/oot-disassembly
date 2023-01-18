@@ -7,6 +7,7 @@
 
 .section .text
 func_80057030:
+# MqDbg: MemCpy
 # Copy bytes (Cutscenes?)
 # A0 = Copy to Address
 # A1 = Copy from Address
@@ -29,6 +30,7 @@ lbl_80057054:
 
 
 func_80057060:
+# MqDbg: MemSet
     or      v0, a0, $zero              # v0 = 00000000
     blez    a2, lbl_800570AC
     or      v1, a2, $zero              # v1 = 00000000
