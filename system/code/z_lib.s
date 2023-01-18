@@ -7,6 +7,7 @@
 
 .section .text
 func_80063630:
+# MqDbg: Lib_MemSet
 # memset byte
 # A0 = Address
 # A1 = Size
@@ -38,6 +39,7 @@ lbl_8006367C:
 
 
 func_80063684:
+# MqDbg: Math_CosS
 # fcoss?
 # Math, Get cosine of short rotation angle
 # A0 = s16 rotation
@@ -61,6 +63,7 @@ func_80063684:
 
 
 func_800636C4:
+# MqDbg: Math_SinS
 # fsins?
 # Math, Get sine of short rotation angle
 # A0 = s16 rotation
@@ -84,6 +87,7 @@ func_800636C4:
 
 
 func_80063704:
+# MqDbg: Math_ScaledStepToS
     sw      a1, 0x0004($sp)
     sw      a2, 0x0008($sp)
     sll     a2, a2, 16
@@ -143,6 +147,7 @@ lbl_800637CC:
 
 
 func_800637D4:
+# MqDbg: Math_StepToS
     sw      a1, 0x0004($sp)
     sw      a2, 0x0008($sp)
     sll     a2, a2, 16
@@ -185,6 +190,7 @@ lbl_80063854:
 
 
 func_8006385C:
+# MqDbg: Math_StepToF
 # This function is called over multiple frames to adjust a value up to some target value.
 # (For example, a hidden grotto that turns visible will call this function, increasing
 # its scale by 0.001 until it reaches its final value of 0.01.)
@@ -238,6 +244,7 @@ lbl_800638E8:
 
 
 func_800638F0:
+# MqDbg: Math_StepUntilAngleS
     sw      a1, 0x0004($sp)
     sw      a2, 0x0008($sp)
     sll     a2, a2, 16
@@ -268,6 +275,7 @@ lbl_80063950:
 
 
 func_80063958:
+# MqDbg: Math_StepUntilS
     sw      a1, 0x0004($sp)
     sw      a2, 0x0008($sp)
     sll     a2, a2, 16
@@ -296,6 +304,7 @@ lbl_800639B0:
 
 
 func_800639B8:
+# MqDbg: Math_StepToAngleS
     sw      a1, 0x0004($sp)
     sw      a2, 0x0008($sp)
     sll     a2, a2, 16
@@ -354,6 +363,7 @@ lbl_80063A74:
 
 
 func_80063A7C:
+# MqDbg: Math_StepUntilF
     mtc1    a1, $f14                   # $f14 = 0.00
     mtc1    a2, $f12                   # $f12 = 0.00
     or      v0, $zero, $zero           # v0 = 00000000
@@ -378,6 +388,7 @@ lbl_80063AC4:
 
 
 func_80063ACC:
+# MqDbg: Math_AsymStepToF
     mtc1    a1, $f12                   # $f12 = 0.00
     mtc1    a2, $f14                   # $f14 = 0.00
     sw      a3, 0x000C($sp)
@@ -429,6 +440,7 @@ lbl_80063B6C:
 
 
 func_80063B74:
+# MqDbg: func_80077D10
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     lui     $at, 0x4270                # $at = 42700000
     mtc1    $at, $f14                  # $f14 = 60.00
@@ -465,6 +477,7 @@ lbl_80063BD4:
 
 
 func_80063BF0:
+# MqDbg: Rand_S16Offset
 # Generates random s16 number
 # Generates random integer between 0 and range (exlusive), and adds Offset
 # A0 = s16 Offset
@@ -494,6 +507,7 @@ func_80063BF0:
 
 
 func_80063C44:
+# MqDbg: Rand_S16OffsetStride
 # Generates random s16 number
 # Generates random integer between 0 and range (exlusive), integer multiplies that by Multiplier, adds Offset
 # A0 = s16 Offset
@@ -529,6 +543,7 @@ func_80063C44:
 
 
 func_80063CAC:
+# MqDbg: Math_Vec3f_Copy
 # Vec3f_Copy
 # Copy Float Coordinates
 # A0 = out vector3_f32* result
@@ -544,6 +559,7 @@ func_80063CAC:
 
 
 func_80063CCC:
+# MqDbg: Math_Vec3s_ToVec3f
 # Vec3f_CopyVec3s
 # Convert s16 Coordinates to Float Coordinates
 # A0 = out vector3_f32* result
@@ -568,6 +584,7 @@ func_80063CCC:
 
 
 func_80063D10:
+# MqDbg: Math_Vec3f_Sum
 # Vec3f_Add
 # Adds XYZ Float Coordinates
 # A0 = Coord A ptr
@@ -590,6 +607,7 @@ func_80063D10:
 
 
 func_80063D48:
+# MqDbg: Math_Vec3f_Diff
 # Vec3f_Sub
 # Calculates XYZ Difference Between Float Coordinates
 # A0 = Coord A ptr
@@ -612,6 +630,7 @@ func_80063D48:
 
 
 func_80063D80:
+# MqDbg: Math_Vec3s_DiffToVec3f
 # Calculates XYZ Difference Between s16 Coordinates
 # A0 = Result Float Coord ptr (A - B)
 # A1 = s16 coord A ptr
@@ -642,6 +661,7 @@ func_80063D80:
 
 
 func_80063DDC:
+# MqDbg: Math_Vec3f_Scale
 # Multiply XYZ Float Coordinates By Scalar
 # A0 = Coord ptr
 # A1 = Scalar Value
@@ -663,6 +683,7 @@ func_80063DDC:
 
 
 func_80063E18:
+# MqDbg: Math_Vec3f_DistXYZ
 # Calculates XYZ Distance Between Float Coordinates
 # A0 = Coord A ptr
 # A1 = Coord B ptr
@@ -687,6 +708,7 @@ func_80063E18:
 
 
 func_80063E5C:
+# MqDbg: Math_Vec3f_DistXYZAndStoreDiff
 # Calculates XYZ Distance Between Float Coordinates
 # A0 = Coord A ptr
 # A1 = Coord B ptr
@@ -718,6 +740,7 @@ func_80063E5C:
 
 
 func_80063EB8:
+# MqDbg: Math_Vec3f_DistXZ
 # Calculates XZ Distance Between Float Coordinates
 # A0 = Coord A ptr
 # A1 = Coord B ptr
@@ -738,6 +761,7 @@ func_80063EB8:
 
 
 func_80063EEC:
+# MqDbg: Math_Vec3f_DiffY
 # Calculates Y Difference Between Float Coordinates
 # A0 = Coord A ptr
 # A1 = Coord B ptr
@@ -750,6 +774,7 @@ func_80063EEC:
 
 
 func_80063F00:
+# MqDbg: Math_Vec3f_Yaw
 # Calculates Arctan2 (X,Z) of two coordinates (A-B)
 # Wrapper for 800AA4F8
 # A0 = Coord A ptr
@@ -771,6 +796,7 @@ func_80063F00:
 
 
 func_80063F34:
+# MqDbg: Math_Vec3f_Pitch
 # Calculates Arctan2 (distance(XZ), Y) of two coordinates
 # (A-B for Y coordinate)
 # A0 = Coord A ptr
@@ -797,6 +823,7 @@ func_80063F34:
 
 
 func_80063F7C:
+# MqDbg: Actor_ProcessInitChain
 # Instance Init, Initialize Variable Chain
 # A0 = Actor Instance
 # A1 = Variable Initializer List ptr
@@ -834,6 +861,7 @@ lbl_80063FA4:
 
 
 func_80063FF4:
+# MqDbg: IChain_Apply_u8
 # Instance Init 0, Set Byte
 # A0 = Actor Instance
 # A1 = Instance Initializer Data
@@ -847,6 +875,7 @@ func_80063FF4:
 
 
 func_80064010:
+# MqDbg: IChain_Apply_s8
 # Instance Init 1, Set Byte
 # A0 = Actor Instance
 # A1 = Instance Initializer Data
@@ -860,6 +889,7 @@ func_80064010:
 
 
 func_8006402C:
+# MqDbg: IChain_Apply_u16
 # Instance Init 2, Set Halfword
 # A0 = Actor Instance
 # A1 = Instance Initializer Data
@@ -873,6 +903,7 @@ func_8006402C:
 
 
 func_80064048:
+# MqDbg: IChain_Apply_s16
 # Instance Init 3, Set Halfword
 # A0 = Actor Instance
 # A1 = Instance Initializer Data
@@ -886,6 +917,7 @@ func_80064048:
 
 
 func_80064064:
+# MqDbg: IChain_Apply_u32
 # Instance Init 4, Set Word
 # A0 = Actor Instance
 # A1 = Instance Initializer Data
@@ -899,6 +931,7 @@ func_80064064:
 
 
 func_80064080:
+# MqDbg: IChain_Apply_s32
 # Instance Init 5, Set Word
 # A0 = Actor Instance
 # A1 = Instance Initializer Data
@@ -912,6 +945,7 @@ func_80064080:
 
 
 func_8006409C:
+# MqDbg: IChain_Apply_f32
 # Instance Init 6, Set Float (int to float)
 # A0 = Actor Instance
 # A1 = Instance Initializer Data
@@ -927,6 +961,7 @@ func_8006409C:
 
 
 func_800640C0:
+# MqDbg: IChain_Apply_f32div1000
 # Instance Init 7, Set Float (int to float / 1000)
 # A0 = Actor Instance
 # A1 = Instance Initializer Data
@@ -945,6 +980,7 @@ func_800640C0:
 
 
 func_800640F0:
+# MqDbg: IChain_Apply_Vec3f
 # Instance Init 8, Set vector3_f32 (int to float)
 # A0 = Actor Instance
 # A1 = Instance Initializer Data
@@ -962,6 +998,7 @@ func_800640F0:
 
 
 func_8006411C:
+# MqDbg: IChain_Apply_Vec3fdiv1000
 # Instance Init 9, Set vector3_f32 (int to float)/1000)
 # A0 = Actor Instance
 # A1 = Instance Initializer Data
@@ -982,6 +1019,7 @@ func_8006411C:
 
 
 func_80064154:
+# MqDbg: IChain_Apply_Vec3s
 # Instance Init A, Set vector3_s16
 # A0 = Actor Instance
 # A1 = Instance Initializer Data
@@ -997,6 +1035,7 @@ func_80064154:
 
 
 func_80064178:
+# MqDbg: Math_SmoothStepToF
     mtc1    a1, $f12                   # $f12 = 0.00
     mtc1    a2, $f14                   # $f14 = 0.00
     sw      a3, 0x000C($sp)
@@ -1073,6 +1112,7 @@ lbl_80064274:
 
 
 func_80064280:
+# MqDbg: Math_ApproachF
 # Smoothly aproximates A0 to A1, commonly used for smooth movement
 # A0 = float* value to change
 # A1 = float target
@@ -1113,6 +1153,7 @@ lbl_800642E8:
 
 
 func_800642F0:
+# MqDbg: Math_ApproachZeroF
     mtc1    a1, $f12                   # $f12 = 0.00
     mtc1    a2, $f14                   # $f14 = 0.00
     nop
@@ -1140,6 +1181,7 @@ lbl_80064338:
 
 
 func_80064344:
+# MqDbg: Math_SmoothStepToDegF
     addiu   $sp, $sp, 0xFFF0           # $sp -= 0x10
     mtc1    a1, $f12                   # $f12 = 0.00
     mtc1    a3, $f14                   # $f14 = 0.00
@@ -1267,6 +1309,7 @@ lbl_80064500:
 
 
 func_80064508:
+# MqDbg: Math_SmoothStepToS
 # A0 = s16 Rotation Pointer
 # A1 = s16 ?
 # A2 = ?
@@ -1354,6 +1397,7 @@ lbl_8006461C:
 
 
 func_80064624:
+# MqDbg: Math_ApproachS
     sw      a1, 0x0004($sp)
     sw      a2, 0x0008($sp)
     sw      a3, 0x000C($sp)
@@ -1402,6 +1446,7 @@ lbl_800646BC:
 
 
 func_800646C8:
+# MqDbg: Color_RGBA8_Copy
 # Copy u8[4] array
 # A0 = Destination ptr
 # A1 = Source ptr
@@ -1418,6 +1463,7 @@ func_800646C8:
 
 
 func_800646F0:
+# MqDbg: func_80078884
 # Play SFX (limited set, identical to 80064738)
 # A0 = SFX
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
@@ -1441,6 +1487,7 @@ func_800646F0:
 
 
 func_80064738:
+# MqDbg: func_800788CC
 # Play SFX (limited set, Identical to 800646F0)
 # A0 = SFX
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
@@ -1464,6 +1511,7 @@ func_80064738:
 
 
 func_80064780:
+# MqDbg: func_80078914
 # Play SFX (limited set)
 # Used by medallions
 # A0 = SFX

@@ -7,6 +7,7 @@
 
 .section .text
 func_80067440:
+# MqDbg: PreNmiBuff_Init
 # PreNMI?
 # A0 = osAppNMIBuffer ptr
     sw      $zero, 0x0000(a0)          # 00000000
@@ -44,6 +45,7 @@ lbl_800674A0:
 
 
 func_800674B8:
+# MqDbg: PreNmiBuff_SetReset
 # PreNMI, Save Time to osAppNMIBuffer
 # A0 = osAppNMIBuffer ptr
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
@@ -62,6 +64,7 @@ func_800674B8:
 
 
 func_800674EC:
+# MqDbg: PreNmiBuff_IsResetting
     lw      v0, 0x0000(a0)             # 00000000
     jr      $ra
     nop

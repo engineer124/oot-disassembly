@@ -10,6 +10,7 @@
 
 .section .text
 func_80066DF0:
+# MqDbg: MapMark_Init
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     lui     v0, 0x800F                 # v0 = 800F0000
     addiu   v0, v0, 0x1BF8             # v0 = 800F1BF8
@@ -68,6 +69,7 @@ lbl_80066EB4:
 
 
 func_80066EC0:
+# MqDbg: MapMark_ClearPointers
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -93,6 +95,7 @@ lbl_80066EF4:
 
 
 func_80066F14:
+# MqDbg: MapMark_DrawForDungeon
 # Draw minimap icons?
 # parameter_static minimap chest icon related.
 # A0 = Global Context
@@ -423,6 +426,7 @@ lbl_800673C4:
 
 
 func_800673F0:
+# MqDbg: MapMark_Draw
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lhu     t6, 0x00A4(a0)             # 000000A4

@@ -32,22 +32,23 @@ This directory contains all files composing the massive "code" file which holds 
 | [**z_elf_message.s**](z_elf_message.s)                 | Elf_Message                          |  800590E0  |   ACF040   |  6E0  |
 | [**z_face_reaction.s**](z_face_reaction.s)             | Mask Reaction                        |  800597C0  |   ACF720   |  50   |
 | [**z_env_flag.s**](z_env_flag.s)                       | Cutscene Flags                       |  80059810  |   ACF770   |  180  |
-| [**fcurve_data_skelanime.s**](fcurve_data_skelanime.s) | FCurve Animation Data                |  80059990  |   ACF8F0   |  A30  |
-| [**horse.s**](horse.s)                                 | Horse                                |  8005A3C0  |   AD0320   |  CE0  |
+| [**z_fcurve_data.s**](z_fcurve_data.s)                 | FCurve Animation Data                |  80059990  |   ACF8F0   |  240  |
+| [**z_fcurve_data_skelanime.s**](z_fcurve_data_skelanime.s) | FCurve Animation Data            |  80059BD0  |   ACFB30   |  7F0  |
+| [**z_horse.s**](z_horse.s)                             | Horse                                |  8005A3C0  |   AD0320   |  CE0  |
 | [**z_jpeg.s**](z_jpeg.s)                               | JPEG                                 |  8005B0A0  |   AD1000   |  7C0  |
 | [**z_kaleido_setup.s**](z_kaleido_setup.s)             | Pause Menu Setup                     |  8005B860  |   AD17C0   |  430  |
 | [**z_kanfont.s**](z_kanfont.s)                         | Kanji Font                           |  8005BC90  |   AD1BF0   |  210  |
 | [**z_kankyo.s**](z_kankyo.s)                           | Environment                          |  8005BEA0  |   AD1E00   | 7790  |
-| [**lib.s**](lib.s)                                     | General Library                      |  80063630  |   AD9590   | 11A0  |
-| [**lifemeter.s**](lifemeter.s)                         | Player Health                        |  800647D0  |   ADA730   | 13A0  |
-| [**lights.s**](lights.s)                               | Lights                               |  80065B70  |   ADBAD0   | 10A0  |
-| [**zelda_alloc.s**](zelda_alloc.s)                     | Game Memory Allocation               |  80066C10  |   ADCB70   |  1E0  |
-| [**map_mark.s**](map_mark.s)                           | Map Markers                          |  80066DF0  |   ADCD50   |  650  |
-| [**code_80067440.s**](code_80067440.s)                 | Unknown (80067440)                   |  80067440  |   ADD3A0   |  C0   |
-| [**code_80067500.s**](code_80067500.s)                 | Unknown (80067500)                   |  80067500  |   ADD460   |  80   |
-| [**vector.s**](vector.s)                               | Vector Util                          |  80067580  |   ADD4E0   |  6F0  |
-| [**onepointdemo.s**](onepointdemo.s)                   | Single Focus Cutscene                |  80067C70  |   ADDBD0   | 4000  |
-| [**map_exp.s**](map_exp.s)                             | Minimap                              |  8006BC70  |   AE1BD0   | 1C70  |
+| [**z_lib.s**](z_lib.s)                                 | General Library                      |  80063630  |   AD9590   | 11A0  |
+| [**z_lifemeter.s**](z_lifemeter.s)                     | Player Health                        |  800647D0  |   ADA730   | 13A0  |
+| [**z_lights.s**](z_lights.s)                           | Lights                               |  80065B70  |   ADBAD0   | 10A0  |
+| [**z_malloc.s**](z_malloc.s)                           | Game Memory Allocation               |  80066C10  |   ADCB70   |  1E0  |
+| [**z_map_mark.s**](z_map_mark.s)                       | Map Markers                          |  80066DF0  |   ADCD50   |  650  |
+| [**z_prenmi_buff.s**](z_prenmi_buff.s)                 | Reset Buffer                         |  80067440  |   ADD3A0   |  C0   |
+| [**z_nulltask.s**](z_nulltask.s)                       | Sched_FlushTaskQueue                 |  80067500  |   ADD460   |  80   |
+| [**z_olib.s**](z_olib.s)                               | Vector Util                          |  80067580  |   ADD4E0   |  6F0  |
+| [**z_onepointdemo.s**](z_onepointdemo.s)               | Single Focus Cutscene                |  80067C70  |   ADDBD0   | 4000  |
+| [**z_map_exp.s**](z_map_exp.s)                         | Minimap                              |  8006BC70  |   AE1BD0   | 1C70  |
 | [**z_parameter.s**](z_parameter.s)                     | Interface, Hud, Items                |  8006D8E0  |   AE3840   | B7D0  |
 | [**z_path.s**](z_path.s)                               | Paths                                |  800790B0  |   AEF010   |  150  |
 | [**z_player_lib.s**](z_player_lib.s)                   | Player Library                       |  80079200  |   AEF160   | 3A30  |

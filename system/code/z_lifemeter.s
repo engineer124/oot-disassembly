@@ -7,6 +7,7 @@
 
 .section .text
 func_800647D0:
+# MqDbg: Health_InitMeter
 # Potentially Initialize hud to default values?
 # Possibly Heart Hud based on locality/values read in
 # A0 = Global Context
@@ -68,6 +69,7 @@ func_800647D0:
 
 
 func_800648AC:
+# MqDbg: Health_UpdateMeter
     lui     t6, 0x0001                 # t6 = 00010000
     addu    t6, t6, a0
     lh      t6, 0x06EE(t6)             # 000106EE
@@ -323,6 +325,7 @@ lbl_80064940:
 
 
 func_80064C90:
+# MqDbg: func_80078E18
     lui     t6, 0x0001                 # t6 = 00010000
     addu    t6, t6, a0
     lh      t6, 0x0716(t6)             # 00010716
@@ -334,6 +337,7 @@ func_80064C90:
 
 
 func_80064CB0:
+# MqDbg: func_80078E34
     lui     $at, 0x0001                # $at = 00010000
     addu    v0, a0, $at
     lh      t7, 0x0716(v0)             # 00000716
@@ -358,6 +362,7 @@ lbl_80064CF8:
 
 
 func_80064D00:
+# MqDbg: func_80078E84
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lui     $at, 0x0001                # $at = 00010000
@@ -402,6 +407,7 @@ lbl_80064D88:
 
 
 func_80064D98:
+# MqDbg: Health_DrawMeter
 # parameter_static texture: 4/4 Regular Heart & 4/4 Double Defense Heart
     addiu   $sp, $sp, 0xFE70           # $sp -= 0x190
     lui     a2, 0x8012                 # a2 = 80120000
@@ -1239,6 +1245,7 @@ lbl_800659DC:
 
 
 func_80065A14:
+# MqDbg: Health_UpdateBeatingHeart
 # Heart Animation/Low Health SFX
 # Low health beep timed with heartbeat animation
 # A0 = Global Context
@@ -1307,6 +1314,7 @@ lbl_80065AF4:
 
 
 func_80065B00:
+# MqDbg: Health_IsCritical
 # V0 = 0 if ? else 1
     lui     a0, 0x8012                 # a0 = 80120000
     addiu   a0, a0, 0xA5D0             # a0 = 8011A5D0

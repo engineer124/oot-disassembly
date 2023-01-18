@@ -7,6 +7,7 @@
 
 .section .text
 func_80065B70:
+# MqDbg: Lights_PointSetInfo
 # Initialize Flame Light?
 # A0 = Blue Fire Instance + 0x19C
 # A1 = short x
@@ -43,6 +44,7 @@ func_80065B70:
 
 
 func_80065BCC:
+# MqDbg: Lights_PointNoGlowSetInfo
 # Initialize Flame Light (Wrapper for 80065B70)
 # A0 = Blue Fire Instance + 0x19C
 # A1 = short x
@@ -80,6 +82,7 @@ func_80065BCC:
 
 
 func_80065C30:
+# MqDbg: Lights_PointGlowSetInfo
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      a1, 0x0034($sp)
     sw      a2, 0x0038($sp)
@@ -109,6 +112,7 @@ func_80065C30:
 
 
 func_80065C98:
+# MqDbg: Lights_PointSetColorAndRadius
 # Initialize Flame Color
 # writes RGBA to A0 + 0x08 (note alpha is short)
 # Called by 80065B70
@@ -133,6 +137,7 @@ func_80065C98:
 
 
 func_80065CCC:
+# MqDbg: Lights_DirectionalSetInfo
     sw      a1, 0x0004($sp)
     sw      a2, 0x0008($sp)
     sw      a3, 0x000C($sp)
@@ -158,6 +163,7 @@ func_80065CCC:
 
 
 func_80065D24:
+# MqDbg: Lights_Reset
     sw      a1, 0x0004($sp)
     sw      a2, 0x0008($sp)
     sw      a3, 0x000C($sp)
@@ -176,6 +182,7 @@ func_80065D24:
 
 
 func_80065D60:
+# MqDbg: Lights_Draw
 # Write Lighting Display Lists
 # Writes to POLY_OPA and POLY_XLU dlists
 # A0 = Light data ptr
@@ -268,6 +275,7 @@ lbl_80065E6C:
 
 
 func_80065EA4:
+# MqDbg: Lights_FindSlot
     lbu     v1, 0x0000(a0)             # 00000000
     slti    $at, v1, 0x0007
     bne     $at, $zero, lbl_80065EBC
@@ -284,6 +292,7 @@ lbl_80065EBC:
 
 
 func_80065ED4:
+# MqDbg: Lights_BindPoint
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      $ra, 0x0014($sp)
     beql    a2, $zero, lbl_80066224
@@ -518,6 +527,7 @@ lbl_80066224:
 
 
 func_80066230:
+# MqDbg: Lights_BindDirectional
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a2, 0x0020($sp)
@@ -548,6 +558,7 @@ lbl_80066288:
 
 
 func_80066298:
+# MqDbg: Lights_BindAll
 # Draw, Lighting, Completes Light Source Record Data
 # A0 = Light Data on DISP append end
 # A1 = Light Source ll record (last element)
@@ -596,6 +607,7 @@ lbl_80066318:
 
 
 func_80066334:
+# MqDbg: Lights_FindBufSlot
 # Allocate Light Source Reference Record
 # V0 = Pointer to free Light Source Reference record, or null if no free space is available
     lui     a1, 0x8012                 # a1 = 80120000
@@ -641,6 +653,7 @@ lbl_800663B4:
 
 
 func_800663C0:
+# MqDbg: Lights_FreeNode
 # Unload Light Source (inner)
     beq     a0, $zero, lbl_80066430
     addiu   v1, $zero, 0x000C          # v1 = 0000000C
@@ -678,6 +691,7 @@ lbl_80066430:
 
 
 func_80066438:
+# MqDbg: LightContext_Init
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x001C($sp)
     sw      a1, 0x0024($sp)
@@ -708,6 +722,7 @@ func_80066438:
 
 
 func_800664A4:
+# MqDbg: LightContext_SetAmbientColor
     sw      a1, 0x0004($sp)
     sw      a2, 0x0008($sp)
     sw      a3, 0x000C($sp)
@@ -722,6 +737,7 @@ func_800664A4:
 
 
 func_800664D0:
+# MqDbg: LightContext_SetFog
     sw      a1, 0x0004($sp)
     sw      a2, 0x0008($sp)
     sw      a3, 0x000C($sp)
@@ -740,6 +756,7 @@ func_800664D0:
 
 
 func_8006650C:
+# MqDbg: LightContext_NewLights
 # Write scene ambient light to POLY_OPA_DISP append end
 # A0 = Global Context + 0x7A8 (lstr)
 # A1 = Graphics Context
@@ -761,6 +778,7 @@ func_8006650C:
 
 
 func_80066544:
+# MqDbg: LightContext_InitList
     sw      a0, 0x0000($sp)
     sw      $zero, 0x0000(a1)          # 00000000
     jr      $ra
@@ -768,6 +786,7 @@ func_80066544:
 
 
 func_80066554:
+# MqDbg: LightContext_DestroyList
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s2, 0x0020($sp)
     sw      s0, 0x0018($sp)
@@ -796,6 +815,7 @@ lbl_80066598:
 
 
 func_800665B0:
+# MqDbg: LightContext_InsertLight
 # Lighting, Bind Light Source
 # Initialize Light?
 # A0 = Global Context
@@ -830,6 +850,7 @@ lbl_800665FC:
 
 
 func_80066610:
+# MqDbg: LightContext_RemoveLight
 # Unload Light Source
 # A0 = Global Context
 # A1 = Global Context + 0x7A8
@@ -866,6 +887,7 @@ lbl_80066668:
 
 
 func_80066674:
+# MqDbg: Lights_NewAndDraw
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      a1, 0x0024($sp)
     sw      a2, 0x0028($sp)
@@ -954,6 +976,7 @@ lbl_80066798:
 
 
 func_800667BC:
+# MqDbg: Lights_New
 # Write Light Data to POLY_OPA_DISP append end
 # A0 = Graphics Context
 # A1 = u8 Red
@@ -981,6 +1004,7 @@ func_800667BC:
 
 
 func_80066804:
+# MqDbg: Lights_GlowCheck
 # Lighting engine related
 # Seems to iterate over active light sources
 # A0 = Global Context
@@ -1120,6 +1144,7 @@ lbl_800669C4:
 
 
 func_80066A08:
+# MqDbg: Lights_DrawGlow
 # gameplay_keep d. list: 15BC0 & 15C00
     addiu   $sp, $sp, 0xFFB0           # $sp -= 0x50
     sw      s8, 0x0048($sp)

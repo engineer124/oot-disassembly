@@ -7,6 +7,7 @@
 
 .section .text
 func_80066C10:
+# MqDbg: ZeldaArena_Malloc
 # zelda_malloc?
 # Allocate Memory To Game State Free List (Head End)
 # Wrapper for 800CE060
@@ -25,6 +26,7 @@ func_80066C10:
 
 
 func_80066C38:
+# MqDbg: ZeldaArena_MallocR
 # zelda_malloc?
 # Allocate Memory To Game State Free List (Tail End)
 # Wrapper for 800CE17C
@@ -43,6 +45,7 @@ func_80066C38:
 
 
 func_80066C60:
+# MqDbg: ZeldaArena_Realloc
 # Wrapper for 800CE514
 # A0 = ?
 # A1 = ?
@@ -61,6 +64,7 @@ func_80066C60:
 
 
 func_80066C90:
+# MqDbg: ZeldaArena_Free
 # Free Memory on Game State Free List
 # A0 = Pointer to Space to Free
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
@@ -76,6 +80,7 @@ func_80066C90:
 
 
 func_80066CB8:
+# MqDbg: ZeldaArena_Calloc
 # Gamestate Mem
 # A0 = Type Size?
 # A1 = Number of Records
@@ -105,6 +110,7 @@ lbl_80066CFC:
 
 
 func_80066D10:
+# MqDbg: ZeldaArena_GetSizes
 # Get Total Free Memory on Game State Block List
 # (Wrapper for 800CE688)
 # A0 = int*, total free space on heap?
@@ -127,6 +133,7 @@ func_80066D10:
 
 
 func_80066D48:
+# MqDbg: ZeldaArena_Check
 # Verify Game State Heap Integrity
 # A0 = 8011BEF0 (Game State Free List ref)
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
@@ -141,6 +148,7 @@ func_80066D48:
 
 
 func_80066D6C:
+# MqDbg: ZeldaArena_Init
 # Allocate Game State Heap Free List
 # A0 = 8011BEF0 (Game State Free List ref)
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
@@ -158,6 +166,7 @@ func_80066D6C:
 
 
 func_80066D9C:
+# MqDbg: ZeldaArena_Cleanup
 # Game State Heap
 # A0 = 8011BEF0 (Game State Free List ref)
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
@@ -172,6 +181,7 @@ func_80066D9C:
 
 
 func_80066DC0:
+# MqDbg: ZeldaArena_IsInitialized
 # Game State Heap
 # A0 = 8011BEF0 (Game State Free List ref)
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18

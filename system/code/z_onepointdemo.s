@@ -10,6 +10,7 @@
 
 .section .text
 func_80067C70:
+# MqDbg: OnePointCutscene_AddVecGeoToVec3f
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0030($sp)
@@ -45,6 +46,7 @@ func_80067C70:
 
 
 func_80067CF0:
+# MqDbg: OnePointCutscene_Vec3fYaw
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lwc1    $f4, 0x0000(a1)            # 00000000
@@ -74,6 +76,7 @@ func_80067CF0:
 
 
 func_80067D58:
+# MqDbg: OnePointCutscene_Vec3sToVec3f
     lwc1    $f4, 0x0000(a0)            # 00000000
     trunc.w.s $f6, $f4
     mfc1    t7, $f6
@@ -94,6 +97,7 @@ func_80067D58:
 
 
 func_80067D9C:
+# MqDbg: OnePointCutscene_BgCheckLineTest
     addiu   $sp, $sp, 0xFFB8           # $sp -= 0x48
     sw      $ra, 0x002C($sp)
     addiu   t6, $sp, 0x0034            # t6 = FFFFFFEC
@@ -117,6 +121,7 @@ func_80067D9C:
 
 
 func_80067DEC:
+# MqDbg: OnePointCutscene_RaycastDown
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x0014($sp)
     or      a3, a1, $zero              # a3 = 00000000
@@ -130,6 +135,7 @@ func_80067DEC:
 
 
 func_80067E14:
+# MqDbg: OnePointCutscene_SetCsCamPoints
     sw      a1, 0x0004($sp)
     sw      a2, 0x0008($sp)
     sll     a2, a2, 16
@@ -146,6 +152,7 @@ func_80067E14:
 
 
 func_80067E48:
+# MqDbg: OnePointCutscene_SetInfo
     addiu   $sp, $sp, 0xFF28           # $sp -= 0xD8
     sw      s5, 0x0030($sp)
     sw      a2, 0x00E0($sp)
@@ -3858,6 +3865,7 @@ lbl_8006B5BC:
 
 
 func_8006B5E0:
+# MqDbg: OnePointCutscene_SetAsChild
     sw      a1, 0x0004($sp)
     sw      a2, 0x0008($sp)
     sll     a2, a2, 16
@@ -3879,6 +3887,7 @@ func_8006B5E0:
 
 
 func_8006B628:
+# MqDbg: OnePointCutscene_RemoveCamera
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      a1, 0x0024($sp)
     sll     a1, a1, 16
@@ -3938,6 +3947,7 @@ lbl_8006B6C8:
 
 
 func_8006B6FC:
+# MqDbg: OnePointCutscene_Init
 # Start onepointdemo
 # A0 = Global Context
 # A1 = onepointdemo id
@@ -4139,6 +4149,7 @@ lbl_8006B988:
 
 
 func_8006B9B4:
+# MqDbg: OnePointCutscene_EndCutscene
 # Camera related
 # A0 = Global Context
 # A1 = s16 ?
@@ -4172,6 +4183,7 @@ lbl_8006BA08:
 
 
 func_8006BA10:
+# MqDbg: OnePointCutscene_Attention
 # Start onepointdemo 0x1392
 # A0 = Global Context
 # A1 = Actor* instance
@@ -4284,6 +4296,7 @@ lbl_8006BB68:
 
 
 func_8006BB7C:
+# MqDbg: OnePointCutscene_AttentionSetSfx
 # Start onepointdemo 0x1392 with sfx
 # (Wrapper for 8006BA10)
 # A0 = Global Context
@@ -4314,6 +4327,7 @@ lbl_8006BBBC:
 
 
 func_8006BBD0:
+# MqDbg: OnePointCutscene_EnableAttention
     lui     $at, 0x800F                # $at = 800F0000
     sh      $zero, 0x1C10($at)         # 800F1C10
     jr      $ra
@@ -4321,6 +4335,7 @@ func_8006BBD0:
 
 
 func_8006BBE0:
+# MqDbg: OnePointCutscene_DisableAttention
     addiu   t6, $zero, 0x0001          # t6 = 00000001
     lui     $at, 0x800F                # $at = 800F0000
     sh      t6, 0x1C10($at)            # 800F1C10
@@ -4329,6 +4344,7 @@ func_8006BBE0:
 
 
 func_8006BBF4:
+# MqDbg: OnePointCutscene_CheckForCategory
     lw      v0, 0x0790(a0)             # 00000790
     addiu   a2, $zero, 0x002B          # a2 = 0000002B
     lh      v1, 0x014E(v0)             # 0000014E
@@ -4361,6 +4377,7 @@ lbl_8006BC4C:
 
 
 func_8006BC54:
+# MqDbg: OnePointCutscene_Noop
     sw      a0, 0x0000($sp)
     sw      a1, 0x0004($sp)
     jr      $ra

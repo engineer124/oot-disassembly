@@ -10,6 +10,7 @@
 
 .section .text
 func_8006BC70:
+# MqDbg: Map_SavePlayerInitialInfo
     lw      v0, 0x1C44(a0)             # 00001C44
     lui     $at, 0x800F                # $at = 800F0000
     addiu   t1, $zero, 0x7FFF          # t1 = 00007FFF
@@ -38,6 +39,7 @@ lbl_8006BCC0:
 
 
 func_8006BCD0:
+# MqDbg: Map_SetPaletteData
     sw      a1, 0x0004($sp)
     sll     a1, a1, 16
     sra     a1, a1, 16
@@ -73,6 +75,7 @@ lbl_8006BD20:
 
 
 func_8006BD4C:
+# MqDbg: Map_SetFloorPalettesData
     addiu   $sp, $sp, 0xFFC0           # $sp -= 0x40
     sw      s8, 0x0038($sp)
     sw      s7, 0x0034($sp)
@@ -193,6 +196,7 @@ lbl_8006BED8:
 
 
 func_8006BF04:
+# MqDbg: Map_InitData
 # Load minimap address
 # ROM st: map_grand_static & map_i_static
 # A0 = Global Context
@@ -399,6 +403,7 @@ lbl_8006C1E0:
 
 
 func_8006C1F0:
+# MqDbg: Map_InitRoomData
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      a1, 0x001C($sp)
     sll     a1, a1, 16
@@ -461,6 +466,7 @@ lbl_8006C2C0:
 
 
 func_8006C2CC:
+# MqDbg: Map_Destroy
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     jal     func_80066EC0
@@ -495,6 +501,7 @@ lbl_8006C328:
 
 
 func_8006C340:
+# MqDbg: Map_Init
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0030($sp)
@@ -693,6 +700,7 @@ lbl_8006C614:
 
 
 func_8006C620:
+# MqDbg: Minimap_DrawCompassIcons
     addiu   $sp, $sp, 0xFF98           # $sp -= 0x68
     sw      s1, 0x0020($sp)
     or      s1, a0, $zero              # s1 = 00000000
@@ -979,6 +987,7 @@ lbl_8006CA4C:
 
 
 func_8006CA64:
+# MqDbg: Minimap_Draw
 # parameter_static texture: Minimap Dungeon Entrance
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      $ra, 0x001C($sp)
@@ -1723,6 +1732,7 @@ lbl_8006D580:
 
 
 func_8006D58C:
+# MqDbg: Map_GetFloorTextIndexOffset
     lui     t6, 0x8012                 # t6 = 80120000
     lw      t6, -0x40F0(t6)            # 8011BF10
     sll     t8, a0,  4
@@ -1736,6 +1746,7 @@ func_8006D58C:
 
 
 func_8006D5B4:
+# MqDbg: Map_Update
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      s6, 0x0030($sp)
     lui     s6, 0x8012                 # s6 = 80120000

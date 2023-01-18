@@ -7,6 +7,7 @@
 
 .section .text
 func_8005A3C0:
+# MqDbg: func_8006CFC0
 # ROM st: do_action_static
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     addiu   a1, $sp, 0x000C            # a1 = FFFFFFEC
@@ -61,6 +62,7 @@ lbl_8005A46C:
 
 
 func_8005A474:
+# MqDbg: func_8006D074
     lui     v0, 0x8012                 # v0 = 80120000
     addiu   v0, v0, 0xA5D0             # v0 = 8011A5D0
     sw      a0, 0x0000($sp)
@@ -79,6 +81,7 @@ func_8005A474:
 
 
 func_8005A4B0:
+# MqDbg: func_8006D0AC
     lui     v1, 0x8012                 # v1 = 80120000
     addiu   v1, v1, 0xA5D0             # v1 = 8011A5D0
     sw      a0, 0x0000($sp)
@@ -99,6 +102,7 @@ lbl_8005A4E8:
 
 
 func_8005A4F0:
+# MqDbg: func_8006D0EC
     addiu   $sp, $sp, 0xFF68           # $sp -= 0x98
     sw      s0, 0x0030($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -412,6 +416,7 @@ lbl_8005A978:
 
 
 func_8005A988:
+# MqDbg: func_8006D684
     addiu   $sp, $sp, 0xFF78           # $sp -= 0x88
     sw      s1, 0x0030($sp)
     sw      s0, 0x002C($sp)
@@ -784,6 +789,7 @@ lbl_8005AEEC:
 
 
 func_8005AEFC:
+# MqDbg: func_8006DC68
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     lui     v1, 0x8012                 # v1 = 80120000
     addiu   v1, v1, 0xA5D0             # v1 = 8011A5D0
@@ -863,6 +869,7 @@ lbl_8005B000:
 
 
 func_8005B00C:
+# MqDbg: func_8006DD9C
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      a2, 0x0020($sp)
     sll     a2, a2, 16

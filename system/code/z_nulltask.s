@@ -7,6 +7,7 @@
 
 .section .text
 func_80067500:
+# MqDbg: Sched_FlushTaskQueue
     addiu   $sp, $sp, 0xFF60           # $sp -= 0xA0
     sw      $ra, 0x0014($sp)
     addiu   a0, $sp, 0x0020            # a0 = FFFFFF80

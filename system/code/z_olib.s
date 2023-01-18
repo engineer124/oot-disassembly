@@ -7,6 +7,7 @@
 
 .section .text
 func_80067580:
+# MqDbg: OLib_Vec3fDist
     lwc1    $f4, 0x0000(a0)            # 00000000
     lwc1    $f6, 0x0000(a1)            # 00000000
     lwc1    $f8, 0x0004(a0)            # 00000004
@@ -27,6 +28,7 @@ func_80067580:
 
 
 func_800675C4:
+# MqDbg: OLib_Vec3fDistOutDiff
     lwc1    $f4, 0x0000(a0)            # 00000000
     lwc1    $f6, 0x0000(a1)            # 00000000
     sub.s   $f8, $f4, $f6
@@ -53,6 +55,7 @@ func_800675C4:
 
 
 func_80067620:
+# MqDbg: OLib_Vec3fDistXZ
     lwc1    $f4, 0x0000(a0)            # 00000000
     lwc1    $f6, 0x0000(a1)            # 00000000
     lwc1    $f8, 0x0008(a0)            # 00000008
@@ -69,6 +72,7 @@ func_80067620:
 
 
 func_80067654:
+# MqDbg: OLib_ClampMinDist
     abs.s   $f0, $f12
     c.le.s  $f14, $f0
     nop
@@ -95,6 +99,7 @@ lbl_80067698:
 
 
 func_800676A4:
+# MqDbg: OLib_ClampMaxDist
     abs.s   $f0, $f12
     c.le.s  $f0, $f14
     nop
@@ -121,6 +126,7 @@ lbl_800676E8:
 
 
 func_800676F4:
+# MqDbg: OLib_Vec3fDistNormalize
     addiu   $sp, $sp, 0xFFC8           # $sp -= 0x38
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0038($sp)
@@ -168,6 +174,7 @@ func_800676F4:
 
 
 func_800677A4:
+# MqDbg: OLib_VecSphToVec3f
     addiu   $sp, $sp, 0xFFC0           # $sp -= 0x40
     sw      s0, 0x0018($sp)
     or      s0, a1, $zero              # s0 = 00000000
@@ -214,6 +221,7 @@ func_800677A4:
 
 
 func_80067850:
+# MqDbg: OLib_VecGeoToVec3f
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x0014($sp)
     or      a2, a1, $zero              # a2 = 00000000
@@ -234,6 +242,7 @@ func_80067850:
 
 
 func_80067894:
+# MqDbg: OLib_Vec3fToVecSph
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     mtc1    $zero, $f18                # $f18 = 0.00
     sw      $ra, 0x0014($sp)
@@ -327,6 +336,7 @@ lbl_800679C0:
 
 
 func_800679E8:
+# MqDbg: OLib_Vec3fToVecGeo
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0020($sp)
@@ -348,6 +358,7 @@ func_800679E8:
 
 
 func_80067A30:
+# MqDbg: OLib_Vec3fDiffToVecSph
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      $ra, 0x0014($sp)
     or      a3, a1, $zero              # a3 = 00000000
@@ -372,6 +383,7 @@ func_80067A30:
 
 
 func_80067A84:
+# MqDbg: OLib_Vec3fDiffToVecGeo
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      $ra, 0x0014($sp)
     or      a3, a1, $zero              # a3 = 00000000
@@ -396,6 +408,7 @@ func_80067A84:
 
 
 func_80067AD8:
+# MqDbg: OLib_Vec3fDiffRad
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0028($sp)
@@ -435,6 +448,7 @@ func_80067AD8:
 
 
 func_80067B68:
+# MqDbg: OLib_Vec3fDiffDegF
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0030($sp)
@@ -464,6 +478,7 @@ func_80067B68:
 
 
 func_80067BD0:
+# MqDbg: OLib_Vec3fDiffBinAng
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0030($sp)
