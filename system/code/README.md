@@ -6,8 +6,8 @@ This directory contains all files composing the massive "code" file which holds 
 
 | File Name                                              | Short Name / Purpose                 | VRAM Start | VROM Start | Size  |
 | ------------------------------------------------------ | ------------------------------------ | :--------: | :--------: | :---: |
-| [**En_A_Keep.s**](En_A_Keep.s)                         | Actor En_A_Obj (Gameplay_keep Items) |  800110A0  |   A87000   |  AA0  |
-| [**En_Item00.s**](En_Item00.s)                         | Actor En_Item00 (Collectibles)       |  80011B40  |   A87AA0   | 23F0  |
+| [**z_en_a_keep.s**](z_en_a_keep.s)                     | Actor En_A_Obj (Gameplay_keep Items) |  800110A0  |   A87000   |  AA0  |
+| [**z_en_item00.s**](z_en_item00.s)                     | Actor En_Item00 (Collectibles)       |  80011B40  |   A87AA0   | 23F0  |
 | [**z_eff_blure.s**](z_eff_blure.s)                     | Particle Effects                     |  80013F30  |   A89E90   | 3480  |
 | [**z_eff_shield_particle.s**](z_eff_shield_particle.s) | Particle Effects                     |  800173B0  |   A8D310   | 1670  |
 | [**z_eff_spark.s**](z_eff_spark.s)                     | Particle Effects                     |  80018A20  |   A8E980   | 16C0  |
@@ -71,8 +71,8 @@ This directory contains all files composing the massive "code" file which holds 
 | [**z_fbdemo_fade.s**](z_fbdemo_fade.s)                 | Transition System: Fading            |  800992C0  |   B0F220   |  360  |
 | [**shrink_window.s**](shrink_window.s)                 | Letterboxing                         |  80099620  |   B0F580   |  170  |
 | [**code_80099790.s**](code_80099790.s)                 | Cutscene Camera Spline               |  80099790  |   B0F6F0   |  4D0  |
-| [**kaleido_manager.s**](kaleido_manager.s)             | Pause Screen Manager                 |  80099C60  |   B0FBC0   |  230  |
-| [**kaleido_scope_call.s**](kaleido_scope_call.s)       | Pause Screen Call                    |  80099E90  |   B0FDF0   |  2E0  |
+| [**z_kaleido_manager.s**](z_kaleido_manager.s)         | Pause Screen Manager                 |  80099C60  |   B0FBC0   |  230  |
+| [**z_kaleido_scope_call.s**](z_kaleido_scope_call.s)   | Pause Screen Call                    |  80099E90  |   B0FDF0   |  2E0  |
 | [**z_play.s**](z_play.s)                               | Play                                 |  8009A170  |   B100D0   | 3B30  |
 | [**PreRender.s**](PreRender.s)                         | Pre-Rendering                        |  8009DCA0  |   B13C00   | 2220  |
 | [**TwoHeadGfxArena.s**](TwoHeadGfxArena.s)             | Double-Ended Stack Allocator (gfx)   |  8009FEC0  |   B15E20   |  210  |

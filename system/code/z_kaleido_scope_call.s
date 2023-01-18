@@ -7,6 +7,7 @@
 
 .section .text
 func_80099E90:
+# MqDbg: KaleidoScopeCall_LoadPlayer
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lui     a0, 0x8010                 # a0 = 80100000
@@ -31,6 +32,7 @@ lbl_80099ED0:
 
 
 func_80099EDC:
+# MqDbg: KaleidoScopeCall_Init
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     sw      a0, 0x0018($sp)
@@ -53,6 +55,7 @@ func_80099EDC:
 
 
 func_80099F28:
+# MqDbg: KaleidoScopeCall_Destroy
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     jal     func_8005BC44
@@ -64,6 +67,7 @@ func_80099F28:
 
 
 func_80099F48:
+# MqDbg: KaleidoScopeCall_Update
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      $ra, 0x0014($sp)
     or      a3, a0, $zero              # a3 = 00000000
@@ -180,6 +184,7 @@ lbl_8009A0DC:
 
 
 func_8009A0E8:
+# MqDbg: KaleidoScopeCall_Draw
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lui     t6, 0x8012                 # t6 = 80120000

@@ -11,6 +11,7 @@
 
 .section .text
 func_80011B40:
+# MqDbg: EnItem00_SetupAction
 # Set new update routine function for this actor
 # A0 = Actor Instance
 # A1 = Pointer to function
@@ -20,6 +21,7 @@ func_80011B40:
 
 
 func_80011B4C:
+# MqDbg: EnItem00_Init
 # Init function
 # A0 = Actor Instance
 # A1 = Global Context
@@ -477,6 +479,7 @@ lbl_800121A4:
 
 
 func_800121B4:
+# MqDbg: EnItem00_Destroy
 # Destruct function
 # A0 = Actor Instance
 # A1 = Global Context
@@ -494,6 +497,7 @@ func_800121B4:
 
 
 func_800121E0:
+# MqDbg: func_8001DFC8
 # A0 = Actor Instance
 # A1 = Global Context
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
@@ -640,6 +644,7 @@ lbl_800123D0:
 
 
 func_800123E0:
+# MqDbg: func_8001E1C8
 # A0 = Actor Instance
 # A1 = Global Context
     addiu   $sp, $sp, 0xFFC0           # $sp -= 0x40
@@ -729,6 +734,7 @@ lbl_8001250C:
 
 
 func_8001251C:
+# MqDbg: func_8001E304
 # A0 = Actor Instance
 # A1 = Global Context
     addiu   $sp, $sp, 0xFFB0           # $sp -= 0x50
@@ -922,6 +928,7 @@ lbl_800127D0:
 
 
 func_800127E0:
+# MqDbg: EnItem00_Collected
 # A0 = Actor Instance
 # A1 = Global Context
     addiu   $sp, $sp, 0xFFD0           # $sp -= 0x30
@@ -1021,6 +1028,7 @@ lbl_80012928:
 
 
 func_80012938:
+# MqDbg: EnItem00_Update
 # Main Update function
 # A0 = Actor Instance
 # A1 = Global Context
@@ -1496,6 +1504,7 @@ lbl_80012FA8:
 
 
 func_80012FB8:
+# MqDbg: EnItem00_Draw
 # Main Draw function
 # A0 = Actor Instance
 # A1 = Global Context
@@ -1618,6 +1627,7 @@ lbl_80013144:
 # Functions below this point are related to En_Item00 but are often called from outside
 
 func_80013150:
+# MqDbg: EnItem00_DrawRupee
 # Draw Collectible Rupee (Green/Blue/Red/Orange/Purple)
 # gameplay_keep d. list: 45150
 # A0 = Actor Instance
@@ -1696,6 +1706,7 @@ lbl_800131A0:
 
 
 func_80013268:
+# MqDbg: EnItem00_DrawCollectible
 # Draw Small Key & non-Rupee Drops (Bomb, Arrow, Stick, Nut, Magic Jar...)
 # gameplay_keep d. list: 41D80
 # A0 = Actor Instance
@@ -1784,6 +1795,7 @@ lbl_800132D8:
 
 
 func_800133A0:
+# MqDbg: EnItem00_DrawHeartContainer
 # Draw Heart Container (Early collectible version)
 # gameplay_keep d. list: Piece of Heart - Exterior & Heart Container - Interior [?]
 # A0 = Actor Instance
@@ -1853,6 +1865,7 @@ func_800133A0:
 
 
 func_80013498:
+# MqDbg: EnItem00_DrawHeartPiece
 # Draw Piece of Heart
 # gameplay_keep d. list: Piece of Heart - Interior
 # A0 = Actor Instance
@@ -1898,6 +1911,7 @@ func_80013498:
 
 
 func_80013530:
+# MqDbg: func_8001F404
 # Convert collectibles to different items based on Link's Age and other factors like having a Bomb Bag
 # A0 = Collectible Id
 # V0 = New Collectible Id, or -1 to cancel the drop
@@ -2002,6 +2016,7 @@ lbl_80013670:
 
 
 func_80013678:
+# MqDbg: Item_DropCollectible
 # Spawn En_Item00 Actor (Actor 0015)
 # A0 = Global Context
 # A1 = vector3_f32* spawn position
@@ -2158,6 +2173,7 @@ lbl_80013898:
 
 
 func_800138B0:
+# MqDbg: Item_DropCollectible2
     addiu   $sp, $sp, 0xFFB0           # $sp -= 0x50
     sw      s0, 0x0030($sp)
     sll     s0, a2, 16
@@ -2283,6 +2299,7 @@ lbl_80013A6C:
 
 
 func_80013A84:
+# MqDbg: Item_DropCollectibleRandom
 # Spawn Randomized Item Drop
 # A0 = Global Context
 # A1 = Actor* (if null, standard item drop)

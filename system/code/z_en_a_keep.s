@@ -10,6 +10,7 @@
 
 .section .text
 func_800110A0:
+# MqDbg: EnAObj_SetupAction
 # Set new update routine function for this actor
 # A0 = Actor Instance
 # A1 = Pointer to function
@@ -19,6 +20,7 @@ func_800110A0:
 
 
 func_800110AC:
+# MqDbg: EnAObj_Init
 # Init function
 # A0 = Actor Instance
 # A1 = Global Context
@@ -251,6 +253,7 @@ lbl_800113D8:
 
 
 func_800113EC:
+# MqDbg: EnAObj_Destroy
 # Destruct function
 # A0 = Actor Instance
 # A1 = Global Context
@@ -282,6 +285,7 @@ lbl_8001143C:
 
 
 func_80011448:
+# MqDbg: EnAObj_WaitFinishedTalking
 # Update routine to idle while dialog state is 2
 # Checks dialog state with 80022AD0 and calls 80011478 if it returns true (which sets update routine to 800114A0)
 # A0 = Actor Instance
@@ -302,6 +306,7 @@ lbl_80011468:
 
 
 func_80011478:
+# MqDbg: EnAObj_SetupWaitTalk
 # Initilization for most types: 00, 05-0A & 0C+
 # Sets update routine to 800114A0
 # A0 = Actor Instance
@@ -319,6 +324,7 @@ func_80011478:
 
 
 func_800114A0:
+# MqDbg: EnAObj_WaitTalk
 # Update routine for most types: 00, 05-0A & 0C+
 # A0 = Actor Instance
 # A1 = Global Context
@@ -375,6 +381,7 @@ lbl_80011548:
 
 
 func_80011554:
+# MqDbg: EnAObj_SetupBlockRot
 # Initiliation for types 03 & 04 (Small & Large Grey Stone Block, with rotation when you stand on it)
 # Sets update routine to 800115A4 and some initial data in the actor instance
 # A0 = Actor Instance
@@ -402,6 +409,7 @@ func_80011554:
 
 
 func_800115A4:
+# MqDbg: EnAObj_BlockRot
 # Update routine for types 03 & 04 (Small & Large Grey Stone Block, with rotation when you stand on it)
 # A0 = Actor Instance
 # A1 = Global Context
@@ -488,6 +496,7 @@ lbl_800116BC:
 
 
 func_800116C4:
+# MqDbg: EnAObj_SetupBoulderFragment
 # Initlization for type 0B (?)
 # Sets update routine to 800116EC
 # A0 = Actor Instance
@@ -505,6 +514,7 @@ func_800116C4:
 
 
 func_800116EC:
+# MqDbg: EnAObj_BoulderFragment
 # Update routine for type 0B (?)
 # A0 = Actor Instance
 # A1 = Global Context
@@ -588,6 +598,7 @@ lbl_800117FC:
 
 
 func_8001180C:
+# MqDbg: EnAObj_SetupBlock
 # Initlization for types 01 & 02 (Large & Huge Grey Stone Block)
 # Sets update routine to 8001184C and some float data to Actor + 0xF8 and Actor + 0xFC
 # A0 = Actor Instance
@@ -611,6 +622,7 @@ func_8001180C:
 
 
 func_8001184C:
+# MqDbg: EnAObj_Block
 # Update routine for types 01 & 02 (Large & Huge Grey Stone Block)
 # A0 = Actor Instance
 # A1 = Global Context
@@ -679,6 +691,7 @@ lbl_8001191C:
 
 
 func_80011934:
+# MqDbg: EnAObj_Update
 # Main Update function
 # A0 = Actor Instance
 # A1 = Global Context
@@ -760,6 +773,7 @@ lbl_80011A3C:
 
 
 func_80011A50:
+# MqDbg: EnAObj_Draw
 # Main Draw function
 # A0 = Actor Instance
 # A1 = Global Context

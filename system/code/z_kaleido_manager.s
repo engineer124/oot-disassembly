@@ -7,6 +7,7 @@
 
 .section .text
 func_80099C60:
+# MqDbg: KaleidoManager_LoadOvl
     addiu   $sp, $sp, 0xFFD8           # $sp -= 0x28
     sw      s0, 0x0020($sp)
     or      s0, a0, $zero              # s0 = 00000000
@@ -33,6 +34,7 @@ func_80099C60:
 
 
 func_80099CBC:
+# MqDbg: KaleidoManager_ClearOvl
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     or      a2, a0, $zero              # a2 = 00000000
@@ -57,6 +59,7 @@ lbl_80099CFC:
 
 
 func_80099D0C:
+# MqDbg: KaleidoManager_Init
 # Calculates and sets Start Address for player_actor and kaleido_scope
 # A0 = Global Context
 # Result written to 800FE4B8
@@ -93,6 +96,7 @@ lbl_80099D4C:
 
 
 func_80099D7C:
+# MqDbg: KaleidoManager_Destroy
     addiu   $sp, $sp, 0xFFE8           # $sp -= 0x18
     sw      $ra, 0x0014($sp)
     lui     a0, 0x8010                 # a0 = 80100000
@@ -113,6 +117,7 @@ lbl_80099DA4:
 
 
 func_80099DBC:
+# MqDbg: KaleidoManager_GetRamAddr
 # Converts player/pause overlay virtual address to ram address?
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x0014($sp)
