@@ -1,12 +1,11 @@
-# Unknown part of the code file
-#
-# The purpose of this file's content is currently unknown until further investigation.
+# Stops all sfx
 #
 # Starts at VRAM: 800A0290 / VROM: B161F0
 #
 
 .section .text
 func_800A0290:
+# MqDbg: AudioMgr_StopAllSfx
     addiu   $sp, $sp, 0xFFE0           # $sp -= 0x20
     sw      $ra, 0x001C($sp)
     sw      s1, 0x0018($sp)

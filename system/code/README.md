@@ -73,9 +73,11 @@ This directory contains all files composing the massive "code" file which holds 
 | [**code_80099790.s**](code_80099790.s)                 | Cutscene Camera Spline               |  80099790  |   B0F6F0   |  4D0  |
 | [**kaleido_manager.s**](kaleido_manager.s)             | Pause Screen Manager                 |  80099C60  |   B0FBC0   |  230  |
 | [**kaleido_scope_call.s**](kaleido_scope_call.s)       | Pause Screen Call                    |  80099E90  |   B0FDF0   |  2E0  |
-| [**play.s**](play.s)                                   | Play                                 |  8009A170  |   B100D0   | 5D50  |
-| [**code_8009FEC0.s**](code_8009FEC0.s)                 | Unknown (8009FEC0)                   |  8009FEC0  |   B15E20   |  3D0  |
-| [**code_800A0290.s**](code_800A0290.s)                 | Unknown (800A0290)                   |  800A0290  |   B161F0   |  50   |
+| [**z_play.s**](z_play.s)                               | Play                                 |  8009A170  |   B100D0   | 3B30  |
+| [**PreRender.s**](PreRender.s)                         | Pre-Rendering                        |  8009DCA0  |   B13C00   | 2220  |
+| [**TwoHeadGfxArena.s**](TwoHeadGfxArena.s)             | Double-Ended Stack Allocator (gfx)   |  8009FEC0  |   B15E20   |  210  |
+| [**TwoHeadArena.s**](TwoHeadArena.s)                   | Double-Ended Stack Allocator         |  800A00D0  |   B16030   |  1C0  |
+| [**code_800A0290.s**](code_800A0290.s)                 | Audio Stop All Sfx                   |  800A0290  |   B161F0   |  50   |
 | [**audioMgr.s**](audioMgr.s)                           | Audio Thread Manager                 |  800A02E0  |   B16240   |  420  |
 | [**game.s**](game.s)                                   | Game                                 |  800A0700  |   B16660   |  8F0  |
 | [**graph.s**](graph.s)                                 | Graph Thread                         |  800A0FF0  |   B16F50   |  C60  |
